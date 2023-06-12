@@ -4,6 +4,7 @@ import TopNav from "../Navbar/TopNav";
 import Suggestion from "../Suggestions/Suggestion";
 import AddPost from "../Componets/AddPost/AddPost";
 import Filter from "../Componets/Filter/Filter";
+import Footer from "../Footer/Footer";
 
 const HomePage = () => {
   return (
@@ -11,9 +12,10 @@ const HomePage = () => {
       {" "}
       {/* <TopNav /> */}
       {/* <Navbar /> */}
-      <Suggestion />
+      {/* <Suggestion /> */}
       {/* <AddPost /> */}
       {/* <Filter /> */}
+      <Footer />
     </div>
   );
 };

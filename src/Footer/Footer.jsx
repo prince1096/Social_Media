@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Footer.module.css";
+
 import { GrInstagram } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { SlSocialTwitter } from "react-icons/sl";
@@ -10,10 +12,10 @@ const Footer = () => {
     <div>
       <div>Developed By Prince Raj</div>
 
-      <div className="connect_container">
+      <div className={styles.connect_container}>
         <a
           target="_blank"
-          className="footer_button_links"
+          className={styles.footer_button_links}
           href="https://www.instagram.com/codewithprinceraj/"
           rel="noreferrer"
         >
@@ -22,7 +24,7 @@ const Footer = () => {
 
         <a
           target="_blank"
-          className="footer_button_links"
+          className={styles.footer_button_links}
           href="https://www.linkedin.com/in/prince-raj-a11444126/"
           rel="noreferrer"
         >
@@ -31,7 +33,7 @@ const Footer = () => {
 
         <a
           target="_blank"
-          className="footer_button_links"
+          className={styles.footer_button_links}
           href="https://twitter.com/prince101296raj"
           rel="noreferrer"
         >
@@ -40,13 +42,15 @@ const Footer = () => {
 
         <a
           target="_blank"
-          className="footer_button_links"
+          className={styles.footer_button_links}
           href="https://github.com/prince1096"
           rel="noreferrer"
         >
           <SiGithub />
         </a>
       </div>
+
+      <div>No Copyright </div>
     </div>
   );
 };
