@@ -1,0 +1,42 @@
+.usercontainer {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid; */
+  margin: 4px;
+  padding: 4px;
+}
+
+.suggestioncontainer {
+  display: none;
+  width: 250px;
+  margin: 4px;
+}
+
+.profileimg {
+  width: 40px;
+  height: 40px;
+  background-color: lightgreen;
+  border-radius: 50%;
+}
+
+.suggestedUser {
+  /* display: flex; */
+}
+
+.userprofile {
+  display: flex;
+  gap: 1rem;
+}
+
+.followbtn {
+  background-color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .suggestioncontainer {
+    display: block;
+  }
+}
