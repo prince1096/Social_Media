@@ -10,6 +10,7 @@ import { FaRegBookmark } from "react-icons/fa";
 
 import AddPost from "../Componets/AddPost/AddPost";
 import Profile from "../Componets/Profile/Profile";
+import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 
 const Scroll = () => {
   const [newPost, setNewPost] = useState();
@@ -37,48 +38,7 @@ const Scroll = () => {
         </div>
 
         {newPost?.map((post) => (
-          <div className={styles.postcard}>
-            <div className={styles.username}>
-              <div className={styles.profile}>
-                <div>
-                  <Profile />
-                </div>
-
-                <div>
-                  <p>
-                    <strong>XYZ</strong>
-                  </p>
-                  <p>@{post?.username}</p>
-                </div>
-              </div>
-
-              <div>
-                <button className={styles.profilebtn}>
-                  <BsThreeDots />
-                </button>
-              </div>
-            </div>
-
-            <div>{post?.content}</div>
-            <div className={styles.bottomlogo}>
-              <div className={styles.likelogo}>
-                {" "}
-                <span className={styles.heart}>
-                  <AiOutlineHeart />
-                </span>{" "}
-                <span>
-                  <FaRegComment />
-                </span>
-                <span>
-                  <LuShare2 />
-                </span>
-              </div>
-
-              <div>
-                <FaRegBookmark />
-              </div>
-            </div>
-          </div>
+          <PostDisplay post={post} />
         ))}
       </div>
     </div>

@@ -9,32 +9,31 @@ import Footer from "../Footer/Footer";
 import styles from "./HomePage.module.css";
 import Scroll from "../Scroll/Scroll";
 import Profile from "../Componets/Profile/Profile";
+import Edit from "../Componets/PostDisplay/Edit";
 
 const HomePage = () => {
   return (
-    <div className={styles.homecontainer}>
-      {/* <Profile /> */}
-      {/* <TopNav /> */}
-      {/* <Navbar /> */}
-      {/* <Suggestion /> */}
-      {/* <AddPost /> */}
-      {/* <Filter /> */}
-      {/* <Footer /> */}
-      <div>
-        <TopNav />
-      </div>
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <Scroll />
-      </div>
-      <div>
-        <Suggestion />
-      </div>
-      <div>
-        <Footer />
-      </div>
+    // <div className={styles.homecontainer}>
+    //   <div className={styles.item1}>
+    //     <TopNav />
+    //   </div>
+    //   <div className={styles.item2}>
+    //     <Navbar />
+    //   </div>
+    //   <div className={styles.item3}>
+    //     <Scroll />
+    //   </div>
+    //   <div className={styles.item4}>
+    //     <Suggestion />
+    //   </div>
+    //   <div className={styles.item5}>
+    //     <Footer />
+    //   </div>
+    // </div>
+
+    <div>
+      <Scroll />
+      {/* <Edit /> */}
     </div>
   );
 };
