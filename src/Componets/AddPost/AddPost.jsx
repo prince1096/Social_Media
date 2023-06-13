@@ -4,13 +4,15 @@ import styles from "./AddPost.module.css";
 
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
+import Profile from "../Profile/Profile";
 
 const AddPost = () => {
   return (
     <div className={styles.addpostcontainer}>
       <div className={styles.addpost}>
         <div>
-          <div className={styles.userprofile}></div>
+          {/* <div className={styles.userprofile}></div> */}
+          <Profile />
         </div>
         <div className={styles.textareadiv}>
           <textarea

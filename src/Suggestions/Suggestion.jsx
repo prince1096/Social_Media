@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./Suggestion.module.css";
 import Filter from "../Componets/Filter/Filter";
+import Profile from "../Componets/Profile/Profile";
 
 const Suggestion = () => {
   const [allusers, setAllusers] = useState();
@@ -36,7 +37,9 @@ const Suggestion = () => {
           {allusers?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <div className={styles.userprofile}>
-                <div className={styles.profileimg}></div>
+                {/* <div className={styles.profileimg}></div> */}
+
+                <Profile />
 
                 <div>
                   <p>

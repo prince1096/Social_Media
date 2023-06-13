@@ -14,6 +14,20 @@
   border-radius: 10%;
   font-size: 20px;
   border: none;
+  /* font-size: 40px; */
+}
+
+.footerlogo {
+  color: #4d96fb;
+  font-size: 20px;
+}
+
+.footercontainer {
+  text-align: center;
+}
+
+.footertitle {
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 768px) {

@@ -9,8 +9,8 @@ import { SiGithub } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <div>
-      <div>Developed By Prince Raj</div>
+    <div className={styles.footercontainer}>
+      <div className={styles.footertitle}>Developed By Prince Raj</div>
 
       <div className={styles.connect_container}>
         <a
@@ -19,7 +19,7 @@ const Footer = () => {
           href="https://www.instagram.com/codewithprinceraj/"
           rel="noreferrer"
         >
-          <GrInstagram />
+          <GrInstagram className={styles.footerlogo} />
         </a>
 
         <a
@@ -28,7 +28,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/prince-raj-a11444126/"
           rel="noreferrer"
         >
-          <GrLinkedin />
+          <GrLinkedin className={styles.footerlogo} />
         </a>
 
         <a
@@ -37,7 +37,7 @@ const Footer = () => {
           href="https://twitter.com/prince101296raj"
           rel="noreferrer"
         >
-          <SlSocialTwitter />
+          <SlSocialTwitter className={styles.footerlogo} />
         </a>
 
         <a
@@ -46,11 +46,11 @@ const Footer = () => {
           href="https://github.com/prince1096"
           rel="noreferrer"
         >
-          <SiGithub />
+          <SiGithub className={styles.footerlogo} />
         </a>
       </div>
 
-      <div>No Copyright </div>
+      <div className={styles.footertitle}>Prinstagram 2023</div>
     </div>
   );
 };
