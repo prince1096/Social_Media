@@ -8,7 +8,7 @@ import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 const Suggestion = () => {
   const { state } = useContext(DataUserContext);
 
-  console.log(state?.user);
+  // console.log(state?.user);
 
   return (
     <div>

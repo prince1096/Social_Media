@@ -9,6 +9,7 @@
   padding: 0.3rem;
   margin: 1rem;
   /* text-align: center; */
+  position: relative;
 }
 
 .addpost {
@@ -20,11 +21,13 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.8rem;
+  align-items: center;
 }
 
 .profile {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .profilebtn {
@@ -50,9 +53,43 @@
   font-size: 21px;
 }
 
+.editpostcontainer {
+  width: 80px;
+  margin: 2px;
+  padding: 2px;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+.editbtn,
+.deletebtn {
+  font-size: 18px;
+  background-color: white;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.editbtn {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.show {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 360px;
+  }
+
+  .show {
+    position: absolute;
+    top: 35px;
+    right: -60px;
   }
 }
 

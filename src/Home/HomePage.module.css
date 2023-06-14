@@ -25,6 +25,15 @@
   gap: 10px;
   /* background-color: #2196f3; */
   padding: 10px;
+  /* position: relative; */
+}
+
+.navbar {
+  /* background-color: black; */
+  /* position: fixed; */
+  /* top: 50px; */
+  /* left: 30px; */
+  /* bottom: 0; */
 }
 
 .homecontainer {

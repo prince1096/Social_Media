@@ -14,11 +14,7 @@ import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 const Scroll = () => {
-  const [newPost, setNewPost] = useState();
-
   const { state } = useContext(DataUserContext);
-
-  // console.log(state?.post);
 
   return (
     <div>

@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useReducer } from "react";
 // import axios from "axios";
 import { getAllUserDataService } from "../../Services/user/userServices";
 import { getAllPostService } from "../../Services/Post/postServices";
+import { getBookMarkDataServices } from "../../Services/BookMarkService/BookMarkService";
 
 export const DataUserContext = createContext();
 
@@ -22,10 +23,15 @@ const DataUserProvider = ({ children }) => {
       case "ALL_POST_DATA":
         return { ...state, post: action.payload };
 
+      case "BOOKMARK_DATA":
+        return { ...state, bookmarkPost: action.payload };
+
       default:
         return { ...state };
     }
   };
+
+  const token = localStorage.getItem("token");
 
   const [state, dispatch] = useReducer(datareducerFunction, initialState);
 
@@ -36,6 +42,10 @@ const DataUserProvider = ({ children }) => {
   useEffect(() => {
     getAllPostService(dispatch);
   }, []);
+
+  useEffect(() => {
+    getBookMarkDataServices(dispatch, token);
+  }, [state?.bookmarkPost]);
 
   return (
     <div>
