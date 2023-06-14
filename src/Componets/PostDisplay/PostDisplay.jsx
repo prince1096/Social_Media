@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useState } from "react";
+
 import styles from "./PostDisplay.module.css";
 
 import { BsThreeDots } from "react-icons/bs";
@@ -11,6 +13,12 @@ import Profile from "../Profile/Profile";
 import Edit from "./Edit";
 
 const PostDisplay = ({ post }) => {
+  const [showEdit, setShowEdit] = useState(false);
+
+  const editHandler = () => {
+    setShowEdit(!showEdit);
+  };
+
   return (
     <div className={styles.postcard}>
       <div className={styles.username}>
@@ -28,7 +36,7 @@ const PostDisplay = ({ post }) => {
         </div>
 
         <div>
-          <button className={styles.profilebtn}>
+          <button className={styles.profilebtn} onClick={() => editHandler()}>
             <BsThreeDots />
           </button>
         </div>
@@ -54,9 +62,11 @@ const PostDisplay = ({ post }) => {
         </div>
       </div>
 
-      <div>
-        <Edit />
-      </div>
+      {showEdit && (
+        <div className={styles.show}>
+          <Edit />
+        </div>
+      )}
     </div>
   );
 };

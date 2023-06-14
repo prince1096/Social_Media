@@ -22,7 +22,7 @@ const TopNav = () => {
           type="text"
           name=""
           id=""
-          placeholder="Search products"
+          placeholder="Search Users"
           className={styles.topnavsearchbar}
           //   value={searchedText}
           // onChange={(event) =>

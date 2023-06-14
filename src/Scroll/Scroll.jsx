@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import styles from "./Scroll.module.css";
 
@@ -11,24 +11,14 @@ import { FaRegBookmark } from "react-icons/fa";
 import AddPost from "../Componets/AddPost/AddPost";
 import Profile from "../Componets/Profile/Profile";
 import PostDisplay from "../Componets/PostDisplay/PostDisplay";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 const Scroll = () => {
   const [newPost, setNewPost] = useState();
 
-  const fetchPost = async () => {
-    try {
-      const response = await fetch("/api/posts");
+  const { state } = useContext(DataUserContext);
 
-      const data = await response.json();
-
-      console.log(data?.posts);
-      setNewPost(data?.posts);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, []);
+  // console.log(state?.post);
 
   return (
     <div>
@@ -37,7 +27,7 @@ const Scroll = () => {
           <AddPost />
         </div>
 
-        {newPost?.map((post) => (
+        {state?.post?.map((post) => (
           <PostDisplay post={post} />
         ))}
       </div>

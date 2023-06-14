@@ -7,14 +7,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { makeServer } from "./server";
 import RouterPage from "./RouterPage";
 import AuthProvider from "./Auth/AuthProvider";
+import DataUserProvider from "./Context/DataUser/DataUserProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
-        <App />
-        <RouterPage />
+        <DataUserProvider>
+          <App />
+          <RouterPage />
+        </DataUserProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>

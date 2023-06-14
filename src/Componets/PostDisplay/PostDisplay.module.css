@@ -9,6 +9,7 @@
   padding: 0.3rem;
   margin: 1rem;
   /* text-align: center; */
+  position: relative;
 }
 
 .addpost {
@@ -74,9 +75,21 @@
   border-bottom: 1px solid #d3d3d3;
 }
 
+.show {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 360px;
+  }
+
+  .show {
+    position: absolute;
+    top: 35px;
+    right: -60px;
   }
 }
 

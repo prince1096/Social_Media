@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 
 import styles from "./Suggestion.module.css";
 import Filter from "../Componets/Filter/Filter";
 import Profile from "../Componets/Profile/Profile";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 const Suggestion = () => {
-  const [allusers, setAllusers] = useState();
+  const { state } = useContext(DataUserContext);
 
-  const fetchUsersData = async () => {
-    try {
-      const response = await fetch("/api/users");
-
-      const data = await response.json();
-
-      console.log(data?.users);
-      setAllusers(data?.users);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUsersData();
-  }, []);
+  console.log(state?.user);
 
   return (
     <div>
@@ -34,7 +20,7 @@ const Suggestion = () => {
         <h2>Suggestions For You</h2>
 
         <div className={styles.suggestedUser}>
-          {allusers?.map((user) => (
+          {state?.user?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <div className={styles.userprofile}>
                 {/* <div className={styles.profileimg}></div> */}
