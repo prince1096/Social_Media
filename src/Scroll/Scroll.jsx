@@ -16,7 +16,7 @@ import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 const Scroll = () => {
   const { state } = useContext(DataUserContext);
 
-  console.log(state?.sortByDate);
+  // console.log(state?.sortByDate);
 
   // const sortedDatePost =
   //   state?.sortByDate === "date"
@@ -40,7 +40,7 @@ const Scroll = () => {
         })
       : [...state?.post];
 
-  console.log(sortedDatePost);
+  // console.log(sortedDatePost);
 
   const sortedLikePost =
     state?.sortByLike === "like"

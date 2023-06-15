@@ -12,10 +12,12 @@ const Filter = () => {
 
   const likesortHandler = () => {
     dispatch({ type: "SORT_BY_LIKE", payload: "like" });
+    dispatch({ type: "SORT_BY_DATE", payload: "" });
   };
 
   const dateSortHandler = () => {
     dispatch({ type: "SORT_BY_DATE", payload: "date" });
+    dispatch({ type: "SORT_BY_LIKE", payload: "" });
   };
 
   return (

@@ -1,0 +1,63 @@
+.container {
+  margin: 0 auto;
+  width: 300px;
+  /* text-align: center; */
+}
+
+.postcard {
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem;
+  margin: 1rem;
+  /* text-align: center; */
+}
+
+.addpost {
+  padding: 0.3rem;
+  margin: 1rem;
+}
+
+.username {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+}
+
+.profilebtn {
+  border: none;
+  background-color: white;
+  font-size: 18px;
+}
+
+.bottomlogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
+.likelogo {
+  display: flex;
+  gap: 10px;
+  margin: 6px;
+}
+.heart {
+  font-size: 21px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 450px;
+  }
+}
