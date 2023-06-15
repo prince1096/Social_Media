@@ -11,11 +11,17 @@ const BookMark = () => {
 
   // console.log(state?.bookmarkPost);
 
+  const bookMarkedPostData = state?.bookmarkPost?.map((postId) =>
+    state?.post?.find((post) => post._id === postId)
+  );
+
+  // console.log(bookMarkedPostData);
+
   return (
     <div>
       <div>
         <div className={styles.container}>
-          {state?.bookmarkPost?.map((post) => (
+          {bookMarkedPostData?.map((post) => (
             <BookMarkDisplay post={post} />
           ))}
         </div>
