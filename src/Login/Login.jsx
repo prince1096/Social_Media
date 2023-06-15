@@ -28,19 +28,14 @@ const Login = () => {
 
     if (loginData?.username === "" || loginData?.password === "") {
       event.preventDefault();
-
       return;
     }
-
     setLoggedIn(true);
-
     setTimeout(async () => {
       setLoggedIn(false);
-
       try {
         const response = await fetch("/api/auth/login", {
           method: "POST",
-
           body: JSON.stringify(loginData),
         });
 

@@ -16,16 +16,6 @@ export const addToBookmarkServices = async (token, dispatch, post) => {
 
     console.log(response?.data?.bookmarks);
 
-    // const response = await fetch(`/api/users/bookmark/${post._id}`, {
-    //   method: "POST",
-    //   headers: {
-    //     authorization: token,
-    //   },
-    //   body: JSON.stringify({ post }),
-    // });
-    // const data = await response.json();
-    // console.log(data);
-
     dispatch({ type: "BOOKMARK_DATA", action: response?.data?.bookmarks });
   } catch (error) {
     console.log(error);

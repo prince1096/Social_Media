@@ -24,7 +24,7 @@ const TopNav = () => {
           id=""
           placeholder="Search Users"
           className={styles.topnavsearchbar}
-          //   value={searchedText}
+          // value={searchedText}
           // onChange={(event) =>
           //   dispatch({ type: "SEARCHED", payload: event.target.value })
           // }

@@ -28,21 +28,13 @@ const DataUserProvider = ({ children }) => {
       case "BOOKMARK_DATA":
         return {
           ...state,
-          bookmarkPost:
-            // ...state?.bookmarkPost,
-            // state?.post?.find(
-            //   (singlePost) => singlePost._id === action.payload
-            // ),
-
-            action.payload,
+          bookmarkPost: action.payload,
         };
 
       case "REMOVE_BOOKMARKPOST":
         return {
           ...state,
-          // bookmarkPost: state?.bookmarkPost?.filter(
-          //   (post) => post._id !== action.payload
-          // ),
+
           bookmarkPost: [...action.payload],
         };
 
