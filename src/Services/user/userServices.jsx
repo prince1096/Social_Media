@@ -4,7 +4,7 @@ export const getAllUserDataService = async (dispatch) => {
   try {
     const data = await axios("/api/users");
 
-    console.log(data?.data);
+    // console.log(data?.data);
 
     dispatch({ type: "USER_DATA", payload: data?.data?.users });
   } catch (error) {

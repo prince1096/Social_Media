@@ -26,6 +26,17 @@ const DataUserProvider = ({ children }) => {
       case "BOOKMARK_DATA":
         return { ...state, bookmarkPost: action.payload };
 
+      case "LIKEDPOST":
+        return { ...state, likedPost: [...state?.likedPost, action.payload] };
+
+      case "UNLIKEDPOST":
+        return {
+          ...state,
+          likedPost: state?.likedPost?.filter(
+            (post) => post._id !== action.payload._id
+          ),
+        };
+
       default:
         return { ...state };
     }

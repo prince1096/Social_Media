@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
 
   const [token, setToken] = useState(encodedToken || "");
 
-  console.log(token);
+  // console.log(token);
 
   return (
     <div>

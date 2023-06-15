@@ -2,20 +2,21 @@ import React, { useContext } from "react";
 
 import { useState } from "react";
 
-import styles from "./PostDisplay.module.css";
+// import styles from "./LikedPostDisplay.module.css";
+
+import styles from "./LikedPostDisplay.module.css";
 
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { FaRegBookmark } from "react-icons/fa";
-import Profile from "../Profile/Profile";
-import Edit from "./Edit";
-import { addToBookmarkServices } from "../../Services/BookMarkService/BookMarkService";
-import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
-import { likePostServices } from "../../Services/LikeUnlikeService/LikeUnlikeService";
+import { removeFromBookmarkServices } from "../Services/BookMarkService/BookMarkService";
+import Edit from "../Componets/PostDisplay/Edit";
+import Profile from "../Componets/Profile/Profile";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
-const PostDisplay = ({ post }) => {
+const LikedPostDisplay = ({ post }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   const { state, dispatch } = useContext(DataUserContext);
@@ -23,9 +24,6 @@ const PostDisplay = ({ post }) => {
   const token = localStorage.getItem("token");
 
   // console.log(token);
-  // console.log(post?.likes?.likeCount);
-
-  const likes = post?.likes?.likeCount;
 
   const editHandler = () => {
     setShowEdit(!showEdit);
@@ -58,11 +56,9 @@ const PostDisplay = ({ post }) => {
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}
-          <button onClick={() => likePostServices(token, dispatch, post)}>
-            <span className={styles.heart}>
-              <AiOutlineHeart /> {likes !== 0 ? likes : ""}
-            </span>{" "}
-          </button>
+          <span className={styles.heart}>
+            <AiOutlineHeart />
+          </span>{" "}
           <span>
             <FaRegComment />
           </span>
@@ -72,7 +68,9 @@ const PostDisplay = ({ post }) => {
         </div>
 
         <div>
-          <button onClick={() => addToBookmarkServices(token, dispatch, post)}>
+          <button
+            onClick={() => removeFromBookmarkServices(token, dispatch, post)}
+          >
             <FaRegBookmark />
           </button>
         </div>
@@ -87,4 +85,4 @@ const PostDisplay = ({ post }) => {
   );
 };
 
-export default PostDisplay;
+export default LikedPostDisplay;

@@ -24,7 +24,7 @@ const Scroll = () => {
         </div>
 
         {state?.post?.map((post) => (
-          <PostDisplay post={post} />
+          <PostDisplay post={post} key={post._id} />
         ))}
       </div>
     </div>
