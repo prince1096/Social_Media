@@ -7,7 +7,8 @@ import { useState } from "react";
 import styles from "./LikedPostDisplay.module.css";
 
 import { BsThreeDots } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import { HiOutlineHeart } from "react-icons/hi";
+
 import { FaRegComment } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { FaRegBookmark } from "react-icons/fa";
@@ -15,6 +16,7 @@ import { removeFromBookmarkServices } from "../Services/BookMarkService/BookMark
 import Edit from "../Componets/PostDisplay/Edit";
 import Profile from "../Componets/Profile/Profile";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
+import { unlikePostServices } from "../Services/LikeUnlikeService/LikeUnlikeService";
 
 const LikedPostDisplay = ({ post }) => {
   const [showEdit, setShowEdit] = useState(false);
@@ -56,9 +58,11 @@ const LikedPostDisplay = ({ post }) => {
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}
-          <span className={styles.heart}>
-            <AiOutlineHeart />
-          </span>{" "}
+          <button onClick={() => unlikePostServices(post, dispatch, token)}>
+            <span className={styles.heart}>
+              <HiOutlineHeart />
+            </span>{" "}
+          </button>
           <span>
             <FaRegComment />
           </span>

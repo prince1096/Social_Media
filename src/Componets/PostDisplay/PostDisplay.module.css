@@ -17,6 +17,10 @@
   margin: 1rem;
 }
 
+.postdate {
+  font-size: 10px;
+}
+
 .username {
   display: flex;
   justify-content: space-between;
@@ -69,6 +73,16 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
+}
+
+.likedLogo {
+  fill: red;
+  color: red;
+}
+
+.btn {
+  border: none;
+  background-color: white;
 }
 
 .editbtn {

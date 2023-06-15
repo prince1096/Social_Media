@@ -5,7 +5,8 @@ import { useState } from "react";
 import styles from "./BookMarkDisplay.module.css";
 
 import { BsThreeDots } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import { HiOutlineHeart } from "react-icons/hi";
+
 import { FaRegComment } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { FaRegBookmark } from "react-icons/fa";
@@ -55,7 +56,7 @@ const BookMarkDisplay = ({ post }) => {
         <div className={styles.likelogo}>
           {" "}
           <span className={styles.heart}>
-            <AiOutlineHeart />
+            <HiOutlineHeart />
           </span>{" "}
           <span>
             <FaRegComment />

@@ -12,6 +12,8 @@ const initialState = {
   post: [],
   bookmarkPost: [],
   likedPost: [],
+  sortByDate: "",
+  sortByLike: "",
 };
 
 const DataUserProvider = ({ children }) => {
@@ -24,7 +26,23 @@ const DataUserProvider = ({ children }) => {
         return { ...state, post: action.payload };
 
       case "BOOKMARK_DATA":
-        return { ...state, bookmarkPost: action.payload };
+        return {
+          ...state,
+          bookmarkPost: [
+            ...state?.bookmarkPost,
+            state?.post?.find(
+              (singlePost) => singlePost._id === action.payload
+            ),
+          ],
+        };
+
+      case "REMOVE_BOOKMARKPOST":
+        return {
+          ...state,
+          bookmarkPost: state?.bookmarkPost?.filter(
+            (post) => post._id !== action.payload
+          ),
+        };
 
       case "LIKEDPOST":
         return { ...state, likedPost: [...state?.likedPost, action.payload] };
@@ -35,6 +53,18 @@ const DataUserProvider = ({ children }) => {
           likedPost: state?.likedPost?.filter(
             (post) => post._id !== action.payload._id
           ),
+        };
+
+      case "SORT_BY_DATE":
+        return {
+          ...state,
+          sortByDate: action.payload,
+        };
+
+      case "SORT_BY_LIKE":
+        return {
+          ...state,
+          sortByLike: action.payload,
         };
 
       default:
