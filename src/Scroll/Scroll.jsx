@@ -34,8 +34,8 @@ const Scroll = () => {
   const sortedDatePost =
     state?.sortByDate === "date"
       ? [...state?.post]?.sort((a, b) => {
-          console.log("a.createdAt:", a.createdAt);
-          console.log("b.createdAt:", b.createdAt);
+          // console.log("a.createdAt:", a.createdAt);
+          // console.log("b.createdAt:", b.createdAt);
           return new Date(b.createdAt) - new Date(a.createdAt);
         })
       : [...state?.post];

@@ -1,23 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { useParams } from "react-router";
 import Profile from "../Componets/Profile/Profile";
 import { convertDate } from "../Services/DateChange/DateChange";
 
 import styles from "./UserProfile.module.css";
+import { getUserPostService } from "../Services/Post/postServices";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
 
   const { username } = useParams();
 
-  //   console.log(username);
-
   const loggedInUser = state?.user?.find(
     (currentUser) => currentUser?.username === username
   );
 
   //   console.log(loggedInUser);
+
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
+
+  useEffect(() => {
+    getUserPostService(dispatch, loggedInUser);
+  }, [loggedInUser]);
+
+  //   getUserPostService(dispatch, loggedInUser);
 
   return (
     <div>
@@ -36,7 +44,11 @@ const UserProfile = () => {
               <p>@{loggedInUser?.username}</p>
             </div>
             <div>
-              <button className={styles.followbtn}>Follow</button>
+              {userData?.username === loggedInUser?.username ? (
+                <button className={styles.editprofile}>Edit Profile</button>
+              ) : (
+                <button className={styles.followbtn}>Follow</button>
+              )}
             </div>
           </div>
 

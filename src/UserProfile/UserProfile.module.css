@@ -1,7 +1,9 @@
 .profilecontainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
   width: 280px;
-  gap: 5px;
+  /* gap: 5px; */
   padding: 1rem;
   margin: 0 auto;
   text-align: start;
@@ -13,7 +15,9 @@
   justify-content: space-between;
   align-items: center;
   margin: 5px;
+  /* width: 70%; */
 }
+
 .username {
   font-weight: bolder;
 }
@@ -40,17 +44,34 @@
   text-align: center;
   /* text-transform: uppercase; */
   color: #ffffff;
-  background-color: #3897f0;
+  background-color: #70b1ff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.followbtn:hover {
-  background-color: #3275b8;
+.editprofile {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  /* text-transform: uppercase; */
+  color: #ffffff;
+  background-color: #70b1ff;
+  border: none;
+  border-radius: 4px;
+  /* box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
 }
 
-.followbtn:focus {
+.followbtn:hover,
+.editprofile:focus {
+  background-color: #98ceff;
+}
+
+.followbtn:focus,
+.editprofile:focus {
   outline: none;
   box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3897f0;
 }
@@ -61,8 +82,8 @@
   }
 
   .website {
-    flex-direction: row;
-    justify-content: space-between;
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
   }
 
   .friend {

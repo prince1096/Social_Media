@@ -16,6 +16,7 @@ const initialState = {
   likedPost: [],
   sortByDate: "",
   sortByLike: "",
+  userPost: "",
 };
 
 const DataUserProvider = ({ children }) => {
@@ -64,6 +65,12 @@ const DataUserProvider = ({ children }) => {
         return {
           ...state,
           sortByLike: action.payload,
+        };
+
+      case "USER_POST":
+        return {
+          ...state,
+          userPost: action.payload,
         };
 
       default:

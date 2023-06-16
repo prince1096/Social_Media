@@ -12,6 +12,13 @@ const Suggestion = () => {
 
   // console.log(state?.user);
 
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
+
+  const suggestedUser = state?.user?.filter(
+    (users) => users.username !== userData?.username
+  );
+
   return (
     <div>
       <div className={styles.suggestioncontainer}>
@@ -22,7 +29,7 @@ const Suggestion = () => {
         <h2>Suggestions For You</h2>
 
         <div className={styles.suggestedUser}>
-          {state?.user?.map((user) => (
+          {suggestedUser?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
                 <div className={styles.userprofile}>

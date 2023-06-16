@@ -20,9 +20,14 @@ export const getSinglePostService = async (post, dispatch) => {
   }
 };
 
-export const getUserPostService = async (username) => {
+export const getUserPostService = async (dispatch, username) => {
+  console.log(username);
   try {
     const response = await axios(`/api/posts/user/${username}`);
+
+    console.log(response);
+
+    dispatch({ type: "USER_POST", payload: response });
   } catch (error) {
     console.log(error);
   }
