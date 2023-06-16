@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 
+import { Link } from "react-router-dom";
+
 import styles from "./Suggestion.module.css";
 import Filter from "../Componets/Filter/Filter";
 import Profile from "../Componets/Profile/Profile";
@@ -22,18 +24,18 @@ const Suggestion = () => {
         <div className={styles.suggestedUser}>
           {state?.user?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
-              <div className={styles.userprofile}>
-                {/* <div className={styles.profileimg}></div> */}
+              <Link to={`/userprofile/${user?.username}`}>
+                <div className={styles.userprofile}>
+                  <Profile />
 
-                <Profile />
-
-                <div>
-                  <p>
-                    {user?.firstName} {user?.lastName}
-                  </p>
-                  <p>{user?.username}</p>
+                  <div>
+                    <p>
+                      {user?.firstName} {user?.lastName}
+                    </p>
+                    <p>{user?.username}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               <div>
                 <button className={styles.followbtn}>Follow</button>

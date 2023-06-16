@@ -4,11 +4,13 @@ import React, { createContext, useEffect, useReducer } from "react";
 import { getAllUserDataService } from "../../Services/user/userServices";
 import { getAllPostService } from "../../Services/Post/postServices";
 import { getBookMarkDataServices } from "../../Services/BookMarkService/BookMarkService";
+import { act } from "react-dom/test-utils";
 
 export const DataUserContext = createContext();
 
 const initialState = {
   user: [],
+  loginUser: "",
   post: [],
   bookmarkPost: [],
   likedPost: [],
@@ -20,6 +22,9 @@ const DataUserProvider = ({ children }) => {
   const datareducerFunction = (state, action) => {
     switch (action.type) {
       case "USER_DATA":
+        return { ...state, user: action.payload };
+
+      case "LOGIN_USER":
         return { ...state, user: action.payload };
 
       case "ALL_POST_DATA":

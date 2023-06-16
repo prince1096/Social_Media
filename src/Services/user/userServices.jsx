@@ -11,7 +11,9 @@ export const getAllUserDataService = async (dispatch) => {
 
 export const getUserDataService = async (dispatch, userId) => {
   try {
-    const userdata = await axios(`/api/users/${userId}`);
+    const response = await axios(`/api/users/${userId}`);
+
+    console.log(response);
   } catch (error) {
     console.log(error);
   }

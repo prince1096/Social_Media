@@ -8,6 +8,7 @@ import Explore from "./Explore/Explore";
 import BookMark from "./BookMark/BookMark";
 import LikedPost from "./LikedPost/LikedPost";
 import Scroll from "./Scroll/Scroll";
+import UserProfile from "./UserProfile/UserProfile";
 
 const RouterPage = () => {
   return (
@@ -25,6 +26,7 @@ const RouterPage = () => {
           <Route path="explore" element={<Explore />} />
           <Route path="bookmark" element={<BookMark />} />
           <Route path="likedpost" element={<LikedPost />} />
+          <Route path="userprofile/:username" element={<UserProfile />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

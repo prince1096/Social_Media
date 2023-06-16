@@ -3,12 +3,16 @@ import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
+import { getUserDataService } from "../Services/user/userServices";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // import Loader from "../Components/Loader/Loader";
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
+
+  // const { state, dispatch } = useContext(DataUserContext);
 
   const { setToken } = useContext(AuthContext);
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -22,6 +26,10 @@ const Login = () => {
     username: "adarshuserhu",
     password: "adarshUser123",
   };
+
+  // const userId = state?.user?.find(
+  //   ({ username }) => username === guestUser?.username
+  // );
 
   const getLoginData = async (event) => {
     event.preventDefault();
@@ -43,7 +51,6 @@ const Login = () => {
 
         if (!data?.encodedToken) {
           event.preventDefault();
-
           return;
         }
 
@@ -77,21 +84,20 @@ const Login = () => {
       if (data?.encodedToken) {
         setIsLoggedIn(true);
         localStorage.setItem("token", data?.encodedToken);
+        localStorage.setItem("userInformation", JSON.stringify(guestUser));
+
         setToken(data?.encodedToken);
+
         navigate(location?.state?.from.pathname || "/", { replace: true });
       }
 
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log(error);
     } finally {
     }
     // }, 2000);
   };
-
-  // const getLoginData = () => {};
-
-  // const guestLoginHandler = () => {};
 
   return (
     <div>
