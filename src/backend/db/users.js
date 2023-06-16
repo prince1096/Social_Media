@@ -13,6 +13,7 @@ export const users = [
     username: "adarshuserhu",
     password: "adarshUser123",
     userHandler: "adarshuser24",
+    bio: "let Go",
     following: [],
     followers: [],
     bookmarks: [],
