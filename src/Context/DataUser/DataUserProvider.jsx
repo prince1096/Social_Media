@@ -4,7 +4,6 @@ import React, { createContext, useEffect, useReducer } from "react";
 import { getAllUserDataService } from "../../Services/user/userServices";
 import { getAllPostService } from "../../Services/Post/postServices";
 import { getBookMarkDataServices } from "../../Services/BookMarkService/BookMarkService";
-import { act } from "react-dom/test-utils";
 
 export const DataUserContext = createContext();
 
@@ -16,7 +15,9 @@ const initialState = {
   likedPost: [],
   sortByDate: "",
   sortByLike: "",
-  userPost: "",
+  userPost: [],
+  currentprofile: "",
+  homepagePost: [],
 };
 
 const DataUserProvider = ({ children }) => {
@@ -30,6 +31,9 @@ const DataUserProvider = ({ children }) => {
 
       case "ALL_POST_DATA":
         return { ...state, post: action.payload };
+
+      case "CURRENT_PROFILE":
+        return { ...state, currentprofile: action.payload };
 
       case "BOOKMARK_DATA":
         return {
@@ -83,12 +87,16 @@ const DataUserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(datareducerFunction, initialState);
 
   useEffect(() => {
-    getAllUserDataService(dispatch);
-  }, []);
+    (async () => {
+      await getAllUserDataService(dispatch);
+    })();
+  }, [state?.user]);
 
   useEffect(() => {
-    getAllPostService(dispatch);
-  }, []);
+    (async () => {
+      await getAllPostService(dispatch);
+    })();
+  }, [state?.post]);
 
   useEffect(() => {
     getBookMarkDataServices(dispatch, token);

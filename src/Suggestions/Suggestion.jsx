@@ -6,9 +6,10 @@ import styles from "./Suggestion.module.css";
 import Filter from "../Componets/Filter/Filter";
 import Profile from "../Componets/Profile/Profile";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
+import { getUserDataService } from "../Services/user/userServices";
 
 const Suggestion = () => {
-  const { state } = useContext(DataUserContext);
+  const { state, dispatch } = useContext(DataUserContext);
 
   // console.log(state?.user);
 
@@ -32,16 +33,18 @@ const Suggestion = () => {
           {suggestedUser?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
-                <div className={styles.userprofile}>
-                  <Profile />
+                <button onClick={() => getUserDataService(dispatch, user._id)}>
+                  <div className={styles.userprofile}>
+                    <Profile />
 
-                  <div>
-                    <p>
-                      {user?.firstName} {user?.lastName}
-                    </p>
-                    <p>{user?.username}</p>
+                    <div>
+                      <p>
+                        {user?.firstName} {user?.lastName}
+                      </p>
+                      <p>{user?.username}</p>
+                    </div>
                   </div>
-                </div>
+                </button>
               </Link>
 
               <div>

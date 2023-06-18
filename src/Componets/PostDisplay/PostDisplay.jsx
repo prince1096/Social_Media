@@ -27,8 +27,8 @@ const PostDisplay = ({ post }) => {
 
   const token = localStorage.getItem("token");
 
-  // console.log(token);
-  // console.log(post);
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
 
   const likes = post?.likes?.likeCount;
 
@@ -38,9 +38,9 @@ const PostDisplay = ({ post }) => {
 
   const likedPost = state?.likedPost?.find((liked) => liked?._id === post._id);
 
-  const bookmarkedPost = state?.bookmarkPost?.find(
-    (savedPost) => savedPost?._id === post?._id
-  );
+  // const bookmarkedPost = state?.bookmarkPost?.find(
+  //   (savedPost) => savedPost?._id === post?._id
+  // );
 
   // console.log(likedPost);
 
@@ -110,7 +110,13 @@ const PostDisplay = ({ post }) => {
 
       {showEdit && (
         <div className={styles.show}>
-          <Edit />
+          {post?.username === userData?.username ? (
+            <Edit postData={post} token={token} dispatch={dispatch} />
+          ) : (
+            <button>Unfollow</button>
+          )}
+
+          {/* <Edit /> */}
         </div>
       )}
     </div>

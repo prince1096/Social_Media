@@ -5,27 +5,54 @@ import Profile from "../Componets/Profile/Profile";
 import { convertDate } from "../Services/DateChange/DateChange";
 
 import styles from "./UserProfile.module.css";
-import { getUserPostService } from "../Services/Post/postServices";
+import {
+  getAllPostService,
+  getUserPostService,
+} from "../Services/Post/postServices";
+import PostDisplay from "../Componets/PostDisplay/PostDisplay";
+import {
+  getAllUserDataService,
+  getUserDataService,
+} from "../Services/user/userServices";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
 
   const { username } = useParams();
 
-  const loggedInUser = state?.user?.find(
-    (currentUser) => currentUser?.username === username
-  );
+  // console.log(state?.currentprofile);
 
-  //   console.log(loggedInUser);
+  const currentProfile = state?.currentprofile;
+
+  // console.log(currentProfile);
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
 
   useEffect(() => {
-    getUserPostService(dispatch, loggedInUser);
-  }, [loggedInUser]);
+    (async () => {
+      await getUserDataService(dispatch, username);
+      await getUserPostService(dispatch, state?.currentprofile);
+    })();
+    // getUserDataService(dispatch, userprofileData._id);
+    getUserPostService(dispatch, state?.currentprofile);
+  }, [state?.currentprofile]);
 
-  //   getUserPostService(dispatch, loggedInUser);
+  //   getUserPostService(dispatch, currentProfile);
+
+  // console.log(state?.userPost);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await getAllUserDataService(dispatch);
+  //   })();
+  // }, [state?.user]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await getAllPostService(dispatch);
+  //   })();
+  // }, [state?.post]);
 
   return (
     <div>
@@ -38,13 +65,13 @@ const UserProfile = () => {
           <div className={styles.name}>
             <div>
               <p className={styles.username}>
-                {loggedInUser?.firstName}
-                {loggedInUser?.lastName}
+                {currentProfile?.firstName}
+                {currentProfile?.lastName}
               </p>
-              <p>@{loggedInUser?.username}</p>
+              <p>@{currentProfile?.username}</p>
             </div>
             <div>
-              {userData?.username === loggedInUser?.username ? (
+              {userData?.username === currentProfile?.username ? (
                 <button className={styles.editprofile}>Edit Profile</button>
               ) : (
                 <button className={styles.followbtn}>Follow</button>
@@ -52,28 +79,36 @@ const UserProfile = () => {
             </div>
           </div>
 
-          <div>{loggedInUser?.bio ? loggedInUser?.bio : "working on it"}</div>
+          <div>
+            {currentProfile?.bio ? currentProfile?.bio : "working on it"}
+          </div>
 
           <div className={styles.website}>
             <div>
               {/* <a href="">
-                {loggedInUser?.website
-                  ? loggedInUser?.website
+                {currentProfile?.website
+                  ? currentProfile?.website
                   : "https://princerajdev.netlify.app/"}
               </a> */}
-              {loggedInUser?.website
-                ? loggedInUser?.website
+              {currentProfile?.website
+                ? currentProfile?.website
                 : "https://princerajdev.netlify.app/"}
             </div>
-            <div>{convertDate(loggedInUser?.createdAt)}</div>
+            <div>{convertDate(currentProfile?.createdAt)}</div>
           </div>
 
           <div className={styles.friend}>
             <p>0 Posts</p>
-            <p> {loggedInUser?.followers?.length} followers </p>
-            <p>{loggedInUser?.following?.length} following</p>
+            <p> {currentProfile?.followers?.length} followers </p>
+            <p>{currentProfile?.following?.length} following</p>
           </div>
         </div>
+      </div>
+
+      <div>
+        {state?.userPost?.map((post) => (
+          <PostDisplay post={post} key={post._id} />
+        ))}
       </div>
     </div>
   );

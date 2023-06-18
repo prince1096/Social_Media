@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllUserDataService = async (dispatch) => {
   try {
-    const data = await axios("/api/users");
+    const data = await axios.get("/api/users");
     dispatch({ type: "USER_DATA", payload: data?.data?.users });
   } catch (error) {
     console.log(error);
@@ -11,9 +11,11 @@ export const getAllUserDataService = async (dispatch) => {
 
 export const getUserDataService = async (dispatch, userId) => {
   try {
-    const response = await axios(`/api/users/${userId}`);
+    const response = await axios.get(`/api/users/${userId}`);
 
-    console.log(response);
+    // console.log(response);
+
+    dispatch({ type: "CURRENT_PROFILE", payload: response?.data?.user });
   } catch (error) {
     console.log(error);
   }

@@ -7,7 +7,7 @@ import { formatDate } from "../utils/authUtils";
 
 export const users = [
   {
-    _id: 1,
+    _id: 101,
     firstName: "Adarsh",
     lastName: "User",
     username: "adarshuserhu",
@@ -22,14 +22,14 @@ export const users = [
   },
 
   {
-    _id: uuid(),
+    _id: 102,
     firstName: "Prince",
     lastName: "Raj",
     username: "princeraj",
     // email: "princeraj@gmail.com",
     following: [
       {
-        _id: uuid(),
+        _id: 103,
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture: "",
@@ -37,67 +37,67 @@ export const users = [
     ],
     followers: [
       {
-        _id: uuid(),
+        _id: 103,
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 104,
         fullName: "Jane Smith",
         username: "janes",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 105,
         fullName: "David Johnson",
         username: "dadidj",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 106,
         fullName: "Emily Brown",
         username: "emilyb",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 107,
         fullName: "Michael Wilson",
         username: "michaelw",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 108,
         fullName: "Sophia Jones",
         username: "sophiaj",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 109,
         fullName: "William Davis",
         username: "williamd",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 110,
         fullName: "Mia Clark",
         username: "miacl",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 111,
         fullName: "Daniel Miller",
         username: "danielm",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 112,
         fullName: "Ava Taylor",
         username: "avat",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 113,
         fullName: "Liam Anderson",
         username: "liama",
         profilePicture: "",
@@ -112,14 +112,14 @@ export const users = [
   },
 
   {
-    _id: uuid(),
+    _id: 103,
     firstName: "Sarahana",
     lastName: "Singh",
     username: "kittuaa",
     password: "password123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -127,67 +127,67 @@ export const users = [
     ],
     followers: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 104,
         fullName: "Jane Smith",
         username: "janes",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 105,
         fullName: "David Johnson",
         username: "dadidj",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 106,
         fullName: "Emily Brown",
         username: "emilyb",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 107,
         fullName: "Michael Wilson",
         username: "michaelw",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 108,
         fullName: "Sophia Jones",
         username: "sophiaj",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 109,
         fullName: "William Davis",
         username: "williamd",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 110,
         fullName: "Mia Clark",
         username: "miacl",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 111,
         fullName: "Daniel Miller",
         username: "danielm",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 112,
         fullName: "Ava Taylor",
         username: "avat",
         profilePicture: "",
       },
       {
-        _id: uuid(),
+        _id: 113,
         fullName: "Liam Anderson",
         username: "liama",
         profilePicture: "",
@@ -201,14 +201,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 104,
     firstName: "Jane",
     lastName: "Smith",
     username: "janes",
     password: "test456",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -223,14 +223,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 105,
     firstName: "David",
     lastName: "Johnson",
     username: "davidj",
     password: "pass123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -245,14 +245,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 106,
     firstName: "Emily",
     lastName: "Brown",
     username: "emilyb",
     password: "letmein",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -267,14 +267,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 107,
     firstName: "Michael",
     lastName: "Wilson",
     username: "michaelw",
     password: "qwerty123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -289,14 +289,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 108,
     firstName: "Sophia",
     lastName: "Jones",
     username: "sophiaj",
     password: "mypassword",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -311,14 +311,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 109,
     firstName: "William",
     lastName: "Davis",
     username: "williamd",
     password: "welcome1",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -333,14 +333,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 110,
     firstName: "Mia",
     lastName: "Clark",
     username: "miacl",
     password: "mia123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -355,14 +355,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 111,
     firstName: "Daniel",
     lastName: "Miller",
     username: "danielm",
     password: "daniel123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -377,14 +377,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 112,
     firstName: "Ava",
     lastName: "Taylor",
     username: "avat",
     password: "password123",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",
@@ -399,14 +399,14 @@ export const users = [
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: 113,
     firstName: "Liam",
     lastName: "Anderson",
     username: "liama",
     password: "password456",
     following: [
       {
-        _id: uuid(),
+        _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
         profilePicture: "",

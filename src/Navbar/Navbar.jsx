@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "./Navbar.module.css";
 
@@ -10,8 +10,25 @@ import { AiFillHeart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
+import { getUserDataService } from "../Services/user/userServices";
 
 const Navbar = () => {
+  const { state, dispatch } = useContext(DataUserContext);
+
+  // console.log(state?.currentprofile);
+
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
+
+  // console.log(state?.user);
+
+  const userprofileData = state?.user?.find(
+    ({ username }) => username === userData?.username
+  );
+
+  // console.log(userprofileData);
+
   return (
     <div className={styles.navdiv}>
       <div className={styles.navbarcontainer}>
@@ -48,10 +65,19 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <div className={styles.navlogocontainer}>
-          <CgProfile />
-          <span className={styles.navlogoname}>Profile</span>
-        </div>
+        <NavLink
+          to={`/userprofile/${userprofileData?.username}`}
+          className={styles.navlink}
+        >
+          <button
+            onClick={() => getUserDataService(dispatch, userprofileData._id)}
+          >
+            <div className={styles.navlogocontainer}>
+              <CgProfile />
+              <span className={styles.navlogoname}>Profile</span>
+            </div>
+          </button>
+        </NavLink>
       </div>
 
       <div
