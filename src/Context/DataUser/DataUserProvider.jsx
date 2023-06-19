@@ -1,11 +1,21 @@
 import React, { createContext, useEffect, useReducer } from "react";
 
 // import axios from "axios";
-import { getAllUserDataService } from "../../Services/user/userServices";
-import { getAllPostService } from "../../Services/Post/postServices";
+import {
+  getAllUserDataService,
+  getUserDataService,
+} from "../../Services/user/userServices";
+import {
+  getAllPostService,
+  getUserPostService,
+} from "../../Services/Post/postServices";
 import { getBookMarkDataServices } from "../../Services/BookMarkService/BookMarkService";
+import { useParams } from "react-router";
 
 export const DataUserContext = createContext();
+
+const userInformation = localStorage.getItem("userInformation");
+const userData = JSON.parse(userInformation);
 
 const initialState = {
   user: [],
@@ -18,6 +28,11 @@ const initialState = {
   userPost: [],
   currentprofile: "",
   homepagePost: [],
+  following: [],
+  follower: [],
+  // userOnProfile: { ...userData },
+  userOnProfile: "",
+  showModal: false,
 };
 
 const DataUserProvider = ({ children }) => {
@@ -34,6 +49,15 @@ const DataUserProvider = ({ children }) => {
 
       case "CURRENT_PROFILE":
         return { ...state, currentprofile: action.payload };
+
+      case "FOLLOW":
+        return { ...state, following: [...state?.following, action.payload] };
+
+      case "UNFOLLOW":
+        return { ...state, following: action.payload };
+
+      case "USER_ON_PROFILE":
+        return { ...state, userOnProfile: action.payload };
 
       case "BOOKMARK_DATA":
         return {
@@ -77,6 +101,18 @@ const DataUserProvider = ({ children }) => {
           userPost: action.payload,
         };
 
+      case "SHOW_MODAL":
+        return {
+          ...state,
+          showModal: true,
+        };
+
+      case "HIDE_MODAL":
+        return {
+          ...state,
+          showModal: false,
+        };
+
       default:
         return { ...state };
     }
@@ -85,6 +121,8 @@ const DataUserProvider = ({ children }) => {
   const token = localStorage.getItem("token");
 
   const [state, dispatch] = useReducer(datareducerFunction, initialState);
+
+  const { username } = useParams();
 
   useEffect(() => {
     (async () => {
@@ -101,6 +139,24 @@ const DataUserProvider = ({ children }) => {
   useEffect(() => {
     getBookMarkDataServices(dispatch, token);
   }, [state?.bookmarkPost]);
+
+  // console.log(state?.userOnProfile);
+
+  // useEffect(() => {
+  //   getUserDataService(dispatch, state?.userOnProfile?._id);
+  //   // getUserPostService(dispatch, state?.currentprofile);
+  // }, [state?.userOnProfile]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await getUserDataService(dispatch, username);
+  //     await getUserPostService(dispatch, state?.currentprofile);
+  //   })();
+  //   // getUserDataService(dispatch, userprofileData._id);
+  //   // getUserPostService(dispatch, state?.currentprofile);
+  // }, [state?.currentprofile]);
+
+  // console.log(state?.following);
 
   return (
     <div>

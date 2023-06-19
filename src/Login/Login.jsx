@@ -81,10 +81,15 @@ const Login = () => {
 
       const data = await response.json();
 
+      console.log(data, "loggedIn");
+
       if (data?.encodedToken) {
         setIsLoggedIn(true);
         localStorage.setItem("token", data?.encodedToken);
-        localStorage.setItem("userInformation", JSON.stringify(guestUser));
+        localStorage.setItem(
+          "userInformation",
+          JSON.stringify(data?.foundUser)
+        );
 
         setToken(data?.encodedToken);
 

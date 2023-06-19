@@ -10,10 +10,11 @@ export const getAllUserDataService = async (dispatch) => {
 };
 
 export const getUserDataService = async (dispatch, userId) => {
+  console.log(userId);
   try {
     const response = await axios.get(`/api/users/${userId}`);
 
-    // console.log(response);
+    // const response = await axios.get(`/api/users/102`);
 
     dispatch({ type: "CURRENT_PROFILE", payload: response?.data?.user });
   } catch (error) {
@@ -23,7 +24,7 @@ export const getUserDataService = async (dispatch, userId) => {
 
 export const editUserService = async (token, dispatch, userData) => {
   try {
-    const user = await axios.post(
+    const response = await axios.post(
       "/api/users/edit",
       { userData },
       { headers: { authorization: token } }

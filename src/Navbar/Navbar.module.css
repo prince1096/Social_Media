@@ -64,6 +64,10 @@
     left: 0;
   }
 
+  .modal {
+    max-width: 30rem;
+  }
+
   .navlogoname {
     display: inline-block;
   }

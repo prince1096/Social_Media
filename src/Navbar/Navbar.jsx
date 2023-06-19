@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./Navbar.module.css";
 
@@ -12,22 +12,27 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { getUserDataService } from "../Services/user/userServices";
+import NavAdd from "../Componets/NavAdd/NavAdd";
+import PostModal from "../Componets/PostModal/PostModal";
+import AddPost from "../Componets/AddPost/AddPost";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(DataUserContext);
 
-  // console.log(state?.currentprofile);
-
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
-
-  // console.log(state?.user);
 
   const userprofileData = state?.user?.find(
     ({ username }) => username === userData?.username
   );
 
-  // console.log(userprofileData);
+  const userHandler = (user) => {
+    dispatch({ type: "USER_ON_PROFILE", payload: user });
+  };
+
+  const showModalHandler = () => {
+    dispatch({ type: "SHOW_MODAL" });
+  };
 
   return (
     <div className={styles.navdiv}>
@@ -46,10 +51,15 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <div className={styles.navlogocontainer}>
-          <MdAddCircle />
-          <span className={styles.navlogoname}>Post</span>
-        </div>
+        <button>
+          <div
+            className={styles.navlogocontainer}
+            onClick={() => showModalHandler()}
+          >
+            <MdAddCircle />
+            <span className={styles.navlogoname}>Post</span>
+          </div>
+        </button>
 
         <NavLink to="/bookmark" className={styles.navlink}>
           <div className={styles.navlogocontainer}>
@@ -70,7 +80,8 @@ const Navbar = () => {
           className={styles.navlink}
         >
           <button
-            onClick={() => getUserDataService(dispatch, userprofileData._id)}
+            // onClick={() => getUserDataService(dispatch, userprofileData._id)}
+            onClick={() => userHandler(userprofileData)}
           >
             <div className={styles.navlogocontainer}>
               <CgProfile />
@@ -86,6 +97,25 @@ const Navbar = () => {
         <GiHamburgerMenu />
         <span className={styles.navlogoname}>More</span>
       </div>
+
+      {/* <div> */}
+
+      <PostModal>
+        <AddPost />
+      </PostModal>
+
+      {/* {showModal && (
+        <div
+          className={styles.overlay}
+          onClick={() => setShowModal(false)}
+        ></div>
+      )}
+      {showModal && (
+        <div className={styles.modal}>
+          <NavAdd setShowModal={setShowModal} />
+        </div>
+      )} */}
+      {/* </div> */}
     </div>
   );
 };

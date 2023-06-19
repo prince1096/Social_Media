@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { useParams } from "react-router";
 import Profile from "../Componets/Profile/Profile";
@@ -20,39 +20,27 @@ const UserProfile = () => {
 
   const { username } = useParams();
 
-  // console.log(state?.currentprofile);
+  // console.log(username);
 
   const currentProfile = state?.currentprofile;
 
-  // console.log(currentProfile);
+  const findUser = state?.user.find((userr) => userr?.username === username);
+
+  // console.log(findUser);
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
 
+  // console.log(userData.username, "user");
+
+  // const [currentProfile, setCurrentProfile] = useState(userData?.username);
+
   useEffect(() => {
-    (async () => {
-      await getUserDataService(dispatch, username);
-      await getUserPostService(dispatch, state?.currentprofile);
-    })();
-    // getUserDataService(dispatch, userprofileData._id);
-    getUserPostService(dispatch, state?.currentprofile);
-  }, [state?.currentprofile]);
+    getUserDataService(dispatch, findUser?._id);
+    // getUserPostService(dispatch, state?.currentprofile);
+  }, [findUser?._id]);
 
-  //   getUserPostService(dispatch, currentProfile);
-
-  // console.log(state?.userPost);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     await getAllUserDataService(dispatch);
-  //   })();
-  // }, [state?.user]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     await getAllPostService(dispatch);
-  //   })();
-  // }, [state?.post]);
+  // console.log(state?.userOnProfile);
 
   return (
     <div>
@@ -105,11 +93,11 @@ const UserProfile = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         {state?.userPost?.map((post) => (
           <PostDisplay post={post} key={post._id} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

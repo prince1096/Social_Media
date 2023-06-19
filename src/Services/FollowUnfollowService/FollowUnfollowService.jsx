@@ -11,6 +11,13 @@ export const followServices = async (token, dispatch, followId) => {
         },
       }
     );
+
+    // console.log(response?.data);
+
+    dispatch({
+      type: "FOLLOW",
+      payload: response?.data?.followUser,
+    });
   } catch (error) {
     console.log(error);
   }

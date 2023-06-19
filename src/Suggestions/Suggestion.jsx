@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -7,11 +7,14 @@ import Filter from "../Componets/Filter/Filter";
 import Profile from "../Componets/Profile/Profile";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { getUserDataService } from "../Services/user/userServices";
+import { followServices } from "../Services/FollowUnfollowService/FollowUnfollowService";
 
 const Suggestion = () => {
   const { state, dispatch } = useContext(DataUserContext);
 
   // console.log(state?.user);
+
+  const token = localStorage.getItem("token");
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
@@ -19,6 +22,26 @@ const Suggestion = () => {
   const suggestedUser = state?.user?.filter(
     (users) => users.username !== userData?.username
   );
+
+  // console.log(state?.following);
+
+  const updatedSuggestion = suggestedUser?.filter(
+    (user) =>
+      !state?.following?.find(
+        (followedUser) => followedUser?.username === user?.username
+      )
+  );
+
+  // console.log(updatedSuggestion);
+
+  // useEffect(() => {
+  //   getUserDataService(dispatch, user._id);
+  // }, []);
+
+  const userHandler = (user) => {
+    // console.log(user);
+    dispatch({ type: "USER_ON_PROFILE", payload: user });
+  };
 
   return (
     <div>
@@ -30,10 +53,12 @@ const Suggestion = () => {
         <h2>Suggestions For You</h2>
 
         <div className={styles.suggestedUser}>
-          {suggestedUser?.map((user) => (
+          {updatedSuggestion?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
-                <button onClick={() => getUserDataService(dispatch, user._id)}>
+                {/* <button onClick={() => getUserDataService(dispatch, user._id)}> */}
+
+                <button onClick={() => userHandler(user)}>
                   <div className={styles.userprofile}>
                     <Profile />
 
@@ -48,7 +73,12 @@ const Suggestion = () => {
               </Link>
 
               <div>
-                <button className={styles.followbtn}>Follow</button>
+                <button
+                  className={styles.followbtn}
+                  onClick={() => followServices(token, dispatch, user._id)}
+                >
+                  Follow
+                </button>
               </div>
             </div>
           ))}

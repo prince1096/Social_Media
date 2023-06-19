@@ -3,10 +3,7 @@ import { redirect } from "react-router";
 
 export const getAllPostService = async (dispatch) => {
   try {
-    // console.log(1);
     const postdata = await axios.get("/api/posts");
-
-    // console.log(postdata?.data);
 
     dispatch({ type: "ALL_POST_DATA", payload: postdata?.data?.posts });
   } catch (error) {
@@ -59,7 +56,7 @@ export const createNewPostService = async (token, dispatch, post) => {
 
 export const deletePostService = async (token, dispatch, postId) => {
   try {
-    const response = axios.delete(`/api/posts/${postId}`, {
+    const response = await axios.delete(`/api/posts/${postId}`, {
       headers: {
         authorization: token,
       },
@@ -71,7 +68,7 @@ export const deletePostService = async (token, dispatch, postId) => {
 
 export const editPostService = async (token, dispatch, postData) => {
   try {
-    const response = axios.post(
+    const response = await axios.post(
       `/api/posts/edit/${postData._id}`,
       {
         postData,
@@ -82,6 +79,8 @@ export const editPostService = async (token, dispatch, postData) => {
         },
       }
     );
+
+    console.log(response);
   } catch (error) {
     console.log(error);
   }

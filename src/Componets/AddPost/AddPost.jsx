@@ -19,11 +19,14 @@ const AddPost = () => {
     setNewPost(event.target.value);
   };
 
-  // console.log(newPost);
-
   const backendpost = {
     id: uuid(),
     content: newPost,
+  };
+
+  const postHandler = () => {
+    createNewPostService(token, dispatch, backendpost);
+    dispatch({ type: "HIDE_MODAL" });
   };
 
   return (
@@ -45,15 +48,6 @@ const AddPost = () => {
             // onChange={() => addPostHandler(event)}
             onChange={handleTextareaChange}
           ></textarea>
-
-          {/* <input
-            type="text"
-            width="130px"
-            height="50px"
-            name=""
-            id=""
-            className={styles.textarea}
-          /> */}
         </div>
       </div>
 
@@ -66,7 +60,8 @@ const AddPost = () => {
 
         <div>
           <button
-            onClick={() => createNewPostService(token, dispatch, backendpost)}
+            // onClick={() => createNewPostService(token, dispatch, backendpost)}
+            onClick={() => postHandler(token, dispatch, backendpost)}
             className={styles.button}
           >
             Post

@@ -1,0 +1,71 @@
+.addpost {
+  display: flex;
+  gap: 1rem;
+}
+
+.addpostcontainer {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 0 auto;
+  width: 350px;
+  padding: 0.8rem;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  z-index: 150;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.userprofile {
+  width: 40px;
+  height: 40px;
+  background-color: lightblue;
+  border-radius: 50%;
+}
+
+.adddata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postlogo {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.textarea {
+  padding: 4px;
+  border: none;
+  font-family: sans-serif;
+}
+
+.button {
+  padding: 0.5rem;
+  background-color: deeppink;
+  color: whitesmoke;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 99;
+
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0, 0.8);
+}
