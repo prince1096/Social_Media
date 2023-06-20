@@ -374,8 +374,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/sophiaj.jpg",
-    bio: "Foodie and aspiring chef.",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/michael-dam-mEZ3PoFGs_k-unsplash_zh0wjy.jpg ",
+
     website: "https://example.com/sophiaj",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -404,7 +405,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/williamd.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/ian-dooley-d1UPkiFd04A-unsplash_z2bp6m.jpg ",
+
     bio: "Sports enthusiast and fitness freak.",
     website: "https://example.com/williamd",
     createdAt: formatDate(),
@@ -421,6 +424,7 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
+
         profilePicture:
           "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
       },
@@ -434,7 +438,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/miacl.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264095/ayo-ogunseinde-6W4F62sN_yI-unsplash_vlsdey.jpg ",
+
     bio: "Fashion enthusiast and trendsetter.",
     website: "https://example.com/miacl",
     createdAt: formatDate(),
@@ -464,7 +470,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/danielm.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/charlie-green-3JmfENcL24M-unsplash_jy1aao.jpg ",
+
     bio: "Tech geek and software developer.",
     website: "https://example.com/danielm",
     createdAt: formatDate(),
@@ -494,7 +502,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/avat.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/alexandru-zdrobau-BGz8vO3pK8k-unsplash_xjds37.jpg ",
+
     bio: "Art lover and aspiring painter.",
     website: "https://example.com/avat",
     createdAt: formatDate(),
@@ -524,7 +534,9 @@ export const users = [
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/liama.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264094/kirill-balobanov-2rIs8OH5ng0-unsplash_kyzydt.jpg ",
+
     bio: "Nature lover and hiking enthusiast.",
     website: "https://example.com/liama",
     createdAt: formatDate(),
