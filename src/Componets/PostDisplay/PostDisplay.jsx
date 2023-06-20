@@ -38,23 +38,23 @@ const PostDisplay = ({ post }) => {
 
   const likedPost = state?.likedPost?.find((liked) => liked?._id === post._id);
 
-  // const bookmarkedPost = state?.bookmarkPost?.find(
-  //   (savedPost) => savedPost?._id === post?._id
-  // );
-
-  // console.log(likedPost);
+  const findUser = state?.user?.find(
+    (userr) => userr.username === post?.username
+  );
 
   return (
     <div className={styles.postcard}>
       <div className={styles.username}>
         <div className={styles.profile}>
           <div>
-            <Profile />
+            <Profile url={findUser?.profilePicture} />
           </div>
 
-          <div>
+          <div className={styles.postname}>
             <p>
-              <strong>XYZ</strong>
+              <strong>
+                {findUser?.firstName} {findUser?.lastName}{" "}
+              </strong>
             </p>
             <p>@{post?.username}</p>
           </div>
@@ -67,7 +67,7 @@ const PostDisplay = ({ post }) => {
         </div>
       </div>
 
-      <div>{post?.content}</div>
+      <div className={styles?.contentdiv}>{post?.content}</div>
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}
@@ -78,7 +78,7 @@ const PostDisplay = ({ post }) => {
             >
               <span className={styles.heart}>
                 <HiOutlineHeart className={styles.likedLogo} />{" "}
-                {likes !== 0 ? likes + 1 : ""}
+                {likes !== 0 ? likes : ""}
               </span>{" "}
             </button>
           ) : (
@@ -100,8 +100,11 @@ const PostDisplay = ({ post }) => {
         </div>
 
         <div>
-          <button onClick={() => addToBookmarkServices(token, dispatch, post)}>
-            <FaRegBookmark />
+          <button
+            className={styles.bookmarkbtn}
+            onClick={() => addToBookmarkServices(token, dispatch, post)}
+          >
+            <FaRegBookmark className={styles.booklogo} />
           </button>
         </div>
       </div>
