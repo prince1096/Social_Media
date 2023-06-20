@@ -7,7 +7,9 @@
 .navbarcontainer {
   display: flex;
   justify-content: space-between;
-  background-color: #fafafa;
+  background-color: whitesmoke;
+  padding: 5px;
+  margin: 5px;
 
   position: fixed;
   bottom: 0;
@@ -16,6 +18,16 @@
   margin: 0 auto;
   z-index: 1;
   /* width: 100vw; */
+}
+
+.navprofilebtn {
+  background-color: whitesmoke;
+  border: none;
+}
+
+.addpostnav {
+  background-color: whitesmoke;
+  border: none;
 }
 
 .navdiv {
@@ -34,7 +46,9 @@
 .navlogocontainer {
   border-radius: 24px;
   color: #00376b;
-  /* display: inline-flex; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   text-align: start;
   font-size: 20px;
   line-height: 18px;
@@ -45,6 +59,7 @@
 
 .navlink {
   text-decoration: none;
+  text-align: start;
 }
 
 .hidenavbar {

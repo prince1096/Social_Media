@@ -15,6 +15,7 @@ import { getUserDataService } from "../Services/user/userServices";
 import NavAdd from "../Componets/NavAdd/NavAdd";
 import PostModal from "../Componets/PostModal/PostModal";
 import AddPost from "../Componets/AddPost/AddPost";
+import Profile from "../Componets/Profile/Profile";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(DataUserContext);
@@ -51,7 +52,7 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <button>
+        <button className={styles.addpostnav}>
           <div
             className={styles.navlogocontainer}
             onClick={() => showModalHandler()}
@@ -80,23 +81,29 @@ const Navbar = () => {
           className={styles.navlink}
         >
           <button
+            className={styles.navprofilebtn}
             // onClick={() => getUserDataService(dispatch, userprofileData._id)}
             onClick={() => userHandler(userprofileData)}
           >
             <div className={styles.navlogocontainer}>
-              <CgProfile />
+              {/* <CgProfile /> */}
+              <Profile
+                url={userprofileData?.profilePicture}
+                height={"24px"}
+                width={"24px"}
+              />
               <span className={styles.navlogoname}>Profile</span>
             </div>
           </button>
         </NavLink>
       </div>
 
-      <div
+      {/* <div
         className={`${styles.navlogocontainer} ${styles.hidenavbar} ${styles.navend} `}
       >
         <GiHamburgerMenu />
         <span className={styles.navlogoname}>More</span>
-      </div>
+      </div> */}
 
       {/* <div> */}
 

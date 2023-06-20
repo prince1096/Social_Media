@@ -58,11 +58,18 @@ const Suggestion = () => {
           {updatedSuggestion?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
-                <button onClick={() => userHandler(user)}>
+                <button
+                  className={styles.suggestbtn}
+                  onClick={() => userHandler(user)}
+                >
                   <div className={styles.userprofile}>
-                    <Profile url={user?.profilePicture} />
+                    <Profile
+                      url={user?.profilePicture}
+                      height={"40px"}
+                      width={"40px"}
+                    />
 
-                    <div>
+                    <div className={styles?.namediv}>
                       <p>
                         {user?.firstName} {user?.lastName}
                       </p>

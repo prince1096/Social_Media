@@ -47,7 +47,11 @@ const PostDisplay = ({ post }) => {
       <div className={styles.username}>
         <div className={styles.profile}>
           <div>
-            <Profile url={findUser?.profilePicture} />
+            <Profile
+              url={findUser?.profilePicture}
+              height={"40px"}
+              width={"40px"}
+            />
           </div>
 
           <div className={styles.postname}>

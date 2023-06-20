@@ -61,7 +61,11 @@ const UserProfile = () => {
     <div>
       <div className={styles.profilecontainer}>
         <div>
-          <Profile url={currentProfile?.profilePicture} />
+          <Profile
+            url={currentProfile?.profilePicture}
+            height={"80px"}
+            width={"80px"}
+          />
         </div>
 
         <div>
