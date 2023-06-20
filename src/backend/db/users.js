@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
 /**
  * User Database can be added here.
@@ -19,6 +19,8 @@ export const users = [
     bookmarks: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    profilePicture:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262392/samples/people/boy-snow-hoodie.jpg",
   },
 
   {

@@ -14,6 +14,7 @@ import {
   getAllUserDataService,
   getUserDataService,
 } from "../Services/user/userServices";
+import EditProfile from "../Componets/EditProfile/EditProfile";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
@@ -42,11 +43,25 @@ const UserProfile = () => {
 
   // console.log(state?.userOnProfile);
 
+  const showEdit = () => {
+    console.log("show");
+    dispatch({ type: "SHOW_EDITPROFILE_MODAL", payload: true });
+    console.log("ok");
+  };
+
+  // console.log(state?.showProfile);
+
+  const hideEdit = () => {
+    dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
+  };
+
+  console.log(currentProfile);
+
   return (
     <div>
       <div className={styles.profilecontainer}>
         <div>
-          <Profile />
+          <Profile url={currentProfile?.profilePicture} />
         </div>
 
         <div>
@@ -60,7 +75,12 @@ const UserProfile = () => {
             </div>
             <div>
               {userData?.username === currentProfile?.username ? (
-                <button className={styles.editprofile}>Edit Profile</button>
+                <button
+                  className={styles.editprofile}
+                  onClick={() => showEdit()}
+                >
+                  Edit Profile
+                </button>
               ) : (
                 <button className={styles.followbtn}>Follow</button>
               )}
@@ -73,11 +93,6 @@ const UserProfile = () => {
 
           <div className={styles.website}>
             <div>
-              {/* <a href="">
-                {currentProfile?.website
-                  ? currentProfile?.website
-                  : "https://princerajdev.netlify.app/"}
-              </a> */}
               {currentProfile?.website
                 ? currentProfile?.website
                 : "https://princerajdev.netlify.app/"}
@@ -92,6 +107,16 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
+
+      {state?.showProfile && (
+        <div className={styles.overlay} onClick={() => hideEdit()}></div>
+      )}
+
+      {state?.showProfile && (
+        <div className={styles.modal}>
+          <EditProfile />
+        </div>
+      )}
 
       {/* <div>
         {state?.userPost?.map((post) => (

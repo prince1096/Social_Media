@@ -1,0 +1,57 @@
+.editcontainer {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  margin: 6px;
+  text-align: start;
+  gap: 4px;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cross {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.profile {
+  display: flex;
+  justify-content: start;
+  gap: 3rem;
+  margin: 0.4rem;
+}
+
+.updatebtn {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+.bio {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4rem;
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.username {
+  margin: 0.4rem;
+}
+
+.crossbtn {
+  border: none;
+  background-color: white;
+  font-size: 18px;
+}

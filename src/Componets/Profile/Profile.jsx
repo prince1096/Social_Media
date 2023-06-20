@@ -2,10 +2,18 @@ import React from "react";
 
 import styles from "./Profile.module.css";
 
-const Profile = () => {
+const Profile = ({ url }) => {
   return (
     <div>
-      <div className={styles.profile}></div>
+      <div className={styles.profile}>
+        <img
+          src={url}
+          alt=""
+          // height="40px"
+          // width="40px"
+          className={styles?.imgurl}
+        />
+      </div>
     </div>
   );
 };

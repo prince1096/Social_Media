@@ -43,6 +43,8 @@ const Suggestion = () => {
     dispatch({ type: "USER_ON_PROFILE", payload: user });
   };
 
+  // console.log(updatedSuggestion[0]);
+
   return (
     <div>
       <div className={styles.suggestioncontainer}>
@@ -56,11 +58,9 @@ const Suggestion = () => {
           {updatedSuggestion?.map((user) => (
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
-                {/* <button onClick={() => getUserDataService(dispatch, user._id)}> */}
-
                 <button onClick={() => userHandler(user)}>
                   <div className={styles.userprofile}>
-                    <Profile />
+                    <Profile url={user?.profilePicture} />
 
                     <div>
                       <p>

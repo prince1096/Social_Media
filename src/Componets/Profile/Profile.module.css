@@ -4,3 +4,10 @@
   background-color: lawngreen;
   border-radius: 50%;
 }
+
+.imgurl {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

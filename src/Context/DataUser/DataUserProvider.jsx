@@ -14,8 +14,8 @@ import { useParams } from "react-router";
 
 export const DataUserContext = createContext();
 
-const userInformation = localStorage.getItem("userInformation");
-const userData = JSON.parse(userInformation);
+// const userInformation = localStorage.getItem("userInformation");
+// const userData = JSON.parse(userInformation);
 
 const initialState = {
   user: [],
@@ -30,9 +30,9 @@ const initialState = {
   homepagePost: [],
   following: [],
   follower: [],
-  // userOnProfile: { ...userData },
   userOnProfile: "",
   showModal: false,
+  showProfile: false,
 };
 
 const DataUserProvider = ({ children }) => {
@@ -111,6 +111,18 @@ const DataUserProvider = ({ children }) => {
         return {
           ...state,
           showModal: false,
+        };
+
+      case "SHOW_EDITPROFILE_MODAL":
+        return {
+          ...state,
+          showProfile: action.payload,
+        };
+
+      case "HIDE_EDITPROFILE_MODAL":
+        return {
+          ...state,
+          showProfile: false,
         };
 
       default:
