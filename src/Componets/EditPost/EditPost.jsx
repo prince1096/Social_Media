@@ -16,7 +16,7 @@ const EditPost = ({ showEdit, setShowEdit }) => {
   const [newPost, setNewPost] = useState("");
 
   const token = localStorage.getItem("token");
-  const { dispatch } = useContext(DataUserContext);
+  const { state, dispatch } = useContext(DataUserContext);
 
   const handleTextareaChange = (event) => {
     setNewPost(event.target.value);
@@ -29,6 +29,13 @@ const EditPost = ({ showEdit, setShowEdit }) => {
     content: newPost,
   };
 
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
+
+  const currentUser = state?.user?.find(
+    (userr) => userr?.username === userData?.username
+  );
+
   return (
     <div>
       <div className={styles.overlay} onClick={() => setShowEdit(false)}></div>
@@ -37,7 +44,11 @@ const EditPost = ({ showEdit, setShowEdit }) => {
         <div className={styles.addpost}>
           {/* <div> */}
           {/* <div className={styles.userprofile}></div> */}
-          <Profile />
+          <Profile
+            url={currentUser?.profilePicture}
+            height={"60px"}
+            width={"60px"}
+          />
           {/* </div> */}
           <div className={styles.textareadiv}>
             <textarea
