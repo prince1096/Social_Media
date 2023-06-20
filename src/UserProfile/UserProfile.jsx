@@ -15,33 +15,25 @@ import {
   getUserDataService,
 } from "../Services/user/userServices";
 import EditProfile from "../Componets/EditProfile/EditProfile";
+import ShowImage from "../Componets/ShowImage/ShowImage";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
+  const [showImage, setShowImage] = useState(false);
 
   const { username } = useParams();
-
-  // console.log(username);
 
   const currentProfile = state?.currentprofile;
 
   const findUser = state?.user.find((userr) => userr?.username === username);
 
-  // console.log(findUser);
-
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
 
-  // console.log(userData.username, "user");
-
-  // const [currentProfile, setCurrentProfile] = useState(userData?.username);
-
   useEffect(() => {
     getUserDataService(dispatch, findUser?._id);
-    // getUserPostService(dispatch, state?.currentprofile);
+    getUserPostService(dispatch, state?.currentprofile);
   }, [findUser?._id]);
-
-  // console.log(state?.userOnProfile);
 
   const showEdit = () => {
     console.log("show");
@@ -49,24 +41,35 @@ const UserProfile = () => {
     console.log("ok");
   };
 
-  // console.log(state?.showProfile);
-
   const hideEdit = () => {
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
   };
-
-  console.log(currentProfile);
 
   return (
     <div>
       <div className={styles.profilecontainer}>
         <div>
-          <Profile
-            url={currentProfile?.profilePicture}
-            height={"80px"}
-            width={"80px"}
-          />
+          <button className={styles.showpic} onClick={() => setShowImage(true)}>
+            <Profile
+              url={currentProfile?.profilePicture}
+              height={"80px"}
+              width={"80px"}
+            />
+          </button>
         </div>
+
+        {showImage && (
+          <div
+            className={styles.overlay}
+            onClick={() => setShowImage(false)}
+          ></div>
+        )}
+
+        {showImage && (
+          <div className={styles.modals}>
+            <ShowImage url={currentProfile?.profilePicture} />
+          </div>
+        )}
 
         <div>
           <div className={styles.name}>
