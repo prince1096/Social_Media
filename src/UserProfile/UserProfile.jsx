@@ -17,6 +17,8 @@ import {
 import EditProfile from "../Componets/EditProfile/EditProfile";
 import ShowImage from "../Componets/ShowImage/ShowImage";
 
+import { AiOutlineLogout } from "react-icons/ai";
+
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
   const [showImage, setShowImage] = useState(false);
@@ -43,6 +45,15 @@ const UserProfile = () => {
 
   const hideEdit = () => {
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
+  };
+
+  const logoutHandler = () => {
+    // localStorage.clear();
+    localStorage.clear();
+    // setToken("");
+    // localStorage.clear(isLoggedIn);
+    // navigate("/", { replace: true });
+    window.location.reload();
   };
 
   return (
@@ -82,12 +93,20 @@ const UserProfile = () => {
             </div>
             <div>
               {userData?.username === currentProfile?.username ? (
-                <button
-                  className={styles.editprofile}
-                  onClick={() => showEdit()}
-                >
-                  Edit Profile
-                </button>
+                <div>
+                  <button
+                    className={styles.editprofile}
+                    onClick={() => showEdit()}
+                  >
+                    Edit Profile
+                  </button>
+                  <button
+                    className={styles.logout}
+                    onClick={() => logoutHandler()}
+                  >
+                    <AiOutlineLogout className={styles.logoutlogo} />
+                  </button>
+                </div>
               ) : (
                 <button className={styles.followbtn}>Follow</button>
               )}
