@@ -32,7 +32,8 @@ export const users = [
         _id: 103,
         fullName: "Sarahana Singh",
         username: "kittuaa",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [
@@ -40,71 +41,83 @@ export const users = [
         _id: 103,
         fullName: "Sarahana Singh",
         username: "kittuaa",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
       {
         _id: 104,
         fullName: "Jane Smith",
         username: "janes",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262408/cld-sample.jpg ",
       },
       {
         _id: 105,
         fullName: "David Johnson",
         username: "dadidj",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262391/samples/people/smiling-man.jpg  ",
       },
       {
         _id: 106,
         fullName: "Emily Brown",
         username: "emilyb",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264107/stefan-stefancik-QXevDflbl8A-unsplash_wmnmqq.jpg ",
       },
       {
         _id: 107,
         fullName: "Michael Wilson",
         username: "michaelw",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/irene-strong-v2aKnjMbP_k-unsplash_p124aq.jpg ",
       },
       {
         _id: 108,
         fullName: "Sophia Jones",
         username: "sophiaj",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/michael-dam-mEZ3PoFGs_k-unsplash_zh0wjy.jpg ",
       },
       {
         _id: 109,
         fullName: "William Davis",
         username: "williamd",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/ian-dooley-d1UPkiFd04A-unsplash_z2bp6m.jpg ",
       },
       {
         _id: 110,
         fullName: "Mia Clark",
         username: "miacl",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264095/ayo-ogunseinde-6W4F62sN_yI-unsplash_vlsdey.jpg ",
       },
       {
         _id: 111,
         fullName: "Daniel Miller",
         username: "danielm",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/charlie-green-3JmfENcL24M-unsplash_jy1aao.jpg ",
       },
       {
         _id: 112,
         fullName: "Ava Taylor",
         username: "avat",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/alexandru-zdrobau-BGz8vO3pK8k-unsplash_xjds37.jpg ",
       },
       {
         _id: 113,
         fullName: "Liam Anderson",
         username: "liama",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264094/kirill-balobanov-2rIs8OH5ng0-unsplash_kyzydt.jpg ",
       },
     ],
     bookmarks: [],
-    profilePicture: "",
+    profilePicture:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
     bio: "Astrologer 🔯 Developer 👨‍💻 Fitness Freak",
     password: "12345",
     createdAt: formatDate(),
@@ -122,7 +135,8 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
       },
     ],
     followers: [
@@ -130,71 +144,83 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
       },
       {
         _id: 104,
         fullName: "Jane Smith",
         username: "janes",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262408/cld-sample.jpg ",
       },
       {
         _id: 105,
         fullName: "David Johnson",
         username: "dadidj",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262391/samples/people/smiling-man.jpg  ",
       },
       {
         _id: 106,
         fullName: "Emily Brown",
         username: "emilyb",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264107/stefan-stefancik-QXevDflbl8A-unsplash_wmnmqq.jpg ",
       },
       {
         _id: 107,
         fullName: "Michael Wilson",
         username: "michaelw",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/irene-strong-v2aKnjMbP_k-unsplash_p124aq.jpg ",
       },
       {
         _id: 108,
         fullName: "Sophia Jones",
         username: "sophiaj",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/michael-dam-mEZ3PoFGs_k-unsplash_zh0wjy.jpg ",
       },
       {
         _id: 109,
         fullName: "William Davis",
         username: "williamd",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/ian-dooley-d1UPkiFd04A-unsplash_z2bp6m.jpg ",
       },
       {
         _id: 110,
         fullName: "Mia Clark",
         username: "miacl",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264095/ayo-ogunseinde-6W4F62sN_yI-unsplash_vlsdey.jpg ",
       },
       {
         _id: 111,
         fullName: "Daniel Miller",
         username: "danielm",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/charlie-green-3JmfENcL24M-unsplash_jy1aao.jpg ",
       },
       {
         _id: 112,
         fullName: "Ava Taylor",
         username: "avat",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264096/alexandru-zdrobau-BGz8vO3pK8k-unsplash_xjds37.jpg ",
       },
       {
         _id: 113,
         fullName: "Liam Anderson",
         username: "liama",
-        profilePicture: "",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264094/kirill-balobanov-2rIs8OH5ng0-unsplash_kyzydt.jpg ",
       },
     ],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/johnd.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
     bio: "In oneword Celebrity",
     website: "https://example.com/johnd",
     createdAt: formatDate(),
@@ -211,12 +237,21 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/janes.jpg",
+    profilePicture:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262408/cld-sample.jpg ",
     bio: "Lover of books and coffee.",
     website: "https://example.com/janes",
     createdAt: formatDate(),
@@ -233,12 +268,21 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/davidj.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262391/samples/people/smiling-man.jpg  ",
     bio: "Adventure seeker and nature lover.",
     website: "https://example.com/davidj",
     createdAt: formatDate(),
@@ -255,12 +299,21 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/emilyb.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264107/stefan-stefancik-QXevDflbl8A-unsplash_wmnmqq.jpg ",
     bio: "Photography enthusiast and traveler.",
     website: "https://example.com/emilyb",
     createdAt: formatDate(),
@@ -277,12 +330,21 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
     bookmarks: [],
-    profilePicture: "https://example.com/profile-picture/michaelw.jpg",
+    profilePicture:
+      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687264093/irene-strong-v2aKnjMbP_k-unsplash_p124aq.jpg ",
     bio: "Music lover and guitar player.",
     website: "https://example.com/michaelw",
     createdAt: formatDate(),
@@ -299,7 +361,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
@@ -321,7 +391,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
@@ -343,7 +421,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
@@ -365,7 +451,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
@@ -387,7 +481,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
@@ -409,7 +511,15 @@ export const users = [
         _id: 102,
         fullName: "Prince Raj",
         username: "princeraj",
-        profilePicture: "",
+        profilePicture:
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262880/WhatsApp_Image_2023-06-20_at_17.33.46_oi4rs0.jpg",
+      },
+      {
+        _id: 103,
+        fullName: "Sarahana Singh",
+        username: "kittuaa",
+        profilePicture:
+          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
       },
     ],
     followers: [],
