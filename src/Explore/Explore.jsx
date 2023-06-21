@@ -54,9 +54,9 @@ const Explore = () => {
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.addpost}>
+        {/* <div className={styles.addpost}>
           <AddPost />
-        </div>
+        </div> */}
 
         {sortedLikePost?.map((post) => (
           <PostDisplay post={post} key={post._id} />
