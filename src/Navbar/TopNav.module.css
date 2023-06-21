@@ -7,10 +7,33 @@
   line-height: 24px;
   /* border: 2px solid; */
   padding: 3px;
+  position: relative;
 }
 
 .hidelogo {
   display: none;
+}
+
+.topnavprofilebtn {
+  background-color: #fffffa;
+  border: none;
+}
+
+.lightmode {
+  font-size: 18px;
+}
+
+.searchednav {
+  width: 260px;
+  max-width: 100%;
+  max-height: 200px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 50px;
+  right: 40%;
+  z-index: 2;
+  overflow-x: hidden;
+  border-radius: 1rem;
 }
 
 .topnavsearchbar {
@@ -28,11 +51,21 @@
   gap: 5px;
 }
 
+.instagram {
+  font-size: 18px;
+}
+
 .topnavlogo {
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 1rem;
+  text-align: center;
+}
+
+.hidelogo {
+  align-self: center;
+  margin-bottom: 5px;
 }
 
 @media screen and (min-width: 768px) {

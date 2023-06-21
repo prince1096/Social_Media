@@ -33,6 +33,7 @@ const initialState = {
   userOnProfile: "",
   showModal: false,
   showProfile: false,
+  searchedText: "",
 };
 
 const DataUserProvider = ({ children }) => {
@@ -123,6 +124,12 @@ const DataUserProvider = ({ children }) => {
         return {
           ...state,
           showProfile: false,
+        };
+
+      case "SEARCHED":
+        return {
+          ...state,
+          searchedText: action.payload,
         };
 
       default:

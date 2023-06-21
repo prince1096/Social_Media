@@ -6,10 +6,7 @@ import styles from "./EditPost.module.css";
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 import Profile from "../Profile/Profile";
-import {
-  createNewPostService,
-  editPostService,
-} from "../../Services/Post/postServices";
+import { editPostService } from "../../Services/Post/postServices";
 import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
 const EditPost = ({ showEdit, setShowEdit }) => {
