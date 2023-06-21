@@ -7,15 +7,9 @@ import BookMarkDisplay from "./BookMarkDisplay";
 const BookMark = () => {
   const { state } = useContext(DataUserContext);
 
-  // console.log(state);
-
-  // console.log(state?.bookmarkPost);
-
   const bookMarkedPostData = state?.bookmarkPost?.map((postId) =>
     state?.post?.find((post) => post._id === postId)
   );
-
-  // console.log(bookMarkedPostData);
 
   return (
     <div>

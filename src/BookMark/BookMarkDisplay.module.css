@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   width: 300px;
-  /* text-align: center; */
+  text-align: start;
 }
 
 .postcard {
@@ -17,17 +17,30 @@
   margin: 1rem;
 }
 
+.postdate {
+  font-size: 10px;
+}
+
 .username {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.8rem;
   align-items: center;
+  text-align: start;
 }
 
 .profile {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+.postname {
+  text-align: start;
+}
+
+.removebookmark {
+  background-color: white;
+  border: none;
 }
 
 .profilebtn {
@@ -42,6 +55,7 @@
   align-items: center;
   font-size: 18px;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .likelogo {
@@ -51,6 +65,21 @@
 }
 .heart {
   font-size: 21px;
+}
+
+.contentdiv {
+  text-align: start;
+}
+
+.bookmarkbtn {
+  background-color: white;
+  border: none;
+}
+
+.booklogo {
+  font-size: 18px;
+  fill: grey;
+  color: grey;
 }
 
 .editpostcontainer {
@@ -71,8 +100,27 @@
   font-weight: bold;
 }
 
+.likedLogo {
+  fill: red;
+  color: red;
+}
+
+.btn {
+  border: none;
+  background-color: white;
+}
+
+.addedlogo {
+  font-size: 18px;
+}
+
 .editbtn {
   border-bottom: 1px solid #d3d3d3;
+}
+
+.postdate {
+  text-align: start;
+  margin-left: 1rem;
 }
 
 .show {

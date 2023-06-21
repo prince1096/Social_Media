@@ -7,12 +7,16 @@ import styles from "./PostDisplay.module.css";
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegComment } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
-import { FaRegBookmark } from "react-icons/fa";
+import { BiBookmark } from "react-icons/bi";
 import { HiOutlineHeart } from "react-icons/hi";
+import { BsFillBookmarkFill } from "react-icons/bs";
 
 import Profile from "../Profile/Profile";
 import Edit from "./Edit";
-import { addToBookmarkServices } from "../../Services/BookMarkService/BookMarkService";
+import {
+  addToBookmarkServices,
+  removeFromBookmarkServices,
+} from "../../Services/BookMarkService/BookMarkService";
 import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 import {
   likePostServices,
@@ -41,6 +45,14 @@ const PostDisplay = ({ post }) => {
   const findUser = state?.user?.find(
     (userr) => userr.username === post?.username
   );
+
+  const bookmarkedPost = state?.bookmarkPost?.find(
+    (added) => added === post._id
+  );
+
+  // console.log(state?.bookmarkPost);
+
+  // console.log(bookmarkedPost);
 
   return (
     <div className={styles.postcard}>
@@ -104,12 +116,21 @@ const PostDisplay = ({ post }) => {
         </div>
 
         <div>
-          <button
-            className={styles.bookmarkbtn}
-            onClick={() => addToBookmarkServices(token, dispatch, post)}
-          >
-            <FaRegBookmark className={styles.booklogo} />
-          </button>
+          {bookmarkedPost ? (
+            <button
+              className={styles.bookmarkbtn}
+              onClick={() => removeFromBookmarkServices(token, dispatch, post)}
+            >
+              <BsFillBookmarkFill className={styles.addedlogo} />
+            </button>
+          ) : (
+            <button
+              className={styles.bookmarkbtn}
+              onClick={() => addToBookmarkServices(token, dispatch, post)}
+            >
+              <BiBookmark className={styles.booklogo} />
+            </button>
+          )}
         </div>
       </div>
 
@@ -131,3 +152,9 @@ const PostDisplay = ({ post }) => {
 };
 
 export default PostDisplay;
+
+{
+  /* <button onClick={() => removeFromBookmarkServices(token, dispatch, post)}>
+  <FaRegBookmark />
+</button>; */
+}
