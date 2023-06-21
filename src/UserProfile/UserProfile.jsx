@@ -34,8 +34,13 @@ const UserProfile = () => {
 
   useEffect(() => {
     getUserDataService(dispatch, findUser?._id);
-    getUserPostService(dispatch, state?.currentprofile);
   }, [findUser?._id, state?.loginUser, state?.following]);
+
+  // console.log(state?.currentProfile);
+
+  useEffect(() => {
+    getUserPostService(dispatch, state?.currentprofile);
+  }, [state?.currentprofile]);
 
   const showEdit = () => {
     console.log("show");
@@ -146,11 +151,11 @@ const UserProfile = () => {
         </div>
       )}
 
-      {/* <div>
+      <div>
         {state?.userPost?.map((post) => (
           <PostDisplay post={post} key={post._id} />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
