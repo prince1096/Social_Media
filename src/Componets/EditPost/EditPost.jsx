@@ -9,22 +9,14 @@ import Profile from "../Profile/Profile";
 import { editPostService } from "../../Services/Post/postServices";
 import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
-const EditPost = ({ showEdit, setShowEdit }) => {
-  const [newPost, setNewPost] = useState("");
+const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
+  const [editPost, setEditPost] = useState({ ...postData });
 
-  const token = localStorage.getItem("token");
-  const { state, dispatch } = useContext(DataUserContext);
+  const { state } = useContext(DataUserContext);
 
-  const handleTextareaChange = (event) => {
-    setNewPost(event.target.value);
-  };
+  const handleTextareaChange = (event) => {};
 
   // console.log(newPost);
-
-  const backendpost = {
-    id: uuid(),
-    content: newPost,
-  };
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
@@ -32,6 +24,13 @@ const EditPost = ({ showEdit, setShowEdit }) => {
   const currentUser = state?.user?.find(
     (userr) => userr?.username === userData?.username
   );
+
+  const updateHandler = () => {
+    editPostService(token, dispatch, editPost);
+    setShowEdit(false);
+  };
+
+  // console.log(editPost);
 
   return (
     <div>
@@ -54,10 +53,12 @@ const EditPost = ({ showEdit, setShowEdit }) => {
               cols="30"
               rows="6"
               className={styles.textarea}
-              value={newPost}
+              value={editPost?.content}
               placeholder="What's Happening"
               // onChange={() => addPostHandler(event)}
-              onChange={handleTextareaChange}
+              onChange={(event) =>
+                setEditPost({ ...editPost, content: event.target.value })
+              }
             ></textarea>
           </div>
         </div>
@@ -70,10 +71,7 @@ const EditPost = ({ showEdit, setShowEdit }) => {
           </div>
 
           <div>
-            <button
-              onClick={() => editPostService(token, dispatch, backendpost)}
-              className={styles.button}
-            >
+            <button onClick={() => updateHandler()} className={styles.button}>
               Update
             </button>
           </div>

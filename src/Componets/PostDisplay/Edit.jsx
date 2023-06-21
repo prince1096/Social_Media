@@ -24,7 +24,15 @@ const Edit = ({ postData, token, dispatch }) => {
         </button>
       </div>
 
-      {showEdit && <EditPost showEdit={showEdit} setShowEdit={setShowEdit} />}
+      {showEdit && (
+        <EditPost
+          postData={postData}
+          token={token}
+          dispatch={dispatch}
+          showEdit={showEdit}
+          setShowEdit={setShowEdit}
+        />
+      )}
     </div>
   );
 };
