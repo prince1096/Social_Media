@@ -35,7 +35,7 @@ const UserProfile = () => {
   useEffect(() => {
     getUserDataService(dispatch, findUser?._id);
     getUserPostService(dispatch, state?.currentprofile);
-  }, [findUser?._id]);
+  }, [findUser?._id, state?.loginUser, state?.following]);
 
   const showEdit = () => {
     console.log("show");
@@ -55,6 +55,8 @@ const UserProfile = () => {
     // navigate("/", { replace: true });
     window.location.reload();
   };
+
+  // console.log(state?.loginUser);
 
   return (
     <div>

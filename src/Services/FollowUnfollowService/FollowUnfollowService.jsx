@@ -12,7 +12,7 @@ export const followServices = async (token, dispatch, followId) => {
       }
     );
 
-    // console.log(response?.data);
+    console.log(response?.data);
 
     dispatch({
       type: "FOLLOW",
@@ -34,6 +34,13 @@ export const unfollowServices = async (token, dispatch, unfollowId) => {
         },
       }
     );
+
+    console.log(response);
+
+    // dispatch({
+    //   type: "UNFOLLOW",
+    //   payload: response?.data?.followUser,
+    // });
   } catch (error) {
     console.log(error);
   }

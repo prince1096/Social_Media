@@ -14,12 +14,12 @@ import { useParams } from "react-router";
 
 export const DataUserContext = createContext();
 
-// const userInformation = localStorage.getItem("userInformation");
-// const userData = JSON.parse(userInformation);
+const userInformation = localStorage.getItem("userInformation");
+const userData = JSON.parse(userInformation);
 
 const initialState = {
   user: [],
-  loginUser: "",
+  loginUser: { ...userData },
   post: [],
   bookmarkPost: [],
   likedPost: [],
@@ -44,6 +44,9 @@ const DataUserProvider = ({ children }) => {
 
       case "LOGIN_USER":
         return { ...state, user: action.payload };
+
+      case "UPDATED_USER":
+        return { ...state, loginUser: { ...action.payload } };
 
       case "ALL_POST_DATA":
         return { ...state, post: action.payload };

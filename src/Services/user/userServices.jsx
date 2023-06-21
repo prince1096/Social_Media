@@ -26,9 +26,18 @@ export const editUserService = async (token, dispatch, userData) => {
   try {
     const response = await axios.post(
       "/api/users/edit",
-      { userData },
+      { userData: userData },
       { headers: { authorization: token } }
     );
+
+    console.log(response);
+
+    // localStorage.setItem(
+    //   "userInformation",
+    //   JSON.stringify(response?.data?.user)
+    // );
+
+    dispatch({ type: "UPDATED_USER", payload: response?.data?.user });
   } catch (error) {
     console.log(error);
   }

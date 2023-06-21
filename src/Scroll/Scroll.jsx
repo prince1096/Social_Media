@@ -31,6 +31,10 @@ const Scroll = () => {
   //   ),
   // ];
 
+  // console.log(state?.following);
+
+  // const postOnHomePage =
+
   const sortedDatePost =
     state?.sortByDate === "date"
       ? [...state?.post]?.sort((a, b) => {
@@ -39,8 +43,6 @@ const Scroll = () => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         })
       : [...state?.post];
-
-  // console.log(sortedDatePost);
 
   const sortedLikePost =
     state?.sortByLike === "like"

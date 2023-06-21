@@ -19,6 +19,8 @@ export const users = [
     bookmarks: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    website: "https://example.com/johnd",
+
     profilePicture:
       "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262392/samples/people/boy-snow-hoodie.jpg",
   },
@@ -28,6 +30,8 @@ export const users = [
     firstName: "Prince",
     lastName: "Raj",
     username: "princeraj",
+    website: "https://example.com/johnd",
+
     // email: "princeraj@gmail.com",
     following: [
       {
