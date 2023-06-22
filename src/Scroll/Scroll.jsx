@@ -33,16 +33,28 @@ const Scroll = () => {
 
   // console.log(state?.following);
 
-  // const postOnHomePage =
+  const followerPost = state?.post?.filter((userpost) =>
+    state?.following?.some((user) => user.username === userpost?.username)
+  );
+
+  // console.log(postOnHomePage);
+
+  const selfPost = state?.post?.filter(
+    (userpost) => userpost?.username === state?.loginUser?.username
+  );
+
+  // console.log(selfPost);
+
+  const postOnHomePage = [...followerPost, ...selfPost];
 
   const sortedDatePost =
     state?.sortByDate === "date"
-      ? [...state?.post]?.sort((a, b) => {
+      ? [...postOnHomePage]?.sort((a, b) => {
           // console.log("a.createdAt:", a.createdAt);
           // console.log("b.createdAt:", b.createdAt);
           return new Date(b.createdAt) - new Date(a.createdAt);
         })
-      : [...state?.post];
+      : [...postOnHomePage];
 
   const sortedLikePost =
     state?.sortByLike === "like"
