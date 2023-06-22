@@ -8,6 +8,12 @@
   margin: 0 auto;
   text-align: start;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.userpostdiv {
+  width: 280px;
+  margin: 0 auto;
 }
 
 .name {
@@ -52,8 +58,8 @@
 
 .editprofile {
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 14px;
+  padding: 2px 4px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
   /* text-transform: uppercase; */
@@ -113,7 +119,7 @@
 
 .logout {
   /* display: inline-block; */
-  padding: 4px 8px;
+  padding: 2px 4px;
   font-size: 14px;
   font-weight: bolder;
   text-align: center;
@@ -134,10 +140,16 @@
 
 .logoutlogo {
   /* font-weight: bolder; */
+  font-size: 12px;
 }
 
 @media screen and (min-width: 768px) {
   .profilecontainer {
+    width: 360px;
+    font-size: 16px;
+  }
+
+  .userpostdiv {
     width: 360px;
   }
 
@@ -149,11 +161,20 @@
   .friend {
     font-size: 16px;
   }
+
+  .logout,
+  .editprofile {
+    padding: 4px 8px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .profilecontainer {
     width: 450px;
     /* padding: 0 auto; */
+  }
+
+  .userpostdiv {
+    width: 450px;
   }
 }

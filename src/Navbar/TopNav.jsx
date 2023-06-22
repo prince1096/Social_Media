@@ -8,6 +8,7 @@ import { BsFillBrightnessHighFill } from "react-icons/bs";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import Profile from "../Componets/Profile/Profile";
 import SearchedUser from "./SearchedUser";
+import { NavLink } from "react-router-dom";
 
 const TopNav = () => {
   const { state, dispatch } = useContext(DataUserContext);
@@ -64,16 +65,21 @@ const TopNav = () => {
           <BsFillBrightnessHighFill className={styles.lightmode} />
         </div>
         <div className={styles.hidelogo}>
-          <button
-            className={styles.topnavprofilebtn}
-            onClick={() => userHandler(userprofileData)}
+          <NavLink
+            to={`/userprofile/${userprofileData?.username}`}
+            className={styles.navlink}
           >
-            <Profile
-              url={userprofileData?.profilePicture}
-              height={"40px"}
-              width={"40px"}
-            />
-          </button>
+            <button
+              className={styles.topnavprofilebtn}
+              onClick={() => userHandler(userprofileData)}
+            >
+              <Profile
+                url={userprofileData?.profilePicture}
+                height={"40px"}
+                width={"40px"}
+              />
+            </button>
+          </NavLink>
         </div>
       </div>
 

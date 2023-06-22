@@ -176,9 +176,3 @@ const PostDisplay = ({ post }) => {
 };
 
 export default PostDisplay;
-
-{
-  /* <button onClick={() => removeFromBookmarkServices(token, dispatch, post)}>
-  <FaRegBookmark />
-</button>; */
-}

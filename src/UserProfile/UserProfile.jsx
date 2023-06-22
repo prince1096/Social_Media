@@ -151,7 +151,7 @@ const UserProfile = () => {
         </div>
       )}
 
-      <div>
+      <div className={styles.userpostdiv}>
         {state?.userPost?.map((post) => (
           <PostDisplay post={post} key={post._id} />
         ))}

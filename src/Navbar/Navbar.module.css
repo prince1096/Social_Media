@@ -8,16 +8,15 @@
   display: flex;
   justify-content: space-between;
   background-color: whitesmoke;
-  padding: 5px;
-  margin: 5px;
-
+  padding: 3px;
+  margin: 3px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 1;
-  /* width: 100vw; */
+  width: 100vw;
 }
 
 .navprofilebtn {
@@ -28,6 +27,7 @@
 .addpostnav {
   background-color: whitesmoke;
   border: none;
+  cursor: pointer;
 }
 
 .navdiv {
@@ -35,7 +35,7 @@
   /* flex-direction: column; */
   /* align-items: flex-start; */
   /* justify-content: space-around; */
-  position: relative;
+  /* position: relative; */
 }
 
 .navend {
@@ -56,6 +56,26 @@
   /* padding: 12px; */
   width: auto;
 }
+.navprofilebtn {
+  cursor: pointer;
+}
+
+.logout {
+  border-radius: 24px;
+  color: #00376b;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: start;
+  font-size: 20px;
+  line-height: 18px;
+  margin: 15px 0px;
+  /* padding: 12px; */
+  width: auto;
+  border: none;
+  background-color: whitesmoke;
+  /* margin-top: 8rem; */
+}
 
 .navlink {
   text-decoration: none;
@@ -63,6 +83,10 @@
 }
 
 .hidenavbar {
+  display: none;
+}
+
+.hidelogout {
   display: none;
 }
 
@@ -77,6 +101,19 @@
     flex-direction: column;
     position: sticky;
     left: 0;
+    width: auto;
+  }
+
+  .hidelogout {
+    display: block;
+  }
+
+  .navlogoname {
+    font-size: 14px;
+  }
+
+  .logout {
+    margin-top: 8rem;
   }
 
   .modal {
@@ -93,4 +130,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .navlogoname {
+    font-size: 18px;
+  }
 }

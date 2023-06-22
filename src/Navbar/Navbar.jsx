@@ -7,7 +7,7 @@ import { MdExplore } from "react-icons/md";
 import { MdAddCircle } from "react-icons/md";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
+import { ImExit } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
@@ -96,6 +96,13 @@ const Navbar = () => {
             </div>
           </button>
         </NavLink>
+
+        <div className={`${styles.navlogocontainer} ${styles.hidelogout}`}>
+          <button className={styles.logout}>
+            <ImExit />
+            <span className={styles.navlogoname}>Logout</span>
+          </button>
+        </div>
       </div>
 
       {/* <div
