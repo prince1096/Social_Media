@@ -23,6 +23,10 @@ import {
   unlikePostServices,
 } from "../../Services/LikeUnlikeService/LikeUnlikeService";
 import { convertDate } from "../../Services/DateChange/DateChange";
+import {
+  followServices,
+  unfollowServices,
+} from "../../Services/FollowUnfollowService/FollowUnfollowService";
 
 const PostDisplay = ({ post }) => {
   const [showEdit, setShowEdit] = useState(false);
@@ -53,6 +57,16 @@ const PostDisplay = ({ post }) => {
   // console.log(state?.bookmarkPost);
 
   // console.log(bookmarkedPost);
+
+  const followed = state?.following?.some(
+    (users) => users?.username === post?.username
+  );
+
+  const followUnfollowHandler = () => {
+    return followed
+      ? unfollowServices(token, dispatch, findUser?._id)
+      : followServices(token, dispatch, findUser?._id);
+  };
 
   return (
     <div className={styles.postcard}>
@@ -141,7 +155,17 @@ const PostDisplay = ({ post }) => {
           {post?.username === userData?.username ? (
             <Edit postData={post} token={token} dispatch={dispatch} />
           ) : (
-            <button>Unfollow</button>
+            // {
+            // followed ? <button className={styles.unfollow}>Unfollow</button> : 5
+
+            // }
+
+            <button
+              className={styles.unfollow}
+              onClick={() => followUnfollowHandler()}
+            >
+              {followed ? "Unfollow" : "Follow"}
+            </button>
           )}
 
           {/* <Edit /> */}

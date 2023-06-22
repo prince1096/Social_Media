@@ -37,10 +37,10 @@ export const unfollowServices = async (token, dispatch, unfollowId) => {
 
     console.log(response);
 
-    // dispatch({
-    //   type: "UNFOLLOW",
-    //   payload: response?.data?.followUser,
-    // });
+    dispatch({
+      type: "UNFOLLOW",
+      payload: response?.data?.followUser,
+    });
   } catch (error) {
     console.log(error);
   }

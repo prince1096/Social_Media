@@ -58,7 +58,12 @@ const DataUserProvider = ({ children }) => {
         return { ...state, following: [...state?.following, action.payload] };
 
       case "UNFOLLOW":
-        return { ...state, following: action.payload };
+        return {
+          ...state,
+          following: state?.following?.filter(
+            (users) => users.username !== action?.payload?.username
+          ),
+        };
 
       case "USER_ON_PROFILE":
         return { ...state, userOnProfile: action.payload };
