@@ -98,6 +98,7 @@ const PostDisplay = ({ post }) => {
       </div>
 
       <div className={styles?.contentdiv}>{post?.content}</div>
+      {/* <div>{post?.mediaURL}</div> */}
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}

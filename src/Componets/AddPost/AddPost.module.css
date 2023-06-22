@@ -45,3 +45,7 @@
   border: none;
   font-size: 16px;
 }
+
+.inputurl {
+  display: none;
+}

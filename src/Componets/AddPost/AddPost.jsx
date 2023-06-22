@@ -11,6 +11,7 @@ import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
 const AddPost = () => {
   const [newPost, setNewPost] = useState("");
+  const [imageFile, setImagefile] = useState(null);
 
   const token = localStorage.getItem("token");
   const { state, dispatch } = useContext(DataUserContext);
@@ -26,14 +27,18 @@ const AddPost = () => {
     setNewPost(event.target.value);
   };
 
+  // console.log(imageFile);
+
   const backendpost = {
     id: uuid(),
     content: newPost,
+    mediaURL: imageFile,
   };
 
   const postHandler = () => {
     createNewPostService(token, dispatch, backendpost);
     dispatch({ type: "HIDE_MODAL" });
+    setNewPost("");
   };
 
   return (
@@ -65,7 +70,16 @@ const AddPost = () => {
       <div className={styles.adddata}>
         <div>
           {" "}
-          <BsImageFill className={styles.postlogo} />{" "}
+          <label htmlFor="url">
+            <BsImageFill className={styles.postlogo} />{" "}
+          </label>
+          <input
+            type="file"
+            className={styles.inputurl}
+            name=""
+            id="url"
+            onChange={(event) => setImagefile(event.target.files[0])}
+          />
           <BsFillEmojiSmileFill className={styles.postlogo} />{" "}
         </div>
 
