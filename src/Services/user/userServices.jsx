@@ -30,7 +30,7 @@ export const editUserService = async (token, dispatch, userData) => {
       { headers: { authorization: token } }
     );
 
-    // console.log(response);
+    console.log(response);
 
     // localStorage.setItem(
     //   "userInformation",

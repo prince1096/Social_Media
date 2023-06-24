@@ -55,3 +55,22 @@
   background-color: white;
   font-size: 18px;
 }
+
+.avatar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.avatardiv {
+  margin: 2px 3px;
+  background-color: white;
+  border: none;
+}
+
+.avatarbtn {
+  font-size: 10px;
+  background-color: white;
+  border: none;
+}

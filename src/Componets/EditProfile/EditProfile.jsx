@@ -7,18 +7,21 @@ import Profile from "../Profile/Profile";
 import { RxCross2 } from "react-icons/rx";
 import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 import { editUserService } from "../../Services/user/userServices";
+import Avatar from "./Avatar";
 
 const EditProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
+  const { loginUser } = state;
+
+  const [showAvatar, setShowAvatar] = useState(false);
+  const [newavatar, setNewAvatar] = useState(loginUser?.profilePicture);
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
   const token = localStorage.getItem("token");
 
-  const { loginUser } = state;
-
   const [editUser, setEditUser] = useState({
-    avatar: "",
+    profilePicture: newavatar,
     name: loginUser?.firstName,
     userName: loginUser?.username,
     bio: loginUser?.bio,
@@ -43,8 +46,18 @@ const EditProfile = () => {
 
       <div className={styles.profile}>
         <div>Avatar :</div>
-        <Profile />
+        <Profile url={newavatar} height="50px" width="50px" />
+        <button
+          className={styles.avatarbtn}
+          onClick={() => setShowAvatar(!showAvatar)}
+        >
+          {!showAvatar ? "Show Avatar" : "Hide Avatar"}
+        </button>
       </div>
+
+      {showAvatar && (
+        <Avatar setShowAvatar={setShowAvatar} setNewAvatar={setNewAvatar} />
+      )}
 
       <div className={styles.username}>
         Name : {userData?.firstName} {userData?.lastName}{" "}

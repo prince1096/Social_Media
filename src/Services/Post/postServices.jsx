@@ -1,5 +1,5 @@
 import axios from "axios";
-import { redirect } from "react-router";
+// import { redirect } from "react-router";
 
 export const getAllPostService = async (dispatch) => {
   try {
@@ -22,7 +22,7 @@ export const getSinglePostService = async (post, dispatch) => {
 };
 
 export const getUserPostService = async (dispatch, users) => {
-  console.log(users);
+  // console.log(users);
   try {
     const response = await axios.get(`/api/posts/user/${users?.username}`);
 
