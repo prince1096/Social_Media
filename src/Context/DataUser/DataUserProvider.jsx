@@ -144,6 +144,9 @@ const DataUserProvider = ({ children }) => {
       case "THEME":
         return { ...state, theme: action.payload };
 
+      case "LOGINDATA":
+        return { ...state, loginUser: action.payload };
+
       default:
         return { ...state };
     }

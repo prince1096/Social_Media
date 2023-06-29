@@ -12,7 +12,7 @@ import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // const { state, dispatch } = useContext(DataUserContext);
+  const { state, dispatch } = useContext(DataUserContext);
 
   const { setToken } = useContext(AuthContext);
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -91,6 +91,8 @@ const Login = () => {
           JSON.stringify(data?.foundUser)
         );
 
+        dispatch({ type: "LOGINDATA", payload: data?.foundUser });
+
         setToken(data?.encodedToken);
 
         navigate(location?.state?.from.pathname || "/", { replace: true });
@@ -101,7 +103,6 @@ const Login = () => {
       console.log(error);
     } finally {
     }
-    // }, 2000);
   };
 
   return (
@@ -124,22 +125,24 @@ const Login = () => {
                 }
               />
             </div>
-            <div>
+            {/* <div> */}
+            {/* <label>password</label> */}
+
+            <div id="password-block">
               <label>password</label>
 
-              <div id="password-block">
-                <input
-                  className="login_input"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={loginData?.password}
-                  onChange={(event) =>
-                    setLoginData({ ...loginData, password: event.target.value })
-                  }
-                />
-              </div>
+              <input
+                className="login_input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={loginData?.password}
+                onChange={(event) =>
+                  setLoginData({ ...loginData, password: event.target.value })
+                }
+              />
             </div>
+            {/* </div> */}
 
             <button className="login_button" type="submit">
               Login

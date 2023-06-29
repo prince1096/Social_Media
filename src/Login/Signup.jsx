@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./Signup.module.css";
 import { useNavigate, useLocation } from "react-router";
 
 import { BiHide } from "react-icons/bi";
 
 import { BiShow } from "react-icons/bi";
+import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { dispatch } = useContext(DataUserContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,8 +37,8 @@ const Signup = () => {
       return;
     }
 
-    console.log(event.target.value);
-    console.log(userData);
+    // console.log(event.target.value);
+    // console.log(userData);
 
     if (userData?.password !== userData?.confirmPassword) {
       return;
@@ -53,6 +56,8 @@ const Signup = () => {
       if (data?.encodedToken) {
         localStorage.setItem("token", data?.encodedToken);
         localStorage.setItem("userInformation", JSON.stringify(userData));
+        dispatch({ type: "LOGINDATA", payload: data?.foundUser });
+
         navigate(location?.state?.from.pathname || "/login", { replace: true });
       }
 

@@ -18,20 +18,8 @@ const Scroll = () => {
 
   // console.log(state?.sortByDate);
 
-  // const sortedDatePost =
-  //   state?.sortByDate === "date"
-  //     ? [...state?.post]?.sort(
-  //         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  //       )
-  //     : [...state?.post];
-
-  // const sortedDatePost = [
-  //   ...state?.post?.sort(
-  //     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  //   ),
-  // ];
-
-  // console.log(state?.following);
+  const userInformation = localStorage.getItem("userInformation");
+  const userData = JSON.parse(userInformation);
 
   const followerPost = state?.post?.filter((userpost) =>
     state?.following?.some((user) => user.username === userpost?.username)
@@ -42,6 +30,8 @@ const Scroll = () => {
   const selfPost = state?.post?.filter(
     (userpost) => userpost?.username === state?.loginUser?.username
   );
+
+  // console.log(state?.loginUser?.username);
 
   // console.log(selfPost);
 
