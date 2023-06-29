@@ -3,6 +3,10 @@ import { v4 as uuid } from "uuid";
 
 import styles from "./AddPost.module.css";
 
+// import { EmojiPicker }
+
+import EmojiPicker from "emoji-picker-react";
+
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 import Profile from "../Profile/Profile";
@@ -12,6 +16,7 @@ import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 const AddPost = () => {
   const [newPost, setNewPost] = useState("");
   const [imageFile, setImagefile] = useState(null);
+  const [showEmoji, setShowEmoji] = useState(false);
 
   const token = localStorage.getItem("token");
   const { state, dispatch } = useContext(DataUserContext);
@@ -80,7 +85,17 @@ const AddPost = () => {
             id="url"
             onChange={(event) => setImagefile(event.target.files[0])}
           />
-          <BsFillEmojiSmileFill className={styles.postlogo} />{" "}
+          <button
+            className={styles.emojibtn}
+            onClick={() => setShowEmoji(!showEmoji)}
+          >
+            <BsFillEmojiSmileFill className={styles.postlogo} />
+          </button>
+          <div className={styles.emojidiv}>
+            {showEmoji && (
+              <EmojiPicker width="15em" className={styles.emojicontainer} />
+            )}
+          </div>
         </div>
 
         <div>

@@ -11,6 +11,7 @@
   /* width: 350px; */
   padding: 0.8rem;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .userprofile {
@@ -46,6 +47,25 @@
   font-size: 16px;
 }
 
+.emojibtn {
+  background-color: white;
+  border: none;
+}
+
+.emojidiv {
+  position: absolute;
+  bottom: -450px;
+  z-index: 99;
+  width: 280px;
+}
+
+.emojicontainer {
+  width: 280px;
+}
+
 .inputurl {
   display: none;
+}
+
+@media screen and (min-width: 530px) {
 }
