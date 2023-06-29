@@ -2,33 +2,44 @@ import { useState } from "react";
 import styles from "./Signup.module.css";
 import { useNavigate, useLocation } from "react-router";
 
-import { BiSolidShow } from "react-icons/bi";
+import { BiHide } from "react-icons/bi";
+
+import { BiShow } from "react-icons/bi";
 
 const Signup = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const [userData, setUserData] = useState({
     email: "",
     firstname: "",
     lastname: "",
-    fullname: "",
     username: "",
     password: "",
+    confirmPassword: "",
   });
 
   const signupHandler = async (event) => {
     event.preventDefault();
 
     if (
-      userData.fullname === "" ||
+      userData.firstname === "" ||
+      userData.lastname === "" ||
       userData.username === "" ||
-      userData.password === ""
+      userData.email === "" ||
+      userData.password === "" ||
+      userData?.confirmPassword === ""
     ) {
       return;
     }
 
     console.log(event.target.value);
     console.log(userData);
+
+    if (userData?.password !== userData?.confirmPassword) {
+      return;
+    }
 
     try {
       let response = await fetch("/api/auth/signup", {
@@ -120,40 +131,68 @@ const Signup = () => {
           />
         </div>
 
-        <div className={styles.password_block}>
+        <div>
           <label htmlFor="pass" className={styles.login_label}>
             password
           </label>
-          <input
-            className={styles.login_input}
-            type="password"
-            name="password"
-            id="pass"
-            value={userData?.password}
-            onChange={(event) =>
-              setUserData({ ...userData, password: event.target.value })
-            }
-            placeholder="Password"
-          />
-          {/* <BiSolidShow /> */}
+
+          <div className={`${styles.password_block} ${styles.passworddiv}`}>
+            <input
+              className={styles.login_input_password}
+              type={showPassword ? "text" : "password"}
+              // type="password"
+              name="password"
+              id="pass"
+              value={userData?.password}
+              onChange={(event) =>
+                setUserData({ ...userData, password: event.target.value })
+              }
+              placeholder="Password"
+            />
+            <button
+              className={styles.showhidelogo}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <BiShow className={styles.showhidelogo} />
+              ) : (
+                <BiHide className={styles.showhidelogo} />
+              )}
+            </button>
+          </div>
         </div>
 
-        <div className={styles.confirmpassword_block}>
+        <div>
           <label htmlFor="confirm" className={styles.login_label}>
             {" "}
             confirm password
           </label>
-          <input
-            className={styles.login_input}
-            type="password"
-            name="password"
-            id="confirm"
-            value={userData?.password}
-            onChange={(event) =>
-              setUserData({ ...userData, password: event.target.value })
-            }
-            placeholder=" Confirm Password"
-          />
+          <div className={`${styles.password_block} ${styles.passworddiv}`}>
+            <input
+              className={styles.login_input_password}
+              type="password"
+              name="password"
+              id="confirm"
+              value={userData?.confirmPassword}
+              onChange={(event) =>
+                setUserData({
+                  ...userData,
+                  confirmPassword: event.target.value,
+                })
+              }
+              placeholder=" Confirm Password"
+            />
+            <button
+              className={styles.showhidelogo}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <BiShow className={styles.showhidelogo} />
+              ) : (
+                <BiHide className={styles.showhidelogo} />
+              )}
+            </button>
+          </div>
         </div>
 
         <button className={styles.login_button} type="submit">

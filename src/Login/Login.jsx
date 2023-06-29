@@ -124,19 +124,21 @@ const Login = () => {
                 }
               />
             </div>
-
-            <div id="password-block">
+            <div>
               <label>password</label>
-              <input
-                className="login_input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={loginData?.password}
-                onChange={(event) =>
-                  setLoginData({ ...loginData, password: event.target.value })
-                }
-              />
+
+              <div id="password-block">
+                <input
+                  className="login_input"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={loginData?.password}
+                  onChange={(event) =>
+                    setLoginData({ ...loginData, password: event.target.value })
+                  }
+                />
+              </div>
             </div>
 
             <button className="login_button" type="submit">

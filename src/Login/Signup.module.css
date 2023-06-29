@@ -64,7 +64,7 @@
   display: inline-block;
   padding: 0.75rem 2.25rem;
   border-radius: 30px;
-  background-color: #0891b2;
+  background-color: #90e0ef;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
@@ -79,6 +79,41 @@
   width: 100%;
   resize: none;
   color: #333;
+  outline: none;
+}
+
+.login_input_password {
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border: solid 1px #bbb;
+  border-radius: 5px;
+  width: 100%;
+  resize: none;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+.passworddiv {
+  /* padding: 0.6rem; */
+  padding: 0;
+  margin: 0;
+  margin-top: 0.3rem;
+
+  border: solid 1px #bbb;
+  border-radius: 5px;
+  width: 100%;
+  color: #333;
+  display: inline-block;
+  position: relative;
+}
+
+.showhidelogo {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  background-color: white;
+  border: none;
 }
 
 .login_label {
