@@ -17,6 +17,7 @@
 .topnavprofilebtn {
   background-color: #fffffa;
   border: none;
+  cursor: pointer;
 }
 
 .lightmode {
@@ -49,6 +50,12 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.lightmode {
+  cursor: pointer;
+  background-color: white;
+  border: none;
 }
 
 .instagram {

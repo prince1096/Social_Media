@@ -28,7 +28,9 @@ const EditProfile = () => {
     website: loginUser?.website,
   });
 
-  console.log(editUser);
+  console.log(newavatar);
+
+  // console.log(editUser);
 
   const updateHandler = () => {
     editUserService(token, dispatch, editUser);

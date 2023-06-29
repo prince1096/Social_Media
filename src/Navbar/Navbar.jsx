@@ -35,6 +35,15 @@ const Navbar = () => {
     dispatch({ type: "SHOW_MODAL" });
   };
 
+  const logoutHandler = () => {
+    // localStorage.clear();
+    localStorage.clear();
+    // setToken("");
+    // localStorage.clear(isLoggedIn);
+    // navigate("/", { replace: true });
+    window.location.reload();
+  };
+
   return (
     <div className={styles.navdiv}>
       <div className={styles.navbarcontainer}>
@@ -98,7 +107,7 @@ const Navbar = () => {
         </NavLink>
 
         <div className={`${styles.navlogocontainer} ${styles.hidelogout}`}>
-          <button className={styles.logout}>
+          <button className={styles.logout} onClick={() => logoutHandler()}>
             <ImExit />
             <span className={styles.navlogoname}>Logout</span>
           </button>

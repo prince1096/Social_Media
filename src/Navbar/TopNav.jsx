@@ -36,6 +36,10 @@ const TopNav = () => {
 
   // console.log(searchedUser);
 
+  const themeHandler = () => {
+    dispatch({ type: "THEME", payload: !state?.theme });
+  };
+
   return (
     <div className={styles.topnavcontainer}>
       <div className={`${styles.topnavlogo}  `}>
@@ -62,7 +66,9 @@ const TopNav = () => {
 
       <div className={styles.topnavprofile}>
         <div>
-          <BsFillBrightnessHighFill className={styles.lightmode} />
+          <button className={styles.lightmode} onClick={() => themeHandler()}>
+            <BsFillBrightnessHighFill className={styles.lightmode} />
+          </button>
         </div>
         <div className={styles.hidelogo}>
           <NavLink

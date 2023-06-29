@@ -34,6 +34,7 @@ const initialState = {
   showModal: false,
   showProfile: false,
   searchedText: "",
+  theme: true,
 };
 
 const DataUserProvider = ({ children }) => {
@@ -139,6 +140,9 @@ const DataUserProvider = ({ children }) => {
           ...state,
           searchedText: action.payload,
         };
+
+      case "THEME":
+        return { ...state, theme: action.payload };
 
       default:
         return { ...state };
