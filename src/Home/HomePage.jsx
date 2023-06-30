@@ -24,7 +24,7 @@ const HomePage = () => {
         <div className={styles.item1}>
           <TopNav />
         </div>
-        <div className={` ${styles.item2} ${styles.navbar}`}>
+        <div className={` ${styles.item2} ${styles.navbar} ${styles.navdiv} `}>
           <Navbar />
         </div>
         <div className={styles.item3}>
