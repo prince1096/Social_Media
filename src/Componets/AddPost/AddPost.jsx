@@ -115,6 +115,11 @@ const AddPost = () => {
               <EmojiPicker width="15em" className={styles.emojicontainer} />
             )}
           </div>
+          <div className={styles.emojidivdesk} >
+            {showEmoji && (
+              <EmojiPicker className={styles.emojicontainer} />
+            )}
+          </div>
         </div>
 
         <div>

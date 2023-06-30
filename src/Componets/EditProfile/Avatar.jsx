@@ -31,11 +31,8 @@ const Avatar = ({ setShowAvatar, setNewAvatar, editUser, setEditUser }) => {
 
   const avatarHandler = (avatar) => {
     setShowAvatar(false);
-
     setNewAvatar(avatar);
-    // setEditUser({ ...editUser, profilePicture: URL.createObjectURL(avatar) });
-    setEditUser(avatar);
-    // setNewAvatar(URL.createObjectURL(avatar));
+    setEditUser({ ...editUser, profilePicture: avatar });
   };
 
   return (
@@ -46,13 +43,7 @@ const Avatar = ({ setShowAvatar, setNewAvatar, editUser, setEditUser }) => {
             className={styles.avatardiv}
             onClick={() => avatarHandler(avatar)}
           >
-            <Profile
-              url={avatar}
-              height="40px"
-              width="40px"
-
-              //   className={styles.avatarpic}
-            />
+            <Profile url={avatar} height="40px" width="40px" />
           </button>
         </div>
       ))}

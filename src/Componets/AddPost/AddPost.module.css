@@ -58,15 +58,45 @@
   bottom: -450px;
   z-index: 99;
   width: 280px;
+  display: block;
+}
+
+.emojidivdesk {
+  position: absolute;
+  bottom: -450px;
+  z-index: 99;
+  width: 280px;
+  display: none;
 }
 
 .emojicontainer {
-  width: 280px;
+  /* width: 280px; */
+  display: block;
+}
+
+.emojicontainerdesktop {
+  display: none;
 }
 
 .inputurl {
   display: none;
 }
 
-@media screen and (min-width: 530px) {
+@media screen and (min-width: 768px) {
+  .emojicontainer {
+    /* width: 280px; */
+    display: none;
+  }
+
+  .emojicontainerdesktop {
+    display: black;
+  }
+
+  .emojidiv {
+    display: none;
+  }
+
+  .emojidivdesk {
+    display: block;
+  }
 }

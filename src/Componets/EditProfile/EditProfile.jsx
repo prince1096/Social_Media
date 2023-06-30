@@ -31,10 +31,6 @@ const EditProfile = () => {
     website: loginUser?.website,
   });
 
-  // console.log(newavatar);
-
-  // console.log(editUser);
-
   const updateHandler = () => {
     editUserService(token, dispatch, editUser);
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
@@ -43,7 +39,6 @@ const EditProfile = () => {
   const fileUploadHandle = (event) => {
     const file = event.target.files[0];
     const uploadedFile = URL.createObjectURL(file);
-    // setImagefile(uploadedFile);
     setEditUser({ ...editUser, profilePicture: uploadedFile });
   };
 
