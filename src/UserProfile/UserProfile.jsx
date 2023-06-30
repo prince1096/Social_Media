@@ -18,6 +18,10 @@ import EditProfile from "../Componets/EditProfile/EditProfile";
 import ShowImage from "../Componets/ShowImage/ShowImage";
 
 import { AiOutlineLogout } from "react-icons/ai";
+import {
+  followServices,
+  unfollowServices,
+} from "../Services/FollowUnfollowService/FollowUnfollowService";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
@@ -26,6 +30,8 @@ const UserProfile = () => {
   const { username } = useParams();
 
   const currentProfile = state?.currentprofile;
+
+  const token = localStorage.getItem("token");
 
   const findUser = state?.user.find((userr) => userr?.username === username);
 
@@ -62,6 +68,16 @@ const UserProfile = () => {
   };
 
   // console.log(state?.loginUser);
+
+  const followed = state?.following?.find(
+    (user) => user.username === currentProfile.username
+  );
+
+  const followUnfollowHandler = () => {
+    return followed
+      ? unfollowServices(token, dispatch, findUser?._id)
+      : followServices(token, dispatch, findUser?._id);
+  };
 
   return (
     <div>
@@ -115,7 +131,12 @@ const UserProfile = () => {
                   </button>
                 </div>
               ) : (
-                <button className={styles.followbtn}>Follow</button>
+                <button
+                  className={styles.followbtn}
+                  onClick={() => followUnfollowHandler()}
+                >
+                  {followed ? "following" : "follow"}
+                </button>
               )}
             </div>
           </div>

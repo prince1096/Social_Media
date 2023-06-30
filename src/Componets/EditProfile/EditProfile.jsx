@@ -46,6 +46,8 @@ const EditProfile = () => {
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
   };
 
+  
+
   return (
     <div className={styles.editcontainer}>
       <div className={styles.cross}>
