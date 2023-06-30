@@ -131,6 +131,13 @@
   color: red;
 }
 
+.image {
+  /* height: 300px; */
+  /* width: 300px; */
+  /* height: auto; */
+  width: 260px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 360px;
@@ -140,6 +147,13 @@
     position: absolute;
     top: 35px;
     right: -60px;
+  }
+
+  .image {
+    height: 300px;
+    width: 300px;
+    /* height: auto; */
+    /* width: 260px; */
   }
 }
 

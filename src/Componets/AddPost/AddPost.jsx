@@ -40,10 +40,27 @@ const AddPost = () => {
     mediaURL: imageFile,
   };
 
+  const uploadHandler = () => {
+    // console.log(backendpost.content);
+    // console.log(backendpost.mediaURL);
+    if (backendpost.content === "" && backendpost.mediaURL === null) {
+      return;
+    }
+
+    postHandler(token, dispatch, backendpost);
+    setImagefile(null);
+  };
+
   const postHandler = () => {
     createNewPostService(token, dispatch, backendpost);
     dispatch({ type: "HIDE_MODAL" });
     setNewPost("");
+  };
+
+  const fileUploadHandle = (event) => {
+    const file = event.target.files[0];
+    const uploadedFile = URL.createObjectURL(file);
+    setImagefile(uploadedFile);
   };
 
   return (
@@ -61,6 +78,7 @@ const AddPost = () => {
           <textarea
             name=""
             id=""
+            type="text"
             cols="30"
             rows="6"
             className={styles.textarea}
@@ -68,6 +86,7 @@ const AddPost = () => {
             placeholder="What's Happening"
             // onChange={() => addPostHandler(event)}
             onChange={handleTextareaChange}
+            autoFocus
           ></textarea>
         </div>
       </div>
@@ -83,7 +102,7 @@ const AddPost = () => {
             className={styles.inputurl}
             name=""
             id="url"
-            onChange={(event) => setImagefile(event.target.files[0])}
+            onChange={(event) => fileUploadHandle(event)}
           />
           <button
             className={styles.emojibtn}
@@ -100,8 +119,8 @@ const AddPost = () => {
 
         <div>
           <button
-            // onClick={() => createNewPostService(token, dispatch, backendpost)}
-            onClick={() => postHandler(token, dispatch, backendpost)}
+            // onClick={() => postHandler(token, dispatch, backendpost)}
+            onClick={() => uploadHandler()}
             className={styles.button}
           >
             Post

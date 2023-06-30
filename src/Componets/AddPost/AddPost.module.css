@@ -36,6 +36,7 @@
   padding: 4px;
   border: none;
   font-family: sans-serif;
+  resize: none;
 }
 
 .button {

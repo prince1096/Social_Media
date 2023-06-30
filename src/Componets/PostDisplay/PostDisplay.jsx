@@ -68,6 +68,8 @@ const PostDisplay = ({ post }) => {
       : followServices(token, dispatch, findUser?._id);
   };
 
+  // console.log(post.mediaURL);
+
   return (
     <div className={styles.postcard}>
       <div className={styles.username}>
@@ -98,7 +100,14 @@ const PostDisplay = ({ post }) => {
       </div>
 
       <div className={styles?.contentdiv}>{post?.content}</div>
-      {/* <div>{post?.mediaURL}</div> */}
+
+      {post?.mediaURL && (
+        <div>
+          {" "}
+          <img src={post?.mediaURL} alt="" className={styles.image} />{" "}
+        </div>
+      )}
+
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}
