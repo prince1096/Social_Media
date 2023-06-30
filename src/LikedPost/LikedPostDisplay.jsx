@@ -81,6 +81,14 @@ const LikedPostDisplay = ({ post }) => {
       </div>
 
       <div className={styles?.contentdiv}>{post?.content}</div>
+
+      {post?.mediaURL && (
+        <div>
+          {" "}
+          <img src={post?.mediaURL} alt="" className={styles.image} />{" "}
+        </div>
+      )}
+
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}

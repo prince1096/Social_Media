@@ -39,7 +39,7 @@ const BookMarkDisplay = ({ post }) => {
 
   const likedPost = state?.likedPost?.find((liked) => liked?._id === post._id);
 
-  console.log(likedPost);
+  // console.log(likedPost);
 
   const findUser = state?.user?.find(
     (userr) => userr.username === post?.username
@@ -75,6 +75,12 @@ const BookMarkDisplay = ({ post }) => {
       </div>
 
       <div className={styles?.contentdiv}>{post?.content}</div>
+      {post?.mediaURL && (
+        <div>
+          {" "}
+          <img src={post?.mediaURL} alt="" className={styles.image} />{" "}
+        </div>
+      )}
       <div className={styles.bottomlogo}>
         <div className={styles.likelogo}>
           {" "}
