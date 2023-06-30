@@ -15,7 +15,7 @@ import Batman from "../../assets/batman.png";
 
 import Profile from "../Profile/Profile";
 
-const Avatar = ({ setShowAvatar, setNewAvatar }) => {
+const Avatar = ({ setShowAvatar, setNewAvatar, editUser, setEditUser }) => {
   const avatarList = [
     boy,
     gamer,
@@ -31,7 +31,11 @@ const Avatar = ({ setShowAvatar, setNewAvatar }) => {
 
   const avatarHandler = (avatar) => {
     setShowAvatar(false);
+
     setNewAvatar(avatar);
+    // setEditUser({ ...editUser, profilePicture: URL.createObjectURL(avatar) });
+    setEditUser(avatar);
+    // setNewAvatar(URL.createObjectURL(avatar));
   };
 
   return (

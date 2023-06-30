@@ -74,3 +74,17 @@
   background-color: white;
   border: none;
 }
+
+.inputurl {
+  display: none;
+}
+
+.dpdiv {
+  position: relative;
+}
+
+.changedp {
+  position: absolute;
+  bottom: -10px;
+  right: 0px;
+}

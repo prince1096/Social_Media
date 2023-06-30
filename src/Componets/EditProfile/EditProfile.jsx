@@ -5,6 +5,9 @@ import styles from "./EditProfile.module.css";
 import Profile from "../Profile/Profile";
 
 import { RxCross2 } from "react-icons/rx";
+
+import { AiOutlineCamera } from "react-icons/ai";
+
 import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 import { editUserService } from "../../Services/user/userServices";
 import Avatar from "./Avatar";
@@ -28,7 +31,7 @@ const EditProfile = () => {
     website: loginUser?.website,
   });
 
-  console.log(newavatar);
+  // console.log(newavatar);
 
   // console.log(editUser);
 
@@ -37,18 +40,45 @@ const EditProfile = () => {
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
   };
 
+  const fileUploadHandle = (event) => {
+    const file = event.target.files[0];
+    const uploadedFile = URL.createObjectURL(file);
+    // setImagefile(uploadedFile);
+    setEditUser({ ...editUser, profilePicture: uploadedFile });
+  };
+
+  const hideEditProfile = () => {
+    dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
+  };
+
   return (
     <div className={styles.editcontainer}>
       <div className={styles.cross}>
         <h2>Edit Profile</h2>
-        <button className={styles.crossbtn}>
+        <button className={styles.crossbtn} onClick={() => hideEditProfile()}>
           <RxCross2 />
         </button>
       </div>
 
       <div className={styles.profile}>
         <div>Avatar :</div>
-        <Profile url={newavatar} height="50px" width="50px" />
+        <div className={styles.dpdiv}>
+          <Profile url={newavatar} height="50px" width="50px" />
+
+          <div className={styles.changedp}>
+            <label htmlFor="url">
+              <AiOutlineCamera className={styles.postlogo} />{" "}
+            </label>
+            <input
+              type="file"
+              className={styles.inputurl}
+              name=""
+              id="url"
+              onChange={(event) => fileUploadHandle(event)}
+            />
+          </div>
+        </div>
+
         <button
           className={styles.avatarbtn}
           onClick={() => setShowAvatar(!showAvatar)}
@@ -58,7 +88,12 @@ const EditProfile = () => {
       </div>
 
       {showAvatar && (
-        <Avatar setShowAvatar={setShowAvatar} setNewAvatar={setNewAvatar} />
+        <Avatar
+          setShowAvatar={setShowAvatar}
+          editUser={editUser}
+          setEditUser={setEditUser}
+          setNewAvatar={setNewAvatar}
+        />
       )}
 
       <div className={styles.username}>
