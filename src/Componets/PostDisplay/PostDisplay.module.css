@@ -138,6 +138,16 @@
   width: 260px;
 }
 
+.ligththeme {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 360px;

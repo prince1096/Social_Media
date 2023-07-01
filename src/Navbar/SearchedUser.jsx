@@ -6,19 +6,27 @@ import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { Link } from "react-router-dom";
 
 const SearchedUser = ({ user }) => {
-  const { dispatch } = useContext(DataUserContext);
+  const { state, dispatch } = useContext(DataUserContext);
 
   const userHandler = (user) => {
     dispatch({ type: "USER_ON_PROFILE", payload: user });
     dispatch({ type: "SEARCHED", payload: "" });
   };
 
+  const { theme } = state;
+
   return (
     <Link to={`/userprofile/${user?.username}`}>
-      <div className={styles.searcheddiv}>
+      <div
+        className={`${styles.searcheddiv} ${
+          theme ? styles.lighttheme : styles.darktheme
+        }`}
+      >
         <div className={styles.imagediv}>
           <button
-            className={styles.searchbtn}
+            className={`${styles.searchbtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
             onClick={() => userHandler(user)}
           >
             <Profile
@@ -31,7 +39,9 @@ const SearchedUser = ({ user }) => {
 
         <div>
           <button
-            className={styles.searchbtn}
+            className={`${styles.searchbtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
             onClick={() => userHandler(user)}
           >
             <p className={styles.username}>

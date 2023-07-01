@@ -42,7 +42,7 @@
   position: absolute;
   top: 50px;
   right: 40%;
-  z-index: 2;
+  z-index: 99;
   overflow-x: hidden;
   border-radius: 1rem;
 }
@@ -64,7 +64,7 @@
 
 .lightmode {
   cursor: pointer;
-  background-color: white;
+  /* background-color: white; */
   border: none;
 }
 

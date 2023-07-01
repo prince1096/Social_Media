@@ -64,7 +64,9 @@ const TopNav = () => {
           name=""
           id=""
           placeholder="Search Users"
-          className={styles.topnavsearchbar}
+          className={`${styles.topnavsearchbar} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
           value={searchedText}
           onChange={(event) =>
             dispatch({ type: "SEARCHED", payload: event.target.value })
@@ -74,7 +76,12 @@ const TopNav = () => {
 
       <div className={styles.topnavprofile}>
         <div>
-          <button className={styles.lightmode} onClick={() => themeHandler()}>
+          <button
+            className={`${styles.lightmode} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            onClick={() => themeHandler()}
+          >
             <BsFillBrightnessHighFill className={styles.lightmode} />
           </button>
         </div>
@@ -84,7 +91,6 @@ const TopNav = () => {
             className={styles.navlink}
           >
             <button
-              // className={styles.topnavprofilebtn}
               className={`${styles.topnavprofilebtn} ${
                 theme ? styles.lighttheme : styles.darktheme
               }`}
@@ -101,9 +107,17 @@ const TopNav = () => {
       </div>
 
       {searchedText?.length > 0 && (
-        <div className={styles.searchednav}>
+        <div
+          className={`${styles.searchednav} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           {" "}
-          {searchedUser?.length === 0 && <h2>No Users Matched</h2>}
+          {searchedUser?.length === 0 && (
+            <h2 className={` ${theme ? styles.lighttheme : styles.darktheme}`}>
+              No Users Matched
+            </h2>
+          )}
           {searchedUser.map((user) => (
             <SearchedUser user={user} />
           ))}

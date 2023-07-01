@@ -4,17 +4,27 @@
   /* gap: 1rem; */
   margin: 10px;
   padding: 6px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
 }
 
 .searchbtn {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border: none;
 }
 
 .imagediv {
   margin-left: 0.8rem;
+}
+
+.ligththeme {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
 }
 
 .username {
