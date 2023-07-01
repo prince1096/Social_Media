@@ -63,6 +63,12 @@ const AddPost = () => {
     setImagefile(uploadedFile);
   };
 
+  const emojiHandler = (emojiObj) => {
+    console.log(emojiObj);
+    console.log(emojiObj?.string);
+    console.log("1");
+  };
+
   return (
     <div className={styles.addpostcontainer}>
       <div className={styles.addpost}>
@@ -79,14 +85,14 @@ const AddPost = () => {
             name=""
             id=""
             type="text"
-            cols="18"
-            rows="6"
+            // cols="18"
+            // rows="6"
             className={styles.textarea}
             value={newPost}
             placeholder="What's Happening"
             // onChange={() => addPostHandler(event)}
             onChange={handleTextareaChange}
-            autoFocus
+            // autoFocus
           ></textarea>
         </div>
       </div>
@@ -112,7 +118,11 @@ const AddPost = () => {
           </button>
           <div className={styles.emojidiv}>
             {showEmoji && (
-              <EmojiPicker width="15em" className={styles.emojicontainer} />
+              <EmojiPicker
+                width="15em"
+                className={styles.emojicontainer}
+                onEmojiClick={(emojiObj) => emojiHandler(emojiObj)}
+              />
             )}
           </div>
           <div className={styles.emojidivdesk}>

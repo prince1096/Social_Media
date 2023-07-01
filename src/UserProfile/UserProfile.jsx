@@ -101,15 +101,17 @@ const UserProfile = () => {
         </div>
 
         {showImage && (
-          <div
-            className={styles.overlay}
-            onClick={() => setShowImage(false)}
-          ></div>
-        )}
+          <div>
+            <div
+              className={styles.overlay}
+              onClick={() => setShowImage(false)}
+            ></div>
+            {/* // )} */}
 
-        {showImage && (
-          <div className={styles.modals}>
-            <ShowImage url={currentProfile?.profilePicture} />
+            {/* // {showImage && ( */}
+            <div className={styles.modals}>
+              <ShowImage url={currentProfile?.profilePicture} />
+            </div>
           </div>
         )}
 

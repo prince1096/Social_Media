@@ -32,11 +32,19 @@
   font-size: 18px;
 }
 
+.textareadiv {
+}
+
 .textarea {
   padding: 4px;
   border: none;
   font-family: sans-serif;
   resize: none;
+  width: 250px;
+  height: 120px;
+  outline: none;
+  background-color: #ebebeb;
+  padding: 1rem;
 }
 
 .button {
