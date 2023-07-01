@@ -79,11 +79,19 @@ const UserProfile = () => {
       : followServices(token, dispatch, findUser?._id);
   };
 
+  const { theme } = state;
+
   return (
     <div>
       <div className={styles.profilecontainer}>
         <div>
-          <button className={styles.showpic} onClick={() => setShowImage(true)}>
+          <button
+            // className={styles.showpic}
+            className={`${styles.showpic} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            onClick={() => setShowImage(true)}
+          >
             <Profile
               url={currentProfile?.profilePicture}
               height={"80px"}
@@ -155,7 +163,7 @@ const UserProfile = () => {
           </div>
 
           <div className={styles.friend}>
-            <p>0 Posts</p>
+            <p>{state?.userPost?.length} Posts</p>
             <p> {currentProfile?.followers?.length} followers </p>
             <p>{currentProfile?.following?.length} following</p>
           </div>

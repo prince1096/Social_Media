@@ -104,7 +104,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 9999;
 }
 
 .modals {
@@ -113,7 +113,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 9999;
   border-radius: 50%;
 }
 
@@ -132,6 +132,10 @@
   margin: 2px;
 }
 
+.profilePicture {
+  z-index: 999;
+}
+
 .logout:hover {
   background-color: #d32f2f;
   color: white;
@@ -141,6 +145,16 @@
 .logoutlogo {
   /* font-weight: bolder; */
   font-size: 12px;
+}
+
+.ligththeme {
+  background-color: white;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
 }
 
 @media screen and (min-width: 768px) {

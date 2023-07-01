@@ -49,7 +49,6 @@ const Navbar = () => {
   return (
     <div className={styles.navdiv}>
       <div
-        // className={styles.navbarcontainer}
         className={`${styles.navbarcontainer} ${
           theme ? styles.lighttheme : styles.darktheme
         }`}
@@ -59,13 +58,11 @@ const Navbar = () => {
           className={`${styles.navlink} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
-          // className={styles.navlink}
         >
           <div
             className={`${styles.navlogocontainer} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
-            // className={styles.navlogocontainer}
           >
             <AiFillHome className={styles.navLogo} />{" "}
             <span className={styles.navlogoname}>Home</span>
@@ -85,7 +82,6 @@ const Navbar = () => {
         </NavLink>
 
         <button
-          // className={styles.addpostnav}
           className={`${styles.addpostnav} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
@@ -101,7 +97,6 @@ const Navbar = () => {
 
         <NavLink
           to="/bookmark"
-          // className={styles.navlink}
           className={`${styles.navlink} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
@@ -114,7 +109,6 @@ const Navbar = () => {
 
         <NavLink
           to="likedpost"
-          //  className={styles.navlink}
           className={`${styles.navlink} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
@@ -127,21 +121,17 @@ const Navbar = () => {
 
         <NavLink
           to={`/userprofile/${userprofileData?.username}`}
-          // className={styles.navlink}
           className={`${styles.navlink} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
         >
           <button
-            // className={styles.navprofilebtn}
             className={`${styles.navprofilebtn} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
-            // onClick={() => getUserDataService(dispatch, userprofileData._id)}
             onClick={() => userHandler(userprofileData)}
           >
             <div className={styles.navlogocontainer}>
-              {/* <CgProfile /> */}
               <Profile
                 url={userprofileData?.profilePicture}
                 height={"24px"}

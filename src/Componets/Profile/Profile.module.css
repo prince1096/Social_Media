@@ -11,3 +11,13 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.ligththeme {
+  background-color: white;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
+}

@@ -79,7 +79,7 @@ const AddPost = () => {
             name=""
             id=""
             type="text"
-            cols="30"
+            cols="18"
             rows="6"
             className={styles.textarea}
             value={newPost}
@@ -115,10 +115,8 @@ const AddPost = () => {
               <EmojiPicker width="15em" className={styles.emojicontainer} />
             )}
           </div>
-          <div className={styles.emojidivdesk} >
-            {showEmoji && (
-              <EmojiPicker className={styles.emojicontainer} />
-            )}
+          <div className={styles.emojidivdesk}>
+            {showEmoji && <EmojiPicker className={styles.emojicontainer} />}
           </div>
         </div>
 
