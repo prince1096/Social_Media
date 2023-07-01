@@ -15,13 +15,23 @@
 }
 
 .topnavprofilebtn {
-  background-color: #fffffa;
+  /* background-color: #fffffa; */
   border: none;
   cursor: pointer;
 }
 
 .lightmode {
   font-size: 18px;
+}
+
+.ligththeme {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
 }
 
 .searchednav {

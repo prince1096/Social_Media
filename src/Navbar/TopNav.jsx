@@ -40,8 +40,16 @@ const TopNav = () => {
     dispatch({ type: "THEME", payload: !state?.theme });
   };
 
+  // className={theme ? styles.lighttheme : styles.darktheme}
+
+  const { theme } = state;
+
   return (
-    <div className={styles.topnavcontainer}>
+    <div
+      className={`${styles.topnavcontainer} ${
+        theme ? styles.lighttheme : styles.darktheme
+      }`}
+    >
       <div className={`${styles.topnavlogo}  `}>
         <div>
           <BsInstagram className={styles.instagram} />
@@ -76,7 +84,10 @@ const TopNav = () => {
             className={styles.navlink}
           >
             <button
-              className={styles.topnavprofilebtn}
+              // className={styles.topnavprofilebtn}
+              className={`${styles.topnavprofilebtn} ${
+                theme ? styles.lighttheme : styles.darktheme
+              }`}
               onClick={() => userHandler(userprofileData)}
             >
               <Profile
