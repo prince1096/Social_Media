@@ -70,8 +70,14 @@ const PostDisplay = ({ post }) => {
 
   // console.log(post.mediaURL);
 
+  const { theme } = state;
+
   return (
-    <div className={styles.postcard}>
+    <div
+      className={`${styles.postcard} ${
+        theme ? styles.lighttheme : styles.darkpostcard
+      }`}
+    >
       <div className={styles.username}>
         <div className={styles.profile}>
           <div>
@@ -93,7 +99,12 @@ const PostDisplay = ({ post }) => {
         </div>
 
         <div>
-          <button className={styles.profilebtn} onClick={() => editHandler()}>
+          <button
+            className={`${styles.profilebtn} ${
+              theme ? styles.lighttheme : styles.darkthemebtn
+            }`}
+            onClick={() => editHandler()}
+          >
             <BsThreeDots />
           </button>
         </div>
@@ -113,7 +124,9 @@ const PostDisplay = ({ post }) => {
           {" "}
           {likedPost ? (
             <button
-              className={styles.btn}
+              className={`${styles.btn} ${
+                theme ? styles.lighttheme : styles.darkthemebtn
+              }`}
               onClick={() => unlikePostServices(post, dispatch, token)}
             >
               <span className={styles.heart}>
@@ -123,7 +136,9 @@ const PostDisplay = ({ post }) => {
             </button>
           ) : (
             <button
-              className={styles.btn}
+              className={`${styles.btn} ${
+                theme ? styles.lighttheme : styles.darkthemebtn
+              }`}
               onClick={() => likePostServices(token, dispatch, post)}
             >
               <span className={styles.heart}>
@@ -142,17 +157,29 @@ const PostDisplay = ({ post }) => {
         <div>
           {bookmarkedPost ? (
             <button
-              className={styles.bookmarkbtn}
+              className={`${styles.bookmarkbtn} ${
+                theme ? styles.lighttheme : styles.darkthemebook
+              }`}
               onClick={() => removeFromBookmarkServices(token, dispatch, post)}
             >
-              <BsFillBookmarkFill className={styles.addedlogo} />
+              <BsFillBookmarkFill
+                className={`${styles.addedlogos} ${
+                  theme ? styles.lighttheme : styles.darkthemebooklogo
+                }`}
+              />
             </button>
           ) : (
             <button
-              className={styles.bookmarkbtn}
+              className={`${styles.bookmarkbtn} ${
+                theme ? styles.lighttheme : styles.darkthemebook
+              }`}
               onClick={() => addToBookmarkServices(token, dispatch, post)}
             >
-              <BiBookmark className={styles.booklogo} />
+              <BiBookmark
+                className={`${styles.booklogo} ${
+                  theme ? styles.lighttheme : styles.darkthemebookok
+                }`}
+              />
             </button>
           )}
         </div>
@@ -161,17 +188,23 @@ const PostDisplay = ({ post }) => {
       <div className={styles.postdate}>{convertDate(post.createdAt)}</div>
 
       {showEdit && (
-        <div className={styles.show}>
+        <div
+          className={`${styles.show} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           {post?.username === userData?.username ? (
-            <Edit postData={post} token={token} dispatch={dispatch} />
+            <Edit
+              postData={post}
+              token={token}
+              dispatch={dispatch}
+              theme={theme}
+            />
           ) : (
-            // {
-            // followed ? <button className={styles.unfollow}>Unfollow</button> : 5
-
-            // }
-
             <button
-              className={styles.unfollow}
+              className={`${styles.unfollow} ${
+                theme ? styles.lighttheme : styles.darktheme
+              }`}
               onClick={() => followUnfollowHandler()}
             >
               {followed ? "Unfollow" : "Follow"}

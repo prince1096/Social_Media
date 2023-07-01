@@ -22,8 +22,12 @@
 }
 
 .addedlogo {
-  color: black;
-  fill: black;
+  /* color: black; */
+  /* fill: black; */
+  font-size: 18px;
+}
+
+.addedlogos {
   font-size: 18px;
 }
 
@@ -66,6 +70,7 @@
 }
 .heart {
   font-size: 21px;
+  /* background-color: white; */
 }
 
 .contentdiv {
@@ -79,7 +84,7 @@
 
 .booklogo {
   font-size: 20px;
-  /* color: grey; */
+  /* color: white; */
 }
 
 .editpostcontainer {
@@ -93,7 +98,7 @@
 .editbtn,
 .deletebtn {
   font-size: 18px;
-  background-color: white;
+  /* background-color: white; */
   padding: 3px;
   border: none;
   cursor: pointer;
@@ -128,7 +133,8 @@
 .unfollow {
   margin: 5px;
   padding: 5px;
-  color: red;
+  /* color: red; */
+  font-weight: bolder;
 }
 
 .image {
@@ -139,13 +145,42 @@
 }
 
 .ligththeme {
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
 }
 
 .darktheme {
   color: whitesmoke;
   background-color: black;
+}
+
+.darkpostcard {
+  /* border: 1px solid white; */
+  background-color: rgb(46, 49, 50);
+  color: whitesmoke;
+}
+
+.darkthemebtn {
+  background-color: rgb(46, 49, 50);
+  color: whitesmoke;
+}
+
+.darkthemebook {
+  background-color: rgb(46, 49, 50);
+}
+
+.darkthemebooklogo {
+  background-color: rgb(46, 49, 50);
+  color: white;
+  fill: white;
+  font-size: 18px;
+}
+
+.darkthemebookok {
+  background-color: rgb(46, 49, 50);
+  font-size: 18px;
+
+  color: white;
 }
 
 @media screen and (min-width: 768px) {

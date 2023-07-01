@@ -11,11 +11,11 @@
   width: 250px;
   margin: 4px;
   padding: 4px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .suggestbtn {
-  background-color: whitesmoke;
+  background-color: white;
   border: none;
 }
 
@@ -44,10 +44,20 @@
 }
 
 .followbtn {
-  background-color: whitesmoke;
+  background-color: white;
   border: none;
   font-weight: bolder;
   font-size: 16px;
+}
+
+.ligththeme {
+  background-color: white;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
 }
 
 @media screen and (min-width: 768px) {

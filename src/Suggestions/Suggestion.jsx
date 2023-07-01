@@ -45,9 +45,16 @@ const Suggestion = () => {
 
   // console.log(updatedSuggestion[0]);
 
+  const { theme } = state;
+
   return (
     <div>
-      <div className={styles.suggestioncontainer}>
+      <div
+        // className={styles.suggestioncontainer}
+        className={`${styles.suggestioncontainer} ${
+          theme ? styles.lighttheme : styles.darktheme
+        }`}
+      >
         <div className={styles.filter}>
           <Filter />
         </div>
@@ -59,7 +66,10 @@ const Suggestion = () => {
             <div key={user?._id} className={styles.usercontainer}>
               <Link to={`/userprofile/${user?.username}`}>
                 <button
-                  className={styles.suggestbtn}
+                  // className={styles.suggestbtn}
+                  className={`${styles.suggestbtn} ${
+                    theme ? styles.lighttheme : styles.darktheme
+                  }`}
                   onClick={() => userHandler(user)}
                 >
                   <div className={styles.userprofile}>
@@ -81,7 +91,10 @@ const Suggestion = () => {
 
               <div>
                 <button
-                  className={styles.followbtn}
+                  // className={styles.followbtn}
+                  className={`${styles.followbtn} ${
+                    theme ? styles.lighttheme : styles.darktheme
+                  }`}
                   onClick={() => followServices(token, dispatch, user._id)}
                 >
                   Follow

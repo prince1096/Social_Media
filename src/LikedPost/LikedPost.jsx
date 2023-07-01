@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 import styles from "./LikedPost.module.css";
-import LikedPostDisplay from "./LikedPostDisplay";
+// import LikedPostDisplay from "./LikedPostDisplay";
+import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 
 const LikedPost = () => {
   const { state } = useContext(DataUserContext);
@@ -14,7 +15,7 @@ const LikedPost = () => {
       <div>
         <div className={styles.container}>
           {state?.likedPost?.map((post) => (
-            <LikedPostDisplay post={post} />
+            <PostDisplay post={post} />
           ))}
         </div>
       </div>

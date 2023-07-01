@@ -44,24 +44,52 @@ const Navbar = () => {
     window.location.reload();
   };
 
+  const { theme } = state;
+
   return (
     <div className={styles.navdiv}>
-      <div className={styles.navbarcontainer}>
-        <NavLink to="/" className={styles.navlink}>
-          <div className={styles.navlogocontainer}>
+      <div
+        // className={styles.navbarcontainer}
+        className={`${styles.navbarcontainer} ${
+          theme ? styles.lighttheme : styles.darktheme
+        }`}
+      >
+        <NavLink
+          to="/"
+          className={`${styles.navlink} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+          // className={styles.navlink}
+        >
+          <div
+            className={`${styles.navlogocontainer} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            // className={styles.navlogocontainer}
+          >
             <AiFillHome className={styles.navLogo} />{" "}
             <span className={styles.navlogoname}>Home</span>
           </div>
         </NavLink>
 
-        <NavLink to="/explore" className={styles.navlink}>
+        <NavLink
+          to="/explore"
+          className={`${styles.navlink} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           <div className={styles.navlogocontainer}>
             <MdExplore />
             <span className={styles.navlogoname}>Explore</span>
           </div>
         </NavLink>
 
-        <button className={styles.addpostnav}>
+        <button
+          // className={styles.addpostnav}
+          className={`${styles.addpostnav} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           <div
             className={styles.navlogocontainer}
             onClick={() => showModalHandler()}
@@ -71,14 +99,26 @@ const Navbar = () => {
           </div>
         </button>
 
-        <NavLink to="/bookmark" className={styles.navlink}>
+        <NavLink
+          to="/bookmark"
+          // className={styles.navlink}
+          className={`${styles.navlink} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           <div className={styles.navlogocontainer}>
             <BsFillBookmarkFill />
             <span className={styles.navlogoname}>Bookmark</span>
           </div>
         </NavLink>
 
-        <NavLink to="likedpost" className={styles.navlink}>
+        <NavLink
+          to="likedpost"
+          //  className={styles.navlink}
+          className={`${styles.navlink} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           <div className={styles.navlogocontainer}>
             <AiFillHeart />
             <span className={styles.navlogoname}>Liked Posts</span>
@@ -87,10 +127,16 @@ const Navbar = () => {
 
         <NavLink
           to={`/userprofile/${userprofileData?.username}`}
-          className={styles.navlink}
+          // className={styles.navlink}
+          className={`${styles.navlink} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
         >
           <button
-            className={styles.navprofilebtn}
+            // className={styles.navprofilebtn}
+            className={`${styles.navprofilebtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
             // onClick={() => getUserDataService(dispatch, userprofileData._id)}
             onClick={() => userHandler(userprofileData)}
           >
@@ -107,7 +153,14 @@ const Navbar = () => {
         </NavLink>
 
         <div className={`${styles.navlogocontainer} ${styles.hidelogout}`}>
-          <button className={styles.logout} onClick={() => logoutHandler()}>
+          <button
+            // className={styles.logout}
+
+            className={`${styles.logout} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            onClick={() => logoutHandler()}
+          >
             <ImExit />
             <span className={styles.navlogoname}>Logout</span>
           </button>

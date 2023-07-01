@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 import styles from "./BookMark.module.css";
-import BookMarkDisplay from "./BookMarkDisplay";
+// import BookMarkDisplay from "./BookMarkDisplay";
+import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 
 const BookMark = () => {
   const { state } = useContext(DataUserContext);
@@ -16,7 +17,7 @@ const BookMark = () => {
       <div>
         <div className={styles.container}>
           {bookMarkedPostData?.map((post) => (
-            <BookMarkDisplay post={post} />
+            <PostDisplay post={post} />
           ))}
         </div>
       </div>

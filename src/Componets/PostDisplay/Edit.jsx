@@ -4,13 +4,18 @@ import styles from "./PostDisplay.module.css";
 import { deletePostService } from "../../Services/Post/postServices";
 import EditPost from "../EditPost/EditPost";
 
-const Edit = ({ postData, token, dispatch }) => {
+const Edit = ({ postData, token, dispatch, theme }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   return (
     <div className={styles.editpostcontainer}>
       <div>
-        <button className={styles.editbtn} onClick={() => setShowEdit(true)}>
+        <button
+          className={`${styles.editbtn} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+          onClick={() => setShowEdit(true)}
+        >
           Edit
         </button>
       </div>
@@ -18,7 +23,9 @@ const Edit = ({ postData, token, dispatch }) => {
       <div>
         <button
           onClick={() => deletePostService(token, dispatch, postData._id)}
-          className={styles.deletebtn}
+          className={`${styles.deletebtn} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
         >
           Delete
         </button>
