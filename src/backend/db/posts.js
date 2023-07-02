@@ -10,6 +10,7 @@ export const posts = [
   {
     _id: uuid(),
     content: "Feeling Blessed",
+    mediaURL: "",
     likes: {
       likeCount: 10,
       likedBy: [],
@@ -22,6 +23,8 @@ export const posts = [
   {
     _id: uuid(),
     content: "Enjoying Sunset",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688300384/rachel-cook-mOcdke2ZQoE-unsplash_pn4q7g.jpg",
     likes: {
       likeCount: 34,
       likedBy: [],
@@ -35,7 +38,8 @@ export const posts = [
   {
     _id: "xhzTkUi2Nt",
     content: "Nice Weather Today!!",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688300988/mario-alvarez-M1YdS0g8SRA-unsplash_kpei8n.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -220,7 +224,8 @@ export const posts = [
     _id: "Ie92xOSVeU",
     content:
       "Check out this amazing e-commerce app From Me https://prince-quick-cart.vercel.app/ ",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688306180/WhatsApp_Image_2023-07-02_at_19.22.55_1_oh7e4a.jpg",
     likes: {
       likeCount: 41,
       likedBy: [],
@@ -243,8 +248,10 @@ export const posts = [
   },
   {
     _id: "xhzTkUyfNt",
-    content: "Believe in yourself! Rest all will fall in place.",
-    mediaURL: "",
+    content:
+      "Believe in yourself! Rest all will fall in place. Check my portfolio at https://princerajdev.netlify.app/",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688306153/WhatsApp_Image_2023-07-02_at_19.24.51_ndca1n.jpg",
     likes: {
       likeCount: 2,
       likedBy: [],

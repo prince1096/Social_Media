@@ -142,6 +142,7 @@
   /* width: 300px; */
   /* height: auto; */
   width: 260px;
+  object-fit: cover;
 }
 
 .ligththeme {
