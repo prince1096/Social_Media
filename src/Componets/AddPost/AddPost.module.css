@@ -40,8 +40,8 @@
   border: none;
   font-family: sans-serif;
   resize: none;
-  width: 250px;
-  height: 120px;
+  width: 150px;
+  height: 80px;
   outline: none;
   background-color: #ebebeb;
   padding: 1rem;
@@ -121,5 +121,16 @@
 
   .emojidivdesk {
     display: block;
+  }
+
+  .textarea {
+    width: 200px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .textarea {
+    width: 250px;
   }
 }

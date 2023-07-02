@@ -11,10 +11,11 @@ import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
 const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
   const [editPost, setEditPost] = useState({ ...postData });
+  const [imageFile, setImagefile] = useState(null);
 
   const { state } = useContext(DataUserContext);
 
-  const handleTextareaChange = (event) => {};
+  // const handleTextareaChange = (event) => {};
 
   // console.log(newPost);
 
@@ -25,7 +26,25 @@ const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
     (userr) => userr?.username === userData?.username
   );
 
+  const fileUploadHandle = (event) => {
+    console.log(1);
+    console.log(imageFile, "initial");
+    const file = event.target.files[0];
+    const uploadedFile = URL.createObjectURL(file);
+    console.log(uploadedFile);
+    // setImagefile(uploadedFile);
+    setEditPost({ ...editPost, mediaURL: uploadedFile });
+    console.log(imageFile, "final");
+  };
+
+  // console.log(editPost);
+
+  // console.log(imageFile, "finalout");
+  // console.log(imageFile);
+
   const updateHandler = () => {
+    // setEditPost({ ...editPost, mediaURL: imageFile });
+
     editPostService(token, dispatch, editPost);
     setShowEdit(false);
   };
@@ -78,7 +97,29 @@ const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
         <div className={styles.adddata}>
           <div>
             {" "}
-            <BsImageFill className={styles.postlogo} />{" "}
+            {/* <BsImageFill className={styles.postlogo} />{" "} */}
+            {/* <label htmlFor="url">
+              <BsImageFill className={styles.postlogo} />{" "}
+              <input
+                type="file"
+                className={styles.inputurl}
+                name=""
+                id="url"
+                onChange={(event) => fileUploadHandle(event)}
+              />
+            </label> */}
+            <div className={styles.labelcontainer}>
+              <label htmlFor="url">
+                <BsImageFill className={styles.postlogo} />
+              </label>
+              <input
+                type="file"
+                className={styles.inputurl}
+                name=""
+                id="url"
+                onChange={(event) => fileUploadHandle(event)}
+              />
+            </div>
             <BsFillEmojiSmileFill className={styles.postlogo} />{" "}
           </div>
 

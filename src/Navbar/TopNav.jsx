@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import styles from "./TopNav.module.css";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
 import { BsInstagram } from "react-icons/bs";
 
 import { BsFillBrightnessHighFill } from "react-icons/bs";
