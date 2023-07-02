@@ -49,7 +49,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     getUserPostService(dispatch, state?.currentprofile);
-  }, [state?.currentprofile]);
+  }, [state?.currentprofile, state?.userPost]);
 
   const showEdit = () => {
     console.log("show");
@@ -174,7 +174,7 @@ const UserProfile = () => {
           </div>
 
           <div className={styles.friend}>
-            <p>{state?.userPost?.length} Posts</p>
+            <p className={styles.friendpost}>{state?.userPost?.length} Posts</p>
             <button
               onClick={() => setShowfollower(true)}
               className={`${styles.followerbtn} ${
@@ -209,6 +209,7 @@ const UserProfile = () => {
               users={currentProfile?.followers}
               setShowfollowing={setShowfollowing}
               setShowfollower={setShowfollower}
+              theme={theme}
             />
           </div>
         </div>
@@ -227,6 +228,7 @@ const UserProfile = () => {
               users={currentProfile?.following}
               setShowfollowing={setShowfollowing}
               setShowfollower={setShowfollower}
+              theme={theme}
             />
           </div>
         </div>

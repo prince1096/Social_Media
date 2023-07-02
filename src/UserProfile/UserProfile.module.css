@@ -39,7 +39,12 @@
   display: flex;
   justify-content: space-around;
   font-size: 13px;
-  margin-top: 5px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.friendpost {
+  align-self: center;
 }
 
 .followbtn {
@@ -120,10 +125,10 @@
 .followerbtn {
   background-color: white;
   border: none;
+  font-size: 14px;
 }
 
 .logout {
-  /* display: inline-block; */
   padding: 2px 4px;
   font-size: 14px;
   font-weight: bolder;

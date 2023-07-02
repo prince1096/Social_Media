@@ -2,23 +2,55 @@ import React from "react";
 
 import styles from "./Follower.module.css";
 import FollowCard from "./FollowCard";
+// import { BsTypeH3 } from "react-icons/bs";
+
+import { RxCross2 } from "react-icons/rx";
 
 const Follower = ({
   currentaction,
   users,
   setShowfollower,
   setShowfollowing,
+  theme,
 }) => {
-  console.log(users);
+  //   console.log(users);
+
+  const crossHandler = () => {
+    setShowfollower(false);
+    setShowfollowing(false);
+  };
+
   return (
-    <div className={styles.followlist}>
-      <h2>{currentaction}</h2>
+    <div
+      //  className={styles.followlist}
+      className={`${styles.followlist} ${
+        theme ? styles.lighttheme : styles.darktheme
+      }`}
+    >
+      <div className={styles.cut}>
+        <h2 className={styles.headin}>{currentaction}</h2>
+        <button
+          className={`${styles.cross} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+          onClick={() => crossHandler()}
+        >
+          <RxCross2 className={styles.logo} />
+        </button>
+      </div>
+      <hr />
+
+      {users.length === 0 && (
+        <h3 className={styles.nothing}>No {currentaction}</h3>
+      )}
+
       <div className={styles.listdiv}>
         {users?.map((user, index) => (
           <FollowCard
             user={user}
             setShowfollowing={setShowfollowing}
             setShowfollower={setShowfollower}
+            theme={theme}
           />
         ))}
       </div>

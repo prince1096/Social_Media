@@ -11,7 +11,7 @@ import {
   unfollowServices,
 } from "../../Services/FollowUnfollowService/FollowUnfollowService";
 
-const FollowCard = ({ user, setShowfollower, setShowfollowing }) => {
+const FollowCard = ({ user, setShowfollower, setShowfollowing, theme }) => {
   const { state, dispatch } = useContext(DataUserContext);
 
   const token = localStorage.getItem("token");
@@ -20,15 +20,11 @@ const FollowCard = ({ user, setShowfollower, setShowfollowing }) => {
     dispatch({ type: "USER_ON_PROFILE", payload: user });
     setShowfollower(false);
     setShowfollowing(false);
-    // dispatch({ type: "SHOW_FOLLOWER", payload: false });
-    // dispatch({ type: "SHOW_FOLLOWING", payload: false });
   };
 
-  const { theme } = state;
+  //   const currentProfile = state?.currentprofile;
 
-  const currentProfile = state?.currentprofile;
-
-  const findUser = currentProfile?.following?.find(
+  const findUser = state?.following?.find(
     (users) => users.username === user.username
   );
 
@@ -39,48 +35,53 @@ const FollowCard = ({ user, setShowfollower, setShowfollowing }) => {
   };
 
   return (
-    // <div>
-    <div key={user?._id} className={styles.usercontainer}>
-      <Link to={`/userprofile/${user?.username}`}>
-        <button
-          // className={styles.suggestbtn}
-          className={`${styles.suggestbtn} ${
-            theme ? styles.lighttheme : styles.darktheme
-          }`}
-          onClick={() => userHandler(user)}
-        >
-          <div className={styles.userprofile}>
-            <Profile
-              url={user?.profilePicture}
-              height={"40px"}
-              width={"40px"}
-            />
+    <div>
+      <div key={user?._id} className={styles.usercontainer}>
+        <Link to={`/userprofile/${user?.username}`}>
+          <button
+            // className={styles.suggestbtn}
+            className={`${styles.suggestbtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            onClick={() => userHandler(user)}
+          >
+            <div className={styles.userprofile}>
+              <Profile
+                url={user?.profilePicture}
+                height={"40px"}
+                width={"40px"}
+              />
 
-            <div className={styles?.namediv}>
-              <p>
-                {user?.firstName} {user?.lastName}
-              </p>
-              <p>{user?.username}</p>
+              <div className={styles?.namediv}>
+                {user?.firstName && (
+                  <p>
+                    {user?.firstName} {user?.lastName}
+                  </p>
+                )}
+
+                {user?.fullName && <p>{user?.fullName}</p>}
+
+                <p>{user?.username}</p>
+              </div>
             </div>
-          </div>
-        </button>
-      </Link>
+          </button>
+        </Link>
 
-      <div>
-        <button
-          // className={styles.followbtn}
-          className={`${styles.followbtn} ${
-            theme ? styles.lighttheme : styles.darktheme
-          }`}
-          //   onClick={() => followServices(token, dispatch, user._id)}
-          onClick={() => followHandler()}
-        >
-          {findUser ? "Unfollow" : "Follow"}
-          {/* Follow */}
-        </button>
+        <div>
+          <button
+            // className={styles.followbtn}
+            className={`${styles.followbtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+            //   onClick={() => followServices(token, dispatch, user._id)}
+            onClick={() => followHandler()}
+          >
+            {findUser ? "Unfollow" : "Follow"}
+            {/* Follow */}
+          </button>
+        </div>
       </div>
     </div>
-    // </div>
   );
 };
 

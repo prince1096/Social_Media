@@ -1,5 +1,42 @@
 .followlist {
   border: 2px solid black;
   min-height: 100px;
-  width: 200px;
+  width: 280px;
+}
+
+.cross {
+  border: none;
+  background-color: white;
+}
+
+.ligththeme {
+  background-color: white;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
+}
+
+.headin {
+  margin: 5px;
+  padding: 5px;
+}
+
+.nothing {
+  margin: 5px;
+  padding: 5px;
+}
+
+.cut {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
 }
