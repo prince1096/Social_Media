@@ -1,44 +1,46 @@
-/* .usercontainer {
+.usercontainer {
   display: flex;
   justify-content: space-between;
-  border: 2px solid;
+  /* border: 2px solid; */
   margin: 4px;
   padding: 4px;
-} */
-
-.suggestioncontainer {
-  display: none;
-  width: 250px;
-  margin: 4px;
-  padding: 4px;
-  background-color: white;
 }
 
-/* .suggestbtn {
+/*  */
+
+/* .suggestioncontainer {
+    display: none;
+    width: 250px;
+    margin: 4px;
+    padding: 4px;
+    background-color: white;
+  } */
+
+.suggestbtn {
   background-color: white;
   border: none;
-} */
+}
 
 .namediv {
   text-align: start;
 }
 
-/* .profileimg {
+.profileimg {
   width: 40px;
   height: 40px;
   background-color: lightgreen;
   border-radius: 50%;
-} */
-
-.suggestedUser {
-  margin-top: 1rem;
-  /* display: flex; */
-  max-height: 380px;
-  overflow-x: hidden;
-  z-index: 99;
 }
 
-/* .userprofile {
+/* .suggestedUser {
+    margin-top: 1rem;
+    display: flex;
+    max-height: 380px;
+    overflow-x: hidden;
+    z-index: 99;
+  } */
+
+.userprofile {
   display: flex;
   gap: 1rem;
 }
@@ -48,7 +50,7 @@
   border: none;
   font-weight: bolder;
   font-size: 16px;
-} */
+}
 
 .ligththeme {
   background-color: white;
@@ -60,8 +62,8 @@
   background-color: black;
 }
 
-@media screen and (min-width: 768px) {
-  .suggestioncontainer {
-    display: block;
-  }
-}
+/* @media screen and (min-width: 768px) {
+    .suggestioncontainer {
+      display: block;
+    }
+  } */

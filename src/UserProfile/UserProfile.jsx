@@ -22,10 +22,13 @@ import {
   followServices,
   unfollowServices,
 } from "../Services/FollowUnfollowService/FollowUnfollowService";
+import Follower from "../Componets/FollowersModal/Follower";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
   const [showImage, setShowImage] = useState(false);
+  const [showfollower, setShowfollower] = useState(false);
+  const [showfollowing, setShowfollowing] = useState(false);
 
   const { username } = useParams();
 
@@ -67,8 +70,6 @@ const UserProfile = () => {
     window.location.reload();
   };
 
-  // console.log(state?.loginUser);
-
   const followed = state?.following?.find(
     (user) => user.username === currentProfile.username
   );
@@ -80,6 +81,14 @@ const UserProfile = () => {
   };
 
   const { theme } = state;
+
+  // const showfollowerHandler = (data) => {
+  //   dispatch({ type: "SHOW_FOLLOWER", payload: data });
+  // };
+
+  // const showfollowingHandler = (data) => {
+  //   dispatch({ type: "SHOW_FOLLOWING", payload: data });
+  // };
 
   return (
     <div>
@@ -166,11 +175,62 @@ const UserProfile = () => {
 
           <div className={styles.friend}>
             <p>{state?.userPost?.length} Posts</p>
-            <p> {currentProfile?.followers?.length} followers </p>
-            <p>{currentProfile?.following?.length} following</p>
+            <button
+              onClick={() => setShowfollower(true)}
+              className={`${styles.followerbtn} ${
+                theme ? styles.lighttheme : styles.darktheme
+              }`}
+            >
+              <p> {currentProfile?.followers?.length} followers </p>
+            </button>
+
+            <button
+              onClick={() => setShowfollowing(true)}
+              className={`${styles.followerbtn} ${
+                theme ? styles.lighttheme : styles.darktheme
+              }`}
+            >
+              <p>{currentProfile?.following?.length} following</p>
+            </button>
           </div>
         </div>
       </div>
+
+      {showfollower && (
+        <div>
+          <div
+            className={styles.overlay}
+            onClick={() => setShowfollower(false)}
+          ></div>
+
+          <div className={styles.modal}>
+            <Follower
+              currentaction={"followers"}
+              users={currentProfile?.followers}
+              setShowfollowing={setShowfollowing}
+              setShowfollower={setShowfollower}
+            />
+          </div>
+        </div>
+      )}
+
+      {showfollowing && (
+        <div>
+          <div
+            className={styles.overlay}
+            onClick={() => setShowfollowing(false)}
+          ></div>
+
+          <div className={styles.modal}>
+            <Follower
+              currentaction={"following"}
+              users={currentProfile?.following}
+              setShowfollowing={setShowfollowing}
+              setShowfollower={setShowfollower}
+            />
+          </div>
+        </div>
+      )}
 
       {state?.showProfile && (
         <div className={styles.overlay} onClick={() => hideEdit()}></div>

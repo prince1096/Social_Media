@@ -1,11 +1,27 @@
 import React from "react";
 
 import styles from "./Follower.module.css";
+import FollowCard from "./FollowCard";
 
-const Follower = () => {
+const Follower = ({
+  currentaction,
+  users,
+  setShowfollower,
+  setShowfollowing,
+}) => {
+  console.log(users);
   return (
     <div className={styles.followlist}>
-      <div className={styles.listdiv}></div>
+      <h2>{currentaction}</h2>
+      <div className={styles.listdiv}>
+        {users?.map((user, index) => (
+          <FollowCard
+            user={user}
+            setShowfollowing={setShowfollowing}
+            setShowfollower={setShowfollower}
+          />
+        ))}
+      </div>
     </div>
   );
 };
