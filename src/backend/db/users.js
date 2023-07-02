@@ -39,7 +39,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [
@@ -48,7 +48,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
       {
         _id: 104,
@@ -226,7 +226,7 @@ export const users = [
     ],
     bookmarks: [],
     profilePicture:
-      " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
     bio: "In oneword Celebrity",
     website: "https://example.com/johnd",
     createdAt: formatDate(),
@@ -251,7 +251,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -282,7 +282,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -313,7 +313,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -344,7 +344,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -375,7 +375,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -406,7 +406,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -439,7 +439,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -471,7 +471,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -503,7 +503,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
@@ -535,7 +535,7 @@ export const users = [
         fullName: "Sarahana Singh",
         username: "kittuaa",
         profilePicture:
-          " https://res.cloudinary.com/dejiizvkx/image/upload/v1687262891/WhatsApp_Image_2023-06-20_at_17.37.12_tfde0n.jpg ",
+          "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
       },
     ],
     followers: [],
