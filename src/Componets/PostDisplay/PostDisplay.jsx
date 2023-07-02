@@ -54,10 +54,6 @@ const PostDisplay = ({ post }) => {
     (added) => added === post._id
   );
 
-  // console.log(state?.bookmarkPost);
-
-  // console.log(bookmarkedPost);
-
   const followed = state?.following?.some(
     (users) => users?.username === post?.username
   );
@@ -67,8 +63,6 @@ const PostDisplay = ({ post }) => {
       ? unfollowServices(token, dispatch, findUser?._id)
       : followServices(token, dispatch, findUser?._id);
   };
-
-  // console.log(post.mediaURL);
 
   const { theme } = state;
 

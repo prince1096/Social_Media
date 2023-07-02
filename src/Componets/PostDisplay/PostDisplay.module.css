@@ -75,6 +75,8 @@
 
 .contentdiv {
   text-align: start;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .bookmarkbtn {
@@ -138,10 +140,8 @@
 }
 
 .image {
-  /* height: 300px; */
-  /* width: 300px; */
-  /* height: auto; */
-  width: 260px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
 }
 

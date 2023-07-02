@@ -5,15 +5,9 @@ import Profile from "../Componets/Profile/Profile";
 import { convertDate } from "../Services/DateChange/DateChange";
 
 import styles from "./UserProfile.module.css";
-import {
-  getAllPostService,
-  getUserPostService,
-} from "../Services/Post/postServices";
+import { getUserPostService } from "../Services/Post/postServices";
 import PostDisplay from "../Componets/PostDisplay/PostDisplay";
-import {
-  getAllUserDataService,
-  getUserDataService,
-} from "../Services/user/userServices";
+import { getUserDataService } from "../Services/user/userServices";
 import EditProfile from "../Componets/EditProfile/EditProfile";
 import ShowImage from "../Componets/ShowImage/ShowImage";
 
