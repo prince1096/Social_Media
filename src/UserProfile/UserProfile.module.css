@@ -125,7 +125,8 @@
 .followerbtn {
   background-color: white;
   border: none;
-  font-size: 14px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .logout {

@@ -5,9 +5,7 @@
   display: flex;
   justify-content: space-between;
   line-height: 24px;
-  /* border: 2px solid; */
   padding: 3px;
-  position: relative;
 }
 
 .hidelogo {
@@ -15,13 +13,14 @@
 }
 
 .topnavprofilebtn {
-  /* background-color: #fffffa; */
   border: none;
   cursor: pointer;
+  background-color: white;
 }
 
 .lightmode {
   font-size: 18px;
+  background-color: white;
 }
 
 .ligththeme {
@@ -41,14 +40,17 @@
   background-color: whitesmoke;
   position: absolute;
   top: 50px;
-  right: 40%;
   z-index: 99;
   overflow-x: hidden;
   border-radius: 1rem;
 }
 
+.inputdiv {
+  position: relative;
+}
+
 .topnavsearchbar {
-  width: 260px;
+  width: 240px;
   max-width: 400px;
   padding: 8px 16px;
   border: 1px solid #ccc;
@@ -88,5 +90,9 @@
 @media screen and (min-width: 768px) {
   .hidelogo {
     display: block;
+  }
+
+  .topnavsearchbar {
+    width: 260px;
   }
 }

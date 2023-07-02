@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import styles from "./TopNav.module.css";
-// import { CgProfile } from "react-icons/cg";
 import { BsInstagram } from "react-icons/bs";
 
 import { BsFillBrightnessHighFill } from "react-icons/bs";
@@ -32,15 +31,9 @@ const TopNav = () => {
       userr?.lastName?.toLowerCase().includes(searchedText?.toLowerCase())
   );
 
-  // console.log(searchedText);
-
-  // console.log(searchedUser);
-
   const themeHandler = () => {
     dispatch({ type: "THEME", payload: !state?.theme });
   };
-
-  // className={theme ? styles.lighttheme : styles.darktheme}
 
   const { theme } = state;
 
@@ -58,7 +51,7 @@ const TopNav = () => {
         <div className={styles.hidelogo}>Prinstagram</div>
       </div>
 
-      <div>
+      <div className={styles.inputdiv}>
         <input
           type="text"
           name=""
@@ -72,6 +65,26 @@ const TopNav = () => {
             dispatch({ type: "SEARCHED", payload: event.target.value })
           }
         />
+
+        {searchedText?.length > 0 && (
+          <div
+            className={`${styles.searchednav} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
+          >
+            {" "}
+            {searchedUser?.length === 0 && (
+              <h2
+                className={` ${theme ? styles.lighttheme : styles.darktheme}`}
+              >
+                No Users Matched
+              </h2>
+            )}
+            {searchedUser.map((user) => (
+              <SearchedUser user={user} />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className={styles.topnavprofile}>
@@ -82,7 +95,7 @@ const TopNav = () => {
             }`}
             onClick={() => themeHandler()}
           >
-            <BsFillBrightnessHighFill className={styles.lightmode} />
+            <BsFillBrightnessHighFill />
           </button>
         </div>
         <div className={styles.hidelogo}>
@@ -105,24 +118,6 @@ const TopNav = () => {
           </NavLink>
         </div>
       </div>
-
-      {searchedText?.length > 0 && (
-        <div
-          className={`${styles.searchednav} ${
-            theme ? styles.lighttheme : styles.darktheme
-          }`}
-        >
-          {" "}
-          {searchedUser?.length === 0 && (
-            <h2 className={` ${theme ? styles.lighttheme : styles.darktheme}`}>
-              No Users Matched
-            </h2>
-          )}
-          {searchedUser.map((user) => (
-            <SearchedUser user={user} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };

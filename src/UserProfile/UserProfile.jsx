@@ -76,14 +76,6 @@ const UserProfile = () => {
 
   const { theme } = state;
 
-  // const showfollowerHandler = (data) => {
-  //   dispatch({ type: "SHOW_FOLLOWER", payload: data });
-  // };
-
-  // const showfollowingHandler = (data) => {
-  //   dispatch({ type: "SHOW_FOLLOWING", payload: data });
-  // };
-
   return (
     <div>
       <div className={styles.profilecontainer}>
