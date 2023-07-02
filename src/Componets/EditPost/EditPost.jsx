@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 
 import styles from "./EditPost.module.css";
 
@@ -11,7 +11,7 @@ import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
 const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
   const [editPost, setEditPost] = useState({ ...postData });
-  const [imageFile, setImagefile] = useState(null);
+  // const [imageFile, setImagefile] = useState(null);
 
   const { state } = useContext(DataUserContext);
 
@@ -27,14 +27,14 @@ const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
   );
 
   const fileUploadHandle = (event) => {
-    console.log(1);
-    console.log(imageFile, "initial");
+    // console.log(1);
+    // console.log(imageFile, "initial");
     const file = event.target.files[0];
     const uploadedFile = URL.createObjectURL(file);
     console.log(uploadedFile);
     // setImagefile(uploadedFile);
     setEditPost({ ...editPost, mediaURL: uploadedFile });
-    console.log(imageFile, "final");
+    // console.log(imageFile, "final");
   };
 
   // console.log(editPost);

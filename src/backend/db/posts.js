@@ -60,7 +60,7 @@ export const posts = [
     _id: "siFFxfYI1s",
     content: "Sunshine brings my soul live",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/video/upload/v1652188886/upload-socialmedia/oikev6eomsgahnvxcijd.mp4",
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688300931/aaron-burden-BTubi6qaY6Q-unsplash_wwhhus.jpg",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -75,7 +75,7 @@ export const posts = [
     _id: "3XHvLP1fg",
     content: "Checkout This cloud pic By me",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652188492/upload-socialmedia/cakegif_q11mfm.webp",
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688300847/pero-kalimero-9BJRGlqoIUk-unsplash_xsvqsw.jpg",
     likes: {
       likeCount: 1,
       likedBy: [],
@@ -113,9 +113,9 @@ export const posts = [
   },
   {
     _id: "3XHvLP9kC",
-    content: "Yayy! Its my Birthday Today. Feeling Noicee✨",
+    content: "Great things takes its time. Feeling Good✨",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014336/ecommerce/chocolatecake4.webp",
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262409/cld-sample-4.jpg",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -149,7 +149,8 @@ export const posts = [
     _id: "tHaThLyFQh",
     content:
       "Life has got all those twists and turns. You’ve got to hold on tight and off you go.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262398/samples/landscapes/nature-mountains.jpg",
     likes: {
       likeCount: 21,
       likedBy: [],
@@ -178,7 +179,8 @@ export const posts = [
     _id: "GeMUAdi9mh",
     content:
       "No matter what people tell you, words and ideas can change the world.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262396/samples/ecommerce/accessories-bag.jpg",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -193,7 +195,7 @@ export const posts = [
     _id: "IyUlYXTrzZ",
     content: "What's Your View on It",
     mediaURL:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014828/ecommerce/pineapplemuffin1.webp",
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262388/samples/food/dessert.jpg",
     likes: {
       likeCount: 10,
       likedBy: [],
