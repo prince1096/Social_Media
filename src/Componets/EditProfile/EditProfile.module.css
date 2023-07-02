@@ -88,3 +88,13 @@
   bottom: -10px;
   right: 0px;
 }
+
+.lighttheme {
+  background-color: white;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
+}

@@ -90,6 +90,21 @@
   display: none;
 }
 
+.ligththeme {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.darktheme {
+  color: whitesmoke;
+  background-color: black;
+}
+
+.darkthemetext {
+  color: whitesmoke;
+  background-color: rgb(46, 49, 50);
+}
+
 @media screen and (min-width: 768px) {
   .emojicontainer {
     /* width: 280px; */

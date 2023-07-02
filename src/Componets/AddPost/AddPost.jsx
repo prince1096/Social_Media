@@ -69,6 +69,8 @@ const AddPost = () => {
     console.log("1");
   };
 
+  const { theme } = state;
+
   return (
     <div className={styles.addpostcontainer}>
       <div className={styles.addpost}>
@@ -87,7 +89,10 @@ const AddPost = () => {
             type="text"
             // cols="18"
             // rows="6"
-            className={styles.textarea}
+            // className={styles.textarea}
+            className={`${styles.textarea} ${
+              theme ? styles.lighttheme : styles.darkthemetext
+            }`}
             value={newPost}
             placeholder="What's Happening"
             // onChange={() => addPostHandler(event)}
@@ -111,7 +116,10 @@ const AddPost = () => {
             onChange={(event) => fileUploadHandle(event)}
           />
           <button
-            className={styles.emojibtn}
+            // className={styles.emojibtn}
+            className={`${styles.emojibtn} ${
+              theme ? styles.lighttheme : styles.darktheme
+            }`}
             onClick={() => setShowEmoji(!showEmoji)}
           >
             <BsFillEmojiSmileFill className={styles.postlogo} />

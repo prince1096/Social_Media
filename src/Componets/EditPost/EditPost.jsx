@@ -31,13 +31,25 @@ const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
   };
 
   // console.log(editPost);
+  const { theme } = state;
 
   return (
     <div>
       <div className={styles.overlay} onClick={() => setShowEdit(false)}></div>
 
-      <div className={styles.addpostcontainer}>
-        <div className={styles.addpost}>
+      <div
+        //  className={styles.addpostcontainer}
+
+        className={`${styles.addpostcontainer} ${
+          theme ? styles.lighttheme : styles.darktheme
+        }`}
+      >
+        <div
+          // className={styles.addpost}
+          className={`${styles.addpost} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+        >
           {/* <div> */}
           {/* <div className={styles.userprofile}></div> */}
           <Profile

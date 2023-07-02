@@ -46,13 +46,24 @@ const EditProfile = () => {
     dispatch({ type: "HIDE_EDITPROFILE_MODAL" });
   };
 
-  
+  const { theme } = state;
 
   return (
-    <div className={styles.editcontainer}>
+    <div
+      //  className={styles.editcontainer}
+      className={`${styles.editcontainer} ${
+        theme ? styles.lighttheme : styles.darktheme
+      }`}
+    >
       <div className={styles.cross}>
         <h2>Edit Profile</h2>
-        <button className={styles.crossbtn} onClick={() => hideEditProfile()}>
+        <button
+          // className={styles.crossbtn}
+          className={`${styles.crossbtn} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
+          onClick={() => hideEditProfile()}
+        >
           <RxCross2 />
         </button>
       </div>
@@ -77,7 +88,10 @@ const EditProfile = () => {
         </div>
 
         <button
-          className={styles.avatarbtn}
+          // className={styles.avatarbtn}
+          className={`${styles.avatarbtn} ${
+            theme ? styles.lighttheme : styles.darktheme
+          }`}
           onClick={() => setShowAvatar(!showAvatar)}
         >
           {!showAvatar ? "Show Avatar" : "Hide Avatar"}
