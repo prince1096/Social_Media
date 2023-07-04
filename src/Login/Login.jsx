@@ -113,59 +113,62 @@ const Login = () => {
 
   return (
     <div>
-      {/* <div>{loggedIn && <Loader />}</div> */}
+      <div></div>
 
-      {!loggedIn && (
-        <div className="login_container">
-          <form onSubmit={getLoginData} className="login_form_container">
-            <div id="email-block">
-              <label className="login_label">User Name</label>
-              <input
-                className="login_input"
-                type="text"
-                name="username"
-                placeholder="Username"
-                value={loginData?.username}
-                onChange={(event) =>
-                  setLoginData({ ...loginData, username: event.target.value })
-                }
-              />
+      <div className="login_half">
+        {/* <div>{loggedIn && <Loader />}</div> */}
+
+        {!loggedIn && (
+          <div className="login_container">
+            <form onSubmit={getLoginData} className="login_form_container">
+              <div id="email-block">
+                <label className="login_label">User Name</label>
+                <input
+                  className="login_input"
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  value={loginData?.username}
+                  onChange={(event) =>
+                    setLoginData({ ...loginData, username: event.target.value })
+                  }
+                />
+              </div>
+              {/* <div> */}
+              {/* <label>password</label> */}
+
+              <div id="password-block">
+                <label>password</label>
+
+                <input
+                  className="login_input"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={loginData?.password}
+                  onChange={(event) =>
+                    setLoginData({ ...loginData, password: event.target.value })
+                  }
+                />
+              </div>
+              {/* </div> */}
+
+              <button className="login_button" type="submit">
+                Login
+              </button>
+            </form>
+
+            <div className="guest_login_container">
+              <button
+                className="login_button guest_login"
+                onClick={guestLoginHandler}
+                type="submit"
+              >
+                Login as Guest
+              </button>
             </div>
-            {/* <div> */}
-            {/* <label>password</label> */}
 
-            <div id="password-block">
-              <label>password</label>
-
-              <input
-                className="login_input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={loginData?.password}
-                onChange={(event) =>
-                  setLoginData({ ...loginData, password: event.target.value })
-                }
-              />
-            </div>
-            {/* </div> */}
-
-            <button className="login_button" type="submit">
-              Login
-            </button>
-          </form>
-
-          <div className="guest_login_container">
-            <button
-              className="login_button guest_login"
-              onClick={guestLoginHandler}
-              type="submit"
-            >
-              Login as Guest
-            </button>
-          </div>
-
-          {/* <ToastContainer
+            {/* <ToastContainer
             position="bottom-right"
             autoClose={1000}
             hideProgressBar={false}
@@ -178,12 +181,13 @@ const Login = () => {
             theme="colored"
           /> */}
 
-          <Link to="/signup" className="link_to_signup">
-            {" "}
-            Create a New Account{" "}
-          </Link>
-        </div>
-      )}
+            <Link to="/signup" className="link_to_signup">
+              {" "}
+              Create a New Account{" "}
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

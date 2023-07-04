@@ -82,6 +82,13 @@ Generic Styles * {
   color: #333;
 }
 
+.login_half {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (min-width: 530px) {
   .login_form_container {
     padding: 2rem;

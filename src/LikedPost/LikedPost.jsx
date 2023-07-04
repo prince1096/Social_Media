@@ -14,6 +14,8 @@ const LikedPost = () => {
     <div>
       <div>
         <div className={styles.container}>
+          {state?.likedPost?.length === 0 && <h2>Like some Post</h2>}
+
           {state?.likedPost?.map((post) => (
             <PostDisplay post={post} />
           ))}

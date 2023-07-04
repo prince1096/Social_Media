@@ -33,7 +33,7 @@ export const users = [
     firstName: "Prince",
     lastName: "Raj",
     username: "princeraj",
-    website: "https://example.com/johnd",
+    website: "https://princerajdev.netlify.app/",
 
     // email: "princeraj@gmail.com",
     following: [
