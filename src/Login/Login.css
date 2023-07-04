@@ -74,6 +74,10 @@ Generic Styles * {
   display: block;
 }
 
+.prinstagram {
+  font-family: Billabong;
+}
+
 .login_container {
   max-width: 30rem;
   margin: auto;
@@ -82,11 +86,17 @@ Generic Styles * {
   color: #333;
 }
 
-.login_half {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.logindiv_first {
+  display: none;
+}
+
+.logindiv_second {
+  display: grid;
+}
+
+.login_secondhalf {
+  justify-self: center;
+  align-self: center;
 }
 
 @media screen and (min-width: 530px) {
@@ -99,3 +109,83 @@ Generic Styles * {
     max-width: 40rem;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .login_full {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .logindiv_first {
+    background-color: #90e0ef;
+    width: 50vw;
+    height: 100vh;
+    display: grid;
+    /* display: block; */
+  }
+
+  .login_firsthalf {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .login_image {
+    height: 600px;
+    border: 8px solid rgb(89, 86, 86);
+    border-radius: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logindiv_second {
+    display: grid;
+  }
+
+  .login_secondhalf {
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  .login_full {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .login_firsthalf {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .login_image {
+    width: 400px;
+    height: 600px;
+    object-fit: contain;
+    border: 8px solid rgb(89, 86, 86);
+    border-radius: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logindiv_first {
+    background-color: #90e0ef;
+    width: 50vw;
+    height: 100vh;
+    display: grid;
+    display: block;
+  }
+
+  .logindiv_second {
+    display: grid;
+  }
+
+  .login_secondhalf {
+    justify-self: center;
+    align-self: center;
+  }
+} */

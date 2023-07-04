@@ -66,144 +66,167 @@ const Signup = () => {
   };
 
   return (
-    <div className={styles.login_container}>
-      <form onSubmit={signupHandler} className={styles.login_form_container}>
-        <div className={styles.firstname_block}>
-          <label htmlFor="first" className={styles.login_label}>
-            First Name
-          </label>
-          <input
-            className={styles.login_input}
-            type="text"
-            id="first"
-            value={userData?.firstname}
-            onChange={(event) =>
-              setUserData({ ...userData, firstname: event.target.value })
-            }
-            name="name"
-            placeholder="First Name"
+    <div className={styles.login_full}>
+      <div className={styles.logindiv_first}>
+        <div className={styles.login_firsthalf}>
+          <img
+            src="https://res.cloudinary.com/dejiizvkx/image/upload/v1688495943/WhatsApp_Image_2023-07-04_at_23.54.05_x03y6t.jpg"
+            alt="login_Image"
+            className={styles.login_image}
           />
         </div>
+      </div>
 
-        <div id="lastname-block">
-          <label htmlFor="last" className={styles.login_label}>
-            Last Name
-          </label>
-          <input
-            className={styles.login_input}
-            type="text"
-            id="last"
-            value={userData?.lastname}
-            onChange={(event) =>
-              setUserData({ ...userData, lastname: event.target.value })
-            }
-            name="name"
-            placeholder="Last Name"
-          />
-        </div>
-
-        <div className={styles.email_block}>
-          <label className={styles.login_label} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={styles.login_input}
-            id="email"
-            type="email"
-            name="email"
-            value={userData?.email}
-            onChange={(event) =>
-              setUserData({ ...userData, email: event.target.value })
-            }
-            placeholder="email"
-          />
-        </div>
-
-        <div className={styles.username_block}>
-          <label htmlFor="user" className={styles.login_label}>
-            Username
-          </label>
-          <input
-            className={styles.login_input}
-            type="username"
-            name="username"
-            id="user"
-            value={userData?.username}
-            onChange={(event) =>
-              setUserData({ ...userData, username: event.target.value })
-            }
-            placeholder="Username"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="pass" className={styles.login_label}>
-            password
-          </label>
-
-          <div className={`${styles.password_block} ${styles.passworddiv}`}>
-            <input
-              className={styles.login_input_password}
-              type={showPassword ? "text" : "password"}
-              // type="password"
-              name="password"
-              id="pass"
-              value={userData?.password}
-              onChange={(event) =>
-                setUserData({ ...userData, password: event.target.value })
-              }
-              placeholder="Password"
-            />
-            <button
-              className={styles.showhidelogo}
-              onClick={() => setShowPassword(!showPassword)}
+      <div className={styles.logindiv_second}>
+        <div className={styles.login_secondhalf}>
+          <div className={styles.login_container}>
+            <form
+              onSubmit={signupHandler}
+              className={styles.login_form_container}
             >
-              {showPassword ? (
-                <BiShow className={styles.showhidelogo} />
-              ) : (
-                <BiHide className={styles.showhidelogo} />
-              )}
-            </button>
+              <div className={styles.firstname_block}>
+                <label htmlFor="first" className={styles.login_label}>
+                  First Name
+                </label>
+                <input
+                  className={styles.login_input}
+                  type="text"
+                  id="first"
+                  value={userData?.firstname}
+                  onChange={(event) =>
+                    setUserData({ ...userData, firstname: event.target.value })
+                  }
+                  name="name"
+                  placeholder="First Name"
+                />
+              </div>
+
+              <div id="lastname-block">
+                <label htmlFor="last" className={styles.login_label}>
+                  Last Name
+                </label>
+                <input
+                  className={styles.login_input}
+                  type="text"
+                  id="last"
+                  value={userData?.lastname}
+                  onChange={(event) =>
+                    setUserData({ ...userData, lastname: event.target.value })
+                  }
+                  name="name"
+                  placeholder="Last Name"
+                />
+              </div>
+
+              <div className={styles.email_block}>
+                <label className={styles.login_label} htmlFor="email">
+                  Email
+                </label>
+                <input
+                  className={styles.login_input}
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={userData?.email}
+                  onChange={(event) =>
+                    setUserData({ ...userData, email: event.target.value })
+                  }
+                  placeholder="email"
+                />
+              </div>
+
+              <div className={styles.username_block}>
+                <label htmlFor="user" className={styles.login_label}>
+                  Username
+                </label>
+                <input
+                  className={styles.login_input}
+                  type="username"
+                  name="username"
+                  id="user"
+                  value={userData?.username}
+                  onChange={(event) =>
+                    setUserData({ ...userData, username: event.target.value })
+                  }
+                  placeholder="Username"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="pass" className={styles.login_label}>
+                  password
+                </label>
+
+                <div
+                  className={`${styles.password_block} ${styles.passworddiv}`}
+                >
+                  <input
+                    className={styles.login_input_password}
+                    type={showPassword ? "text" : "password"}
+                    // type="password"
+                    name="password"
+                    id="pass"
+                    value={userData?.password}
+                    onChange={(event) =>
+                      setUserData({ ...userData, password: event.target.value })
+                    }
+                    placeholder="Password"
+                  />
+                  <button
+                    className={styles.showhidelogo}
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? (
+                      <BiShow className={styles.showhidelogo} />
+                    ) : (
+                      <BiHide className={styles.showhidelogo} />
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="confirm" className={styles.login_label}>
+                  {" "}
+                  confirm password
+                </label>
+                <div
+                  className={`${styles.password_block} ${styles.passworddiv}`}
+                >
+                  <input
+                    className={styles.login_input_password}
+                    type="password"
+                    name="password"
+                    id="confirm"
+                    value={userData?.confirmPassword}
+                    onChange={(event) =>
+                      setUserData({
+                        ...userData,
+                        confirmPassword: event.target.value,
+                      })
+                    }
+                    placeholder=" Confirm Password"
+                  />
+                  <button
+                    className={styles.showhidelogo}
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? (
+                      <BiShow className={styles.showhidelogo} />
+                    ) : (
+                      <BiHide className={styles.showhidelogo} />
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <button className={styles.login_button} type="submit">
+                SignUp
+              </button>
+            </form>
           </div>
         </div>
-
-        <div>
-          <label htmlFor="confirm" className={styles.login_label}>
-            {" "}
-            confirm password
-          </label>
-          <div className={`${styles.password_block} ${styles.passworddiv}`}>
-            <input
-              className={styles.login_input_password}
-              type="password"
-              name="password"
-              id="confirm"
-              value={userData?.confirmPassword}
-              onChange={(event) =>
-                setUserData({
-                  ...userData,
-                  confirmPassword: event.target.value,
-                })
-              }
-              placeholder=" Confirm Password"
-            />
-            <button
-              className={styles.showhidelogo}
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? (
-                <BiShow className={styles.showhidelogo} />
-              ) : (
-                <BiHide className={styles.showhidelogo} />
-              )}
-            </button>
-          </div>
-        </div>
-
-        <button className={styles.login_button} type="submit">
-          SignUp
-        </button>
-      </form>
+      </div>
     </div>
   );
 };

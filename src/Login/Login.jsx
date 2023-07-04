@@ -5,6 +5,8 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { getUserDataService } from "../Services/user/userServices";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
+import { BsInstagram } from "react-icons/bs";
+
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // import Loader from "../Components/Loader/Loader";
@@ -112,63 +114,83 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div></div>
+    <div className="login_full">
+      <div className="logindiv_first">
+        <div className="login_firsthalf">
+          <img
+            src="https://res.cloudinary.com/dejiizvkx/image/upload/v1688495943/WhatsApp_Image_2023-07-04_at_23.54.05_x03y6t.jpg"
+            alt="login_Image"
+            className="login_image"
+          />
+        </div>
+      </div>
 
-      <div className="login_half">
-        {/* <div>{loggedIn && <Loader />}</div> */}
+      <div className="logindiv_second">
+        <div className="login_secondhalf">
+          {/* <div>{loggedIn && <Loader />}</div> */}
 
-        {!loggedIn && (
-          <div className="login_container">
-            <form onSubmit={getLoginData} className="login_form_container">
-              <div id="email-block">
-                <label className="login_label">User Name</label>
-                <input
-                  className="login_input"
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  value={loginData?.username}
-                  onChange={(event) =>
-                    setLoginData({ ...loginData, username: event.target.value })
-                  }
-                />
+          {!loggedIn && (
+            <div className="login_container">
+              <div>
+                {/* <BsInstagram /> */}
+                <h2 className="prinstagram">Prinstagram</h2>
               </div>
-              {/* <div> */}
-              {/* <label>password</label> */}
 
-              <div id="password-block">
-                <label>password</label>
+              <form onSubmit={getLoginData} className="login_form_container">
+                <div id="email-block">
+                  <label className="login_label">User Name</label>
+                  <input
+                    className="login_input"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={loginData?.username}
+                    onChange={(event) =>
+                      setLoginData({
+                        ...loginData,
+                        username: event.target.value,
+                      })
+                    }
+                  />
+                </div>
+                {/* <div> */}
+                {/* <label>password</label> */}
 
-                <input
-                  className="login_input"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={loginData?.password}
-                  onChange={(event) =>
-                    setLoginData({ ...loginData, password: event.target.value })
-                  }
-                />
+                <div id="password-block">
+                  <label>password</label>
+
+                  <input
+                    className="login_input"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={loginData?.password}
+                    onChange={(event) =>
+                      setLoginData({
+                        ...loginData,
+                        password: event.target.value,
+                      })
+                    }
+                  />
+                </div>
+                {/* </div> */}
+
+                <button className="login_button" type="submit">
+                  Login
+                </button>
+              </form>
+
+              <div className="guest_login_container">
+                <button
+                  className="login_button guest_login"
+                  onClick={guestLoginHandler}
+                  type="submit"
+                >
+                  Login as Guest
+                </button>
               </div>
-              {/* </div> */}
 
-              <button className="login_button" type="submit">
-                Login
-              </button>
-            </form>
-
-            <div className="guest_login_container">
-              <button
-                className="login_button guest_login"
-                onClick={guestLoginHandler}
-                type="submit"
-              >
-                Login as Guest
-              </button>
-            </div>
-
-            {/* <ToastContainer
+              {/* <ToastContainer
             position="bottom-right"
             autoClose={1000}
             hideProgressBar={false}
@@ -181,12 +203,13 @@ const Login = () => {
             theme="colored"
           /> */}
 
-            <Link to="/signup" className="link_to_signup">
-              {" "}
-              Create a New Account{" "}
-            </Link>
-          </div>
-        )}
+              <Link to="/signup" className="link_to_signup">
+                {" "}
+                Create a New Account{" "}
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
