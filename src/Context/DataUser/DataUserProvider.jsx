@@ -35,6 +35,7 @@ const initialState = {
   showProfile: false,
   searchedText: "",
   theme: true,
+  stories: [],
 };
 
 const DataUserProvider = ({ children }) => {
@@ -92,6 +93,9 @@ const DataUserProvider = ({ children }) => {
             (post) => post._id !== action.payload._id
           ),
         };
+
+      case "STORY":
+        return { ...state, stories: action.payload };
 
       case "SORT_BY_DATE":
         return {

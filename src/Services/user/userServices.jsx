@@ -38,6 +38,7 @@ export const editUserService = async (token, dispatch, userData) => {
     // );
 
     dispatch({ type: "UPDATED_USER", payload: response?.data?.user });
+    dispatch({ type: "STORY", payload: response?.data?.user?.status });
   } catch (error) {
     console.log(error);
   }

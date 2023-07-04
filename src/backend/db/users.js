@@ -17,6 +17,9 @@ export const users = [
     following: [],
     followers: [],
     bookmarks: [],
+    status: [
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262397/samples/food/spices.jpg",
+    ],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     website: "https://example.com/johnd",
@@ -228,6 +231,7 @@ export const users = [
     profilePicture:
       "https://res.cloudinary.com/dejiizvkx/image/upload/v1688307074/WhatsApp_Image_2023-07-02_at_19.39.00_mmuxoh.jpg",
     bio: "In oneword Celebrity",
+    // password: "12345",
     website: "https://example.com/johnd",
     createdAt: formatDate(),
     updatedAt: formatDate(),

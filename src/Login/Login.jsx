@@ -31,6 +31,10 @@ const Login = () => {
   //   ({ username }) => username === guestUser?.username
   // );
 
+  const findUser = state?.user?.find(
+    (userr) => userr.username === loginData?.username
+  );
+
   const getLoginData = async (event) => {
     event.preventDefault();
 
@@ -58,6 +62,8 @@ const Login = () => {
           setIsLoggedIn(true);
 
           localStorage.setItem("token", data?.encodedToken);
+          localStorage.setItem("userInformation", JSON.stringify(findUser));
+
           setToken(data?.encodedToken);
           navigate(location?.state?.from.pathname || "/", { replace: true });
         }

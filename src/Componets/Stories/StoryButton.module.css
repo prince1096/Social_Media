@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* min-height: 100vh; */
+  margin-top: 10px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(230, 230, 230);
+  place-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.container {
+  overflow: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid rgb(204, 204, 204);
+  background-color: white;
+  padding: 2rem;
+  width: 90%;
+}
+
+.story_container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 5rem;
+  grid-gap: 2rem;
+}
+
+.story_container .content {
+  display: grid;
+  grid-gap: 0.5rem;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in;
+}
+
+.story_container .content:hover {
+  transform: scale(1.1);
+}
+
+.story_container .content .img_container {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: radial-gradient(rgba(0, 0, 0, 0.15) 60%, transparent 0),
+    radial-gradient(rgba(255, 255, 255, 1) 65%, transparent 0),
+    linear-gradient(to top right, orange, deeppink);
+
+  /* background: radial-gradient(rgba(0, 0, 0, 0.15) 60%, transparent 0),
+      radial-gradient(rgba(255, 255, 255, 1) 65%, transparent 0),
+      linear-gradient(to top right, orange, deeppink); */
+
+  background-image: linear-gradient(
+      to right,
+      #ff6b6b,
+      #feca57,
+      #1dd1a1,
+      #48dbfb,
+      #ff9ff3
+    )
+    1;
+
+  /* background: red; */
+
+  /* background-image: yellowgreen; */
+}
+
+.story_container .content .img_container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: circle(42%);
+}
+
+.story_container .content:last-child::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 100%;
+  right: -2rem;
+}
+
+.content {
+  border: none;
+  background-color: rgb(230, 230, 230);
+}
+
+/* .story-container .content .text-container{
+    overflow: hidden;
+    white-space: ;
+  } */

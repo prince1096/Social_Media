@@ -114,8 +114,8 @@ const UserProfile = () => {
           <div className={styles.name}>
             <div>
               <p className={styles.username}>
-                {currentProfile?.firstName}
-                {currentProfile?.lastName}
+                {currentProfile?.firstName || currentProfile?.firstname + " "}
+                {currentProfile?.lastName || currentProfile?.lastname}
               </p>
               <p>@{currentProfile?.username}</p>
             </div>
