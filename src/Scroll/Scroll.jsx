@@ -58,6 +58,8 @@ const Scroll = () => {
   return (
     <div>
       <div className={styles.container}>
+        <div>{/* <Filter /> */}</div>
+
         <div className={styles.addpost}>
           <AddPost />
         </div>

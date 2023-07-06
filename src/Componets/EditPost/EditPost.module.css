@@ -86,6 +86,11 @@
   background-color: black;
 }
 
+.darkthemetext {
+  background-color: rgb(46, 49, 50);
+  color: whitesmoke;
+}
+
 .inputurl {
   /* display: none;  */
 }

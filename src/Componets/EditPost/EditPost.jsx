@@ -83,7 +83,10 @@ const EditPost = ({ showEdit, setShowEdit, token, postData, dispatch }) => {
               id=""
               cols="30"
               rows="6"
-              className={styles.textarea}
+              // className={styles.textarea}
+              className={`${styles.textarea} ${
+                theme ? styles.lighttheme : styles.darkthemetext
+              }`}
               value={editPost?.content}
               placeholder="What's Happening"
               // onChange={() => addPostHandler(event)}

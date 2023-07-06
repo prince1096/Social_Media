@@ -3,12 +3,19 @@ import React, { useState } from "react";
 import styles from "./PostDisplay.module.css";
 import { deletePostService } from "../../Services/Post/postServices";
 import EditPost from "../EditPost/EditPost";
+import { AiFillEdit } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 
 const Edit = ({ postData, token, dispatch, theme }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   return (
-    <div className={styles.editpostcontainer}>
+    <div
+      // className={styles.editpostcontainer}
+      className={`${styles.editpostcontainer} ${
+        theme ? styles.lighttheme : styles.darkthemecontainer
+      }`}
+    >
       <div>
         <button
           className={`${styles.editbtn} ${
@@ -16,7 +23,7 @@ const Edit = ({ postData, token, dispatch, theme }) => {
           }`}
           onClick={() => setShowEdit(true)}
         >
-          Edit
+          <AiFillEdit /> Edit
         </button>
       </div>
 
@@ -27,6 +34,7 @@ const Edit = ({ postData, token, dispatch, theme }) => {
             theme ? styles.lighttheme : styles.darktheme
           }`}
         >
+          <AiFillDelete />
           Delete
         </button>
       </div>

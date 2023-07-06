@@ -90,17 +90,21 @@
 }
 
 .editpostcontainer {
-  width: 80px;
+  width: 90px;
   margin: 2px;
   padding: 2px;
-  border: 1px solid #d3d3d3;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.darkthemecontainer {
+  border: 1px solid #d3d3d3;
 }
 
 .editbtn,
 .deletebtn {
   font-size: 18px;
-  /* background-color: white; */
+  background-color: white;
   padding: 3px;
   border: none;
   cursor: pointer;

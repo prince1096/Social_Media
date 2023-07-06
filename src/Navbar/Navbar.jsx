@@ -157,31 +157,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* <div
-        className={`${styles.navlogocontainer} ${styles.hidenavbar} ${styles.navend} `}
-      >
-        <GiHamburgerMenu />
-        <span className={styles.navlogoname}>More</span>
-      </div> */}
-
-      {/* <div> */}
-
-      <PostModal>
+      <PostModal theme={theme}>
         <AddPost />
       </PostModal>
-
-      {/* {showModal && (
-        <div
-          className={styles.overlay}
-          onClick={() => setShowModal(false)}
-        ></div>
-      )}
-      {showModal && (
-        <div className={styles.modal}>
-          <NavAdd setShowModal={setShowModal} />
-        </div>
-      )} */}
-      {/* </div> */}
     </div>
   );
 };
