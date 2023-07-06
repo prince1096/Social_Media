@@ -72,6 +72,7 @@
 
 .instagram {
   font-size: 18px;
+  font-weight: bolder;
 }
 
 .topnavlogo {
@@ -90,6 +91,9 @@
 @media screen and (min-width: 768px) {
   .hidelogo {
     display: block;
+    font-family: lobster;
+    font-size: 20px;
+    /* font-weight: bolder; */
   }
 
   .topnavsearchbar {

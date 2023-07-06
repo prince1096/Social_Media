@@ -9,7 +9,7 @@ import { LuShare2 } from "react-icons/lu";
 import { FaRegBookmark } from "react-icons/fa";
 
 import AddPost from "../Componets/AddPost/AddPost";
-import Profile from "../Componets/Profile/Profile";
+import Filter from "../Componets/Filter/Filter";
 import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
@@ -58,10 +58,12 @@ const Scroll = () => {
   return (
     <div>
       <div className={styles.container}>
-        <div>{/* <Filter /> */}</div>
-
         <div className={styles.addpost}>
           <AddPost />
+        </div>
+
+        <div className={styles.filtermobile}>
+          <Filter />
         </div>
 
         {sortedLikePost?.map((post) => (

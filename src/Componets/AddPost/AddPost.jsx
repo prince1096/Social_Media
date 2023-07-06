@@ -5,7 +5,7 @@ import styles from "./AddPost.module.css";
 
 // import { EmojiPicker }
 
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { SuggestionMode } from "emoji-picker-react";
 
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
@@ -63,10 +63,11 @@ const AddPost = () => {
     setImagefile(uploadedFile);
   };
 
-  const emojiHandler = (emojiObj) => {
-    console.log(emojiObj);
-    console.log(emojiObj?.string);
-    console.log("1");
+  const emojiHandler = (event, emojiObj) => {
+    // console.log(emojiObj.emoji);
+    // console.log(emojiObj);
+
+    setNewPost((prev) => prev + emojiObj.emoji);
   };
 
   const { theme } = state;
@@ -129,12 +130,20 @@ const AddPost = () => {
               <EmojiPicker
                 width="15em"
                 className={styles.emojicontainer}
-                onEmojiClick={(emojiObj) => emojiHandler(emojiObj)}
+                onEmojiClick={emojiHandler}
+                suggestedEmojisMode={SuggestionMode.RECENT}
               />
             )}
           </div>
           <div className={styles.emojidivdesk}>
-            {showEmoji && <EmojiPicker className={styles.emojicontainer} />}
+            {showEmoji && (
+              <EmojiPicker
+                className={styles.emojicontainer}
+                // onSelect={emojiHandler}
+                onEmojiClick={emojiHandler}
+                suggestedEmojisMode={SuggestionMode.RECENT}
+              />
+            )}
           </div>
         </div>
 
