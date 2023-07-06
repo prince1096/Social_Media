@@ -64,7 +64,7 @@
   display: inline-block;
   padding: 0.75rem 2.25rem;
   border-radius: 30px;
-  background-color: #90e0ef;
+  background-color: #099ab4;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
@@ -125,12 +125,32 @@
   width: 20rem;
   margin: auto;
   padding: 1rem;
-  border: solid 1px #ddd;
+  /* border: solid 1px #ddd; */
+  border: none;
   color: #333;
 }
 
 .logindiv_first {
   display: none;
+}
+
+.logindiv_second {
+  background-color: white;
+
+  display: grid;
+}
+
+.login_secondhalf {
+  justify-self: center;
+  align-self: center;
+}
+
+.prinstagram {
+  font-family: lobster;
+}
+
+.login_form_container {
+  text-align: start;
 }
 
 @media screen and (min-width: 530px) {
@@ -169,7 +189,7 @@
   }
 
   .logindiv_first {
-    background-color: #90e0ef;
+    background-color: #099ab4;
     width: 50vw;
     height: 100vh;
     display: grid;

@@ -10,6 +10,10 @@ Generic Styles * {
   text-align: center;
 }
 
+body {
+  background-color: white;
+}
+
 .login_form_container {
   padding: 1rem;
 
@@ -53,7 +57,7 @@ Generic Styles * {
   display: inline-block;
   padding: 0.75rem 2.25rem;
   border-radius: 30px;
-  background-color: #90e0ef;
+  background-color: #099ab4;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
@@ -70,19 +74,26 @@ Generic Styles * {
   color: #333;
 }
 
+.login_form_container {
+  text-align: start;
+}
+
 .login_label {
   display: block;
 }
 
 .prinstagram {
-  font-family: Billabong;
+  font-family: "Inter", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Lobster";
 }
 
 .login_container {
   max-width: 30rem;
   margin: auto;
   padding: 1rem;
-  border: solid 1px #ddd;
+  /* border: solid 1px #ddd; */
+  border: none;
   color: #333;
 }
 
@@ -91,6 +102,7 @@ Generic Styles * {
 }
 
 .logindiv_second {
+  background-color: white;
   display: grid;
 }
 
@@ -119,7 +131,7 @@ Generic Styles * {
   }
 
   .logindiv_first {
-    background-color: #90e0ef;
+    background-color: #099ab4;
     width: 50vw;
     height: 100vh;
     display: grid;
@@ -148,44 +160,3 @@ Generic Styles * {
     align-self: center;
   }
 }
-
-/* @media screen and (min-width: 1024px) {
-  .login_full {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-  }
-
-  .login_firsthalf {
-    justify-self: center;
-    align-self: center;
-  }
-
-  .login_image {
-    width: 400px;
-    height: 600px;
-    object-fit: contain;
-    border: 8px solid rgb(89, 86, 86);
-    border-radius: 12px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .logindiv_first {
-    background-color: #90e0ef;
-    width: 50vw;
-    height: 100vh;
-    display: grid;
-    display: block;
-  }
-
-  .logindiv_second {
-    display: grid;
-  }
-
-  .login_secondhalf {
-    justify-self: center;
-    align-self: center;
-  }
-} */

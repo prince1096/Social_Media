@@ -7,6 +7,8 @@ import { BiHide } from "react-icons/bi";
 import { BiShow } from "react-icons/bi";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
+import profile from "../assets/profile.jpeg";
+
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -69,17 +71,15 @@ const Signup = () => {
     <div className={styles.login_full}>
       <div className={styles.logindiv_first}>
         <div className={styles.login_firsthalf}>
-          <img
-            src="https://res.cloudinary.com/dejiizvkx/image/upload/v1688495943/WhatsApp_Image_2023-07-04_at_23.54.05_x03y6t.jpg"
-            alt="login_Image"
-            className={styles.login_image}
-          />
+          <img src={profile} alt="login_Image" className={styles.login_image} />
         </div>
       </div>
 
       <div className={styles.logindiv_second}>
         <div className={styles.login_secondhalf}>
           <div className={styles.login_container}>
+            <h2 className={styles.prinstagram}>Prinstagram</h2>
+
             <form
               onSubmit={signupHandler}
               className={styles.login_form_container}

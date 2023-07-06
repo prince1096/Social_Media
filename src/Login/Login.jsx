@@ -7,6 +7,8 @@ import { getUserDataService } from "../Services/user/userServices";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import { BsInstagram } from "react-icons/bs";
 
+import profile from "../assets/profile.jpeg";
+
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // import Loader from "../Components/Loader/Loader";
@@ -117,11 +119,7 @@ const Login = () => {
     <div className="login_full">
       <div className="logindiv_first">
         <div className="login_firsthalf">
-          <img
-            src="https://res.cloudinary.com/dejiizvkx/image/upload/v1688495943/WhatsApp_Image_2023-07-04_at_23.54.05_x03y6t.jpg"
-            alt="login_Image"
-            className="login_image"
-          />
+          <img src={profile} alt="login_Image" className="login_image" />
         </div>
       </div>
 
@@ -138,7 +136,7 @@ const Login = () => {
 
               <form onSubmit={getLoginData} className="login_form_container">
                 <div id="email-block">
-                  <label className="login_label">User Name</label>
+                  <label className="login_label">username</label>
                   <input
                     className="login_input"
                     type="text"
