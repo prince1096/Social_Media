@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import styles from "./TopNav.module.css";
 
 import { BsFillBrightnessHighFill } from "react-icons/bs";
+import { MdDarkMode } from "react-icons/md";
+
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 import Profile from "../Componets/Profile/Profile";
 import SearchedUser from "./SearchedUser";
@@ -90,7 +92,7 @@ const TopNav = () => {
             }`}
             onClick={() => themeHandler()}
           >
-            <BsFillBrightnessHighFill />
+            {theme ? <BsFillBrightnessHighFill /> : <MdDarkMode />}
           </button>
         </div>
         <div className={styles.hidelogo}>
