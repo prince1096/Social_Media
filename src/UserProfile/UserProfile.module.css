@@ -26,6 +26,11 @@
   font-weight: bolder;
 }
 
+.hreflink {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
 .website {
   display: flex;
   flex-direction: column;

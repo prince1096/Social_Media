@@ -44,9 +44,7 @@ const TopNav = () => {
       }`}
     >
       <div className={`${styles.topnavlogo}  `}>
-        <div>
-          <BsInstagram className={styles.instagram} />
-        </div>
+        <div>{/* <BsInstagram className={styles.instagram} /> */}</div>
 
         <div className={styles.hidelogo}>Prinstagram</div>
       </div>

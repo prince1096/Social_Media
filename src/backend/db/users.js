@@ -138,7 +138,7 @@ export const users = [
     firstName: "Sarahana",
     lastName: "Singh",
     username: "kittuaa",
-    password: "password123",
+    password: "meribestie",
     following: [
       {
         _id: 102,

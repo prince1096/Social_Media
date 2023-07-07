@@ -69,6 +69,26 @@ const UserProfile = () => {
 
   const { theme } = state;
 
+  const postedPage = [...state?.userPost]?.sort((a, b) => {
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  });
+
+  const sortedDatePost =
+    state?.sortByDate === "date"
+      ? [...postedPage]?.sort((a, b) => {
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        })
+      : [...postedPage];
+
+  const sortedLikePost =
+    state?.sortByLike === "like"
+      ? [
+          ...sortedDatePost?.sort(
+            (a, b) => b.likes.likeCount - a.likes.likeCount
+          ),
+        ]
+      : [...sortedDatePost];
+
   return (
     <div>
       <div className={styles.profilecontainer}>
@@ -142,9 +162,23 @@ const UserProfile = () => {
 
           <div className={styles.website}>
             <div>
-              {currentProfile?.website
+              <a
+                href={
+                  currentProfile?.website
+                    ? currentProfile?.website
+                    : "https://princerajdev.netlify.app/"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.hreflink}
+              >
+                {currentProfile?.website
+                  ? currentProfile?.website
+                  : "https://princerajdev.netlify.app/"}
+              </a>
+              {/* {currentProfile?.website
                 ? currentProfile?.website
-                : "https://princerajdev.netlify.app/"}
+                : "https://princerajdev.netlify.app/"} */}
             </div>
             <div>{convertDate(currentProfile?.createdAt)}</div>
           </div>
@@ -221,7 +255,7 @@ const UserProfile = () => {
       )}
 
       <div className={styles.userpostdiv}>
-        {state?.userPost?.map((post) => (
+        {sortedLikePost?.map((post) => (
           <PostDisplay post={post} key={post._id} />
         ))}
       </div>
