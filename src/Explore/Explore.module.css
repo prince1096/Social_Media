@@ -1,14 +1,12 @@
 .container {
   margin: 0 auto;
   width: 300px;
-  /* text-align: center; */
 }
 
 .postcard {
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
   padding: 0.3rem;
   margin: 1rem;
-  /* text-align: center; */
 }
 
 .addpost {
@@ -50,9 +48,17 @@
   font-size: 21px;
 }
 
+.filtermobile {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 360px;
+  }
+
+  .filtermobile {
+    display: none;
   }
 }
 
