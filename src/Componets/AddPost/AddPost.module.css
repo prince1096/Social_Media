@@ -4,11 +4,7 @@
 }
 
 .addpostcontainer {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   margin: 0 auto;
-  /* width: 350px; */
   padding: 0.8rem;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -78,7 +74,6 @@
 }
 
 .emojicontainer {
-  /* width: 280px; */
   display: block;
 }
 
@@ -107,7 +102,6 @@
 
 @media screen and (min-width: 768px) {
   .emojicontainer {
-    /* width: 280px; */
     display: none;
   }
 

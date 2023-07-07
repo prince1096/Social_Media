@@ -3,9 +3,8 @@ import { v4 as uuid } from "uuid";
 
 import styles from "./AddPost.module.css";
 
-// import { EmojiPicker }
-
-import EmojiPicker, { SuggestionMode } from "emoji-picker-react";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
@@ -32,8 +31,6 @@ const AddPost = () => {
     setNewPost(event.target.value);
   };
 
-  // console.log(imageFile);
-
   const backendpost = {
     id: uuid(),
     content: newPost,
@@ -41,8 +38,6 @@ const AddPost = () => {
   };
 
   const uploadHandler = () => {
-    // console.log(backendpost.content);
-    // console.log(backendpost.mediaURL);
     if (backendpost.content === "" && backendpost.mediaURL === null) {
       return;
     }
@@ -63,11 +58,8 @@ const AddPost = () => {
     setImagefile(uploadedFile);
   };
 
-  const emojiHandler = (event, emojiObj) => {
-    // console.log(emojiObj.emoji);
-    // console.log(emojiObj);
-
-    setNewPost((prev) => prev + emojiObj.emoji);
+  const emojiHandler = (event) => {
+    setNewPost((prev) => prev + event.native);
   };
 
   const { theme } = state;
@@ -76,7 +68,6 @@ const AddPost = () => {
     <div className={styles.addpostcontainer}>
       <div className={styles.addpost}>
         <div>
-          {/* <div className={styles.userprofile}></div> */}
           <Profile
             url={currentUser?.profilePicture}
             height={"60px"}
@@ -88,17 +79,12 @@ const AddPost = () => {
             name=""
             id=""
             type="text"
-            // cols="18"
-            // rows="6"
-            // className={styles.textarea}
             className={`${styles.textarea} ${
               theme ? styles.lighttheme : styles.darkthemetext
             }`}
             value={newPost}
             placeholder="What's Happening"
-            // onChange={() => addPostHandler(event)}
             onChange={handleTextareaChange}
-            // autoFocus
           ></textarea>
         </div>
       </div>
@@ -117,7 +103,6 @@ const AddPost = () => {
             onChange={(event) => fileUploadHandle(event)}
           />
           <button
-            // className={styles.emojibtn}
             className={`${styles.emojibtn} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
@@ -127,32 +112,28 @@ const AddPost = () => {
           </button>
           <div className={styles.emojidiv}>
             {showEmoji && (
-              <EmojiPicker
-                width="15em"
-                className={styles.emojicontainer}
-                onEmojiClick={emojiHandler}
-                suggestedEmojisMode={SuggestionMode.RECENT}
+              <Picker
+                dynamicWidth
+                className={styles.picker}
+                data={data}
+                previewPosition="none"
+                onEmojiSelect={emojiHandler}
               />
             )}
           </div>
           <div className={styles.emojidivdesk}>
             {showEmoji && (
-              <EmojiPicker
-                className={styles.emojicontainer}
-                // onSelect={emojiHandler}
-                onEmojiClick={emojiHandler}
-                suggestedEmojisMode={SuggestionMode.RECENT}
+              <Picker
+                data={data}
+                previewPosition="none"
+                onEmojiSelect={emojiHandler}
               />
             )}
           </div>
         </div>
 
         <div>
-          <button
-            // onClick={() => postHandler(token, dispatch, backendpost)}
-            onClick={() => uploadHandler()}
-            className={styles.button}
-          >
+          <button onClick={() => uploadHandler()} className={styles.button}>
             Post
           </button>
         </div>
