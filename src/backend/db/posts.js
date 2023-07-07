@@ -10,7 +10,8 @@ export const posts = [
   {
     _id: uuid(),
     content: "Feeling Blessed",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688753047/WhatsApp_Image_2023-07-03_at_03.03.27_1_vao5w2.jpg",
     likes: {
       likeCount: 10,
       likedBy: [],
@@ -104,7 +105,8 @@ export const posts = [
     _id: "MTYtVhecCj",
     content:
       "You are never too old to set another goal or to dream a new dream.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262395/samples/ecommerce/car-interior-design.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -168,7 +170,8 @@ export const posts = [
   {
     _id: "G-Gi3lSZP9",
     content: "When you have a dream, you’ve got to grab it and never let go.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262395/samples/landscapes/beach-boat.jpg",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -276,7 +279,8 @@ export const posts = [
     _id: "CCmJpDnnQQ",
     content:
       "You can get everything in life you want if you will just help enough other people get what they want.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262391/samples/landscapes/girl-urban-view.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -290,9 +294,9 @@ export const posts = [
 
   {
     _id: "Z_TZT_3EAw",
-    content:
-      "If you believe something needs to exist, if it's something you want to use yourself, don't let anyone ever stop you from doing it.",
-    mediaURL: "",
+    content: "My Window View",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688752958/WhatsApp_Image_2023-07-07_at_23.29.49_szmfpe.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -306,8 +310,9 @@ export const posts = [
 
   {
     _id: "e-knMEsoLq",
-    content: "More is lost by indecision than wrong decision.",
-    mediaURL: "",
+    content: "Nature at it Best",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688753582/Doon-valley_xpxuig.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -321,9 +326,9 @@ export const posts = [
 
   {
     _id: "VY14RsXC7G",
-    content:
-      "The reason we struggle with insecurity is because we compare our behind-the-scenes with everyone else’s highlight reel.",
-    mediaURL: "",
+    content: "It takes a village to raise a child.",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688753807/c4d5c1db2688b9da8dd1a9fd22bd17d2_qwrqqb.jpg",
     likes: {
       likeCount: 7,
       likedBy: [],
@@ -338,7 +343,8 @@ export const posts = [
   {
     _id: "l9pedEMjZS",
     content: "If you don’t risk anything, you risk even more.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262387/samples/ecommerce/analog-classic.jpg",
     likes: {
       likeCount: 6,
       likedBy: [],
@@ -353,7 +359,8 @@ export const posts = [
   {
     _id: "lbW4dlCpNC",
     content: "If it makes you nervous, you’re doing it right.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688754016/download_uzgw5s.jpg",
     likes: {
       likeCount: 12,
       likedBy: [],
@@ -367,9 +374,9 @@ export const posts = [
 
   {
     _id: "k-Vwd2d7Vt",
-    content:
-      "I learned a long time ago that there is something worse than missing the goal, and that’s not pulling the trigger.",
-    mediaURL: "",
+    content: "Try Something New",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262389/samples/food/fish-vegetables.jpg",
     likes: {
       likeCount: 9,
       likedBy: [],
@@ -383,9 +390,9 @@ export const posts = [
 
   {
     _id: "R2lAuXvK7V",
-    content:
-      "Success is stumbling from failure to failure with no loss of enthusiasm. Love this quote by Winston Churchill.",
-    mediaURL: "",
+    content: "Soul Connection.",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262393/samples/animals/three-dogs.jpg",
     likes: {
       likeCount: 12,
       likedBy: [],
@@ -401,7 +408,8 @@ export const posts = [
     _id: "G5xd30tMCR",
     content:
       "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688754594/WhatsApp_Image_2023-07-07_at_23.53.42_x6xrwn.jpg",
     likes: {
       likeCount: 8,
       likedBy: [],
@@ -417,7 +425,8 @@ export const posts = [
     _id: "lF8cnfPAe9",
     content:
       "Life is like riding a bicycle. To keep your balance you must keep moving.",
-    mediaURL: "",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1687262394/samples/people/bicycle.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -432,8 +441,9 @@ export const posts = [
   {
     _id: "stfTkUi2Nt",
     content:
-      "“Do not wait for the perfect time and place to enter, for you are already onstage.",
-    mediaURL: "",
+      "“Do not wait for the perfect time and place to enter, for you are already onstage, Follow Your Passion.",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688754747/81bn06jmOOL_jvbfrx.jpg",
     likes: {
       likeCount: 25,
       likedBy: [],
@@ -447,8 +457,9 @@ export const posts = [
 
   {
     _id: "quiTkUi2Nt",
-    content: "It is a rough road that leads to the heights of greatness.",
-    mediaURL: "",
+    content: "Perform Your Karma.",
+    mediaURL:
+      "https://res.cloudinary.com/dejiizvkx/image/upload/v1688754775/top-astrologer-in-India-2_2_cjsnl7.jpg",
     likes: {
       likeCount: 8,
       likedBy: [],
