@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useContext } from "react";
-import { DataUserContext } from "../../Context/DataUser/DataUserProvider";
 
 export const likePostServices = async (token, dispatch, post) => {
   try {
@@ -14,12 +12,11 @@ export const likePostServices = async (token, dispatch, post) => {
       }
     );
 
-    console.log(response);
-    console.log(response?.data?.posts);
+    const totalPosts = [...response?.data?.posts];
 
-    dispatch({ type: "LIKEDPOST", payload: post });
+    const findPost = totalPosts?.find((newPost) => newPost.id === post.id);
 
-    // const likedPost =
+    dispatch({ type: "LIKEDPOST", payload: findPost });
   } catch (error) {
     console.log(error);
   }
@@ -37,7 +34,11 @@ export const unlikePostServices = async (post, dispatch, token) => {
       }
     );
 
-    dispatch({ type: "UNLIKEDPOST", payload: post });
+    const totalPosts = [...response?.data?.posts];
+
+    const findPost = totalPosts?.find((newPost) => newPost.id === post.id);
+
+    dispatch({ type: "UNLIKEDPOST", payload: findPost });
   } catch (error) {
     console.log(error);
   }
