@@ -47,7 +47,13 @@ To run the project locally, follow these steps:
 * React Router v6
 * Vanilla CSS, Using CSS Modules
 
-  
+
+https://www.loom.com/share/1a1ca7df1a994e05867fe06e214b89bb?sid=6e0744af-656a-48fe-9bbd-b507966a5932
+
+
+
+https://github.com/prince1096/Social_Media/assets/85553942/da3bbbf6-6edf-4d19-b702-d1b413d4134c
+
 
 
 
