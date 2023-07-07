@@ -14,11 +14,6 @@
   grid-area: footer;
 }
 
-.navdiv {
-  /* position: fixed; */
-  /* z-index: 9; */
-}
-
 .item3 {
   max-height: 660px;
   z-index: 2;
@@ -26,28 +21,16 @@
 }
 
 .homecontainer {
-  /* display: grid; */
-
   display: grid;
   grid-template-areas:
     "header header header header header header"
     "menu main main main main right"
     "footer footer footer footer footer footer";
   gap: 10px;
-  /* background-color: #2196f3; */
   padding: 10px;
-  /* position: relative; */
 }
 
 .item4 {
-}
-
-.navbar {
-  /* background-color: black; */
-  /* position: fixed; */
-  /* top: 50px; */
-  /* left: 30px; */
-  /* bottom: 0; */
 }
 
 .lighttheme {
@@ -60,7 +43,6 @@
 }
 
 .homecontainer {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
   width: 100vw;
 }

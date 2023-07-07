@@ -46,8 +46,6 @@ export const getBookMarkDataServices = async (dispatch, token) => {
       },
     });
 
-    // console.log(response?.data?.bookmarks);
-
     dispatch({ type: "BOOKMARK_DATA", payload: response?.data?.bookmarks });
   } catch (error) {
     console.log(error);

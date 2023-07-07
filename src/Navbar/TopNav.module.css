@@ -66,7 +66,6 @@
 
 .lightmode {
   cursor: pointer;
-  /* background-color: white; */
   border: none;
 }
 
@@ -93,7 +92,6 @@
     display: block;
     font-family: lobster;
     font-size: 20px;
-    /* font-weight: bolder; */
   }
 
   .topnavsearchbar {

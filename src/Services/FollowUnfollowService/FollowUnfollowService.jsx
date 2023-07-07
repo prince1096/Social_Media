@@ -12,8 +12,6 @@ export const followServices = async (token, dispatch, followId) => {
       }
     );
 
-    console.log(response?.data);
-
     dispatch({
       type: "FOLLOW",
       payload: response?.data?.followUser,
@@ -34,8 +32,6 @@ export const unfollowServices = async (token, dispatch, unfollowId) => {
         },
       }
     );
-
-    console.log(response);
 
     dispatch({
       type: "UNFOLLOW",
