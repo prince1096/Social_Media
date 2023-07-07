@@ -7,6 +7,8 @@ import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
 import { BsImageFill } from "react-icons/bs";
+import { RxCross2 } from "react-icons/rx";
+
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 import Profile from "../Profile/Profile";
 import { createNewPostService } from "../../Services/Post/postServices";
@@ -131,6 +133,20 @@ const AddPost = () => {
             )}
           </div>
         </div>
+
+        {imageFile && (
+          <div className={styles.showpost}>
+            <img src={imageFile} height="80px" width="80px" alt="" />
+            <button
+              className={`${styles.postbtn} ${
+                theme ? styles.lighttheme : styles.darktheme
+              }`}
+              onClick={() => setImagefile(null)}
+            >
+              <RxCross2 />
+            </button>
+          </div>
+        )}
 
         <div>
           <button onClick={() => uploadHandler()} className={styles.button}>

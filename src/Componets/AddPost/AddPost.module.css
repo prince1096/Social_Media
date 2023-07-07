@@ -10,6 +10,19 @@
   position: relative;
 }
 
+.showpost {
+  position: relative;
+}
+
+.postbtn {
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 18px;
+}
+
 .userprofile {
   width: 40px;
   height: 40px;
