@@ -11,7 +11,6 @@ const Profile = ({ url, height, width }) => {
   return (
     <div>
       <div
-        //  className={styles.profile}
         className={`${styles.profile} ${
           theme ? styles.lighttheme : styles.darktheme
         }`}

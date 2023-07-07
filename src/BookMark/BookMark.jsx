@@ -15,7 +15,7 @@ const BookMark = () => {
     <div>
       <div>
         <div className={styles.container}>
-          {state?.bookmarkPost?.length === 0 && <h2>Like some Post</h2>}
+          {state?.bookmarkPost?.length === 0 && <h2>Add some Post</h2>}
 
           {bookMarkedPostData?.map((post) => (
             <PostDisplay post={post} />

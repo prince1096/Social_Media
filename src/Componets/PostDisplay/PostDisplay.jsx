@@ -204,8 +204,6 @@ const PostDisplay = ({ post }) => {
               {followed ? "Unfollow" : "Follow"}
             </button>
           )}
-
-          {/* <Edit /> */}
         </div>
       )}
     </div>

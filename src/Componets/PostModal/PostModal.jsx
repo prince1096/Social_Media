@@ -22,8 +22,6 @@ const PostModal = ({ children, theme }) => {
           }`}
         >
           {children}
-
-          {/* <NavAdd setShowModal={setShowModal} /> */}
         </div>
       )}
     </>

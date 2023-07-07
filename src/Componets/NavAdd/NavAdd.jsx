@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-import styles from "./NavAdd.module.css";
 import AddPost from "../AddPost/AddPost";
 
 const NavAdd = ({ setShowModal }) => {
