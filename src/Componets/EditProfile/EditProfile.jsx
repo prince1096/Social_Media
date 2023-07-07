@@ -50,7 +50,6 @@ const EditProfile = () => {
 
   return (
     <div
-      //  className={styles.editcontainer}
       className={`${styles.editcontainer} ${
         theme ? styles.lighttheme : styles.darktheme
       }`}
@@ -58,7 +57,6 @@ const EditProfile = () => {
       <div className={styles.cross}>
         <h2>Edit Profile</h2>
         <button
-          // className={styles.crossbtn}
           className={`${styles.crossbtn} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}
@@ -88,7 +86,6 @@ const EditProfile = () => {
         </div>
 
         <button
-          // className={styles.avatarbtn}
           className={`${styles.avatarbtn} ${
             theme ? styles.lighttheme : styles.darktheme
           }`}

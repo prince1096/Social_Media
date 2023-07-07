@@ -1,16 +1,8 @@
 import React, { createContext, useEffect, useReducer } from "react";
 
-// import axios from "axios";
-import {
-  getAllUserDataService,
-  getUserDataService,
-} from "../../Services/user/userServices";
-import {
-  getAllPostService,
-  getUserPostService,
-} from "../../Services/Post/postServices";
+import { getAllUserDataService } from "../../Services/user/userServices";
+import { getAllPostService } from "../../Services/Post/postServices";
 import { getBookMarkDataServices } from "../../Services/BookMarkService/BookMarkService";
-import { useParams } from "react-router";
 
 export const DataUserContext = createContext();
 
@@ -160,8 +152,6 @@ const DataUserProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(datareducerFunction, initialState);
 
-  const { username } = useParams();
-
   useEffect(() => {
     (async () => {
       await getAllUserDataService(dispatch);
@@ -177,24 +167,6 @@ const DataUserProvider = ({ children }) => {
   useEffect(() => {
     getBookMarkDataServices(dispatch, token);
   }, [state?.bookmarkPost]);
-
-  // console.log(state?.userOnProfile);
-
-  // useEffect(() => {
-  //   getUserDataService(dispatch, state?.userOnProfile?._id);
-  //   // getUserPostService(dispatch, state?.currentprofile);
-  // }, [state?.userOnProfile]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     await getUserDataService(dispatch, username);
-  //     await getUserPostService(dispatch, state?.currentprofile);
-  //   })();
-  //   // getUserDataService(dispatch, userprofileData._id);
-  //   // getUserPostService(dispatch, state?.currentprofile);
-  // }, [state?.currentprofile]);
-
-  // console.log(state?.following);
 
   return (
     <div>

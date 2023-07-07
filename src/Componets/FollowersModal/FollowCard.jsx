@@ -22,8 +22,6 @@ const FollowCard = ({ user, setShowfollower, setShowfollowing, theme }) => {
     setShowfollowing(false);
   };
 
-  //   const currentProfile = state?.currentprofile;
-
   const findUser = state?.following?.find(
     (users) => users.username === user.username
   );
@@ -39,7 +37,6 @@ const FollowCard = ({ user, setShowfollower, setShowfollowing, theme }) => {
       <div key={user?._id} className={styles.usercontainer}>
         <Link to={`/userprofile/${user?.username}`}>
           <button
-            // className={styles.suggestbtn}
             className={`${styles.suggestbtn} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
@@ -69,15 +66,12 @@ const FollowCard = ({ user, setShowfollower, setShowfollowing, theme }) => {
 
         <div>
           <button
-            // className={styles.followbtn}
             className={`${styles.followbtn} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
-            //   onClick={() => followServices(token, dispatch, user._id)}
             onClick={() => followHandler()}
           >
             {findUser ? "Unfollow" : "Follow"}
-            {/* Follow */}
           </button>
         </div>
       </div>

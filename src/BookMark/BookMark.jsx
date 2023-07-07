@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
 
 import styles from "./BookMark.module.css";
-// import BookMarkDisplay from "./BookMarkDisplay";
 import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 
 const BookMark = () => {

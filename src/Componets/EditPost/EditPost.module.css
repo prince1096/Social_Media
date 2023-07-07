@@ -4,27 +4,16 @@
 }
 
 .addpostcontainer {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   margin: 0 auto;
   width: 350px;
   padding: 0.8rem;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
-  /* background-color: white; */
   z-index: 150;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 .userprofile {
   width: 40px;
@@ -49,11 +38,6 @@
   border: none;
   font-family: sans-serif;
   resize: none;
-}
-
-.inputurl {
-  /* display: none; */
-  /* visibility: hidden; */
 }
 
 .button {
@@ -91,19 +75,12 @@
   color: whitesmoke;
 }
 
-.inputurl {
-  /* display: none;  */
-}
-
 .labelcontainer {
   position: relative;
   display: inline;
 }
 
 .labelcontainer label {
-  /* Style your label as desired */
-  /* For example, add a background color and padding */
-  /* background-color: #eaeaea; */
   padding: 10px;
   cursor: pointer;
 }

@@ -9,6 +9,7 @@ import BookMark from "./BookMark/BookMark";
 import LikedPost from "./LikedPost/LikedPost";
 import Scroll from "./Scroll/Scroll";
 import UserProfile from "./UserProfile/UserProfile";
+import ErrorPage from "./Error/ErrorPage";
 
 const RouterPage = () => {
   return (
@@ -31,6 +32,7 @@ const RouterPage = () => {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
