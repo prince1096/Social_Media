@@ -11,7 +11,6 @@ const Edit = ({ postData, token, dispatch, theme }) => {
 
   return (
     <div
-      // className={styles.editpostcontainer}
       className={`${styles.editpostcontainer} ${
         theme ? styles.lighttheme : styles.darkthemecontainer
       }`}

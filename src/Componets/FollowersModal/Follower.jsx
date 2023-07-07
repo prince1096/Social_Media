@@ -2,7 +2,6 @@ import React from "react";
 
 import styles from "./Follower.module.css";
 import FollowCard from "./FollowCard";
-// import { BsTypeH3 } from "react-icons/bs";
 
 import { RxCross2 } from "react-icons/rx";
 
@@ -13,8 +12,6 @@ const Follower = ({
   setShowfollowing,
   theme,
 }) => {
-  //   console.log(users);
-
   const crossHandler = () => {
     setShowfollower(false);
     setShowfollowing(false);
@@ -22,7 +19,6 @@ const Follower = ({
 
   return (
     <div
-      //  className={styles.followlist}
       className={`${styles.followlist} ${
         theme ? styles.lighttheme : styles.darktheme
       }`}
