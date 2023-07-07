@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import styles from "./TopNav.module.css";
-import { BsInstagram } from "react-icons/bs";
 
 import { BsFillBrightnessHighFill } from "react-icons/bs";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
@@ -44,8 +43,6 @@ const TopNav = () => {
       }`}
     >
       <div className={`${styles.topnavlogo}  `}>
-        <div>{/* <BsInstagram className={styles.instagram} /> */}</div>
-
         <div className={styles.hidelogo}>Prinstagram</div>
       </div>
 
