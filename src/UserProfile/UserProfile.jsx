@@ -39,16 +39,12 @@ const UserProfile = () => {
     getUserDataService(dispatch, findUser?._id);
   }, [findUser?._id, state?.loginUser, state?.following]);
 
-  // console.log(state?.currentProfile);
-
   useEffect(() => {
     getUserPostService(dispatch, state?.currentprofile);
   }, [state?.currentprofile, state?.userPost]);
 
   const showEdit = () => {
-    console.log("show");
     dispatch({ type: "SHOW_EDITPROFILE_MODAL", payload: true });
-    console.log("ok");
   };
 
   const hideEdit = () => {
@@ -56,11 +52,8 @@ const UserProfile = () => {
   };
 
   const logoutHandler = () => {
-    // localStorage.clear();
     localStorage.clear();
-    // setToken("");
-    // localStorage.clear(isLoggedIn);
-    // navigate("/", { replace: true });
+
     window.location.reload();
   };
 
@@ -81,7 +74,6 @@ const UserProfile = () => {
       <div className={styles.profilecontainer}>
         <div>
           <button
-            // className={styles.showpic}
             className={`${styles.showpic} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}
@@ -101,9 +93,7 @@ const UserProfile = () => {
               className={styles.overlay}
               onClick={() => setShowImage(false)}
             ></div>
-            {/* // )} */}
 
-            {/* // {showImage && ( */}
             <div className={styles.modals}>
               <ShowImage url={currentProfile?.profilePicture} />
             </div>

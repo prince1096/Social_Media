@@ -1,21 +1,12 @@
-import React, { useContext, useEffect } from "react";
-
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 
 import styles from "./Suggestion.module.css";
 import Filter from "../Componets/Filter/Filter";
-import Profile from "../Componets/Profile/Profile";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
-import { getUserDataService } from "../Services/user/userServices";
-import { followServices } from "../Services/FollowUnfollowService/FollowUnfollowService";
 import SuggestionCard from "./SuggestionCard";
 
 const Suggestion = () => {
-  const { state, dispatch } = useContext(DataUserContext);
-
-  // console.log(state?.user);
-
-  // const token = localStorage.getItem("token");
+  const { state } = useContext(DataUserContext);
 
   const userInformation = localStorage.getItem("userInformation");
   const userData = JSON.parse(userInformation);
@@ -24,8 +15,6 @@ const Suggestion = () => {
     (users) => users.username !== userData?.username
   );
 
-  // console.log(state?.following);
-
   const updatedSuggestion = suggestedUser?.filter(
     (user) =>
       !state?.following?.find(
@@ -33,16 +22,11 @@ const Suggestion = () => {
       )
   );
 
-  // const userHandler = (user) => {
-  //   dispatch({ type: "USER_ON_PROFILE", payload: user });
-  // };
-
   const { theme } = state;
 
   return (
     <div>
       <div
-        // className={styles.suggestioncontainer}
         className={`${styles.suggestioncontainer} ${
           theme ? styles.lighttheme : styles.darktheme
         }`}

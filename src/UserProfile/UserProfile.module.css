@@ -3,7 +3,6 @@
   grid-template-columns: auto 1fr;
   grid-gap: 10px;
   width: 280px;
-  /* gap: 5px; */
   padding: 1rem;
   margin: 0 auto;
   text-align: start;
@@ -21,7 +20,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 5px;
-  /* width: 70%; */
 }
 
 .username {
@@ -53,7 +51,6 @@
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  /* text-transform: uppercase; */
   color: #ffffff;
   background-color: #70b1ff;
   border: none;
@@ -67,12 +64,10 @@
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  /* text-transform: uppercase; */
   color: #ffffff;
   background-color: #70b1ff;
   border: none;
   border-radius: 4px;
-  /* box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1); */
   cursor: pointer;
   margin: 2px;
 }
@@ -134,7 +129,6 @@
   font-size: 14px;
   font-weight: bolder;
   text-align: center;
-  /* background-color: white; */
   background-color: #d32f2f;
 
   border: none;
@@ -154,7 +148,6 @@
 }
 
 .logoutlogo {
-  /* font-weight: bolder; */
   font-size: 12px;
 }
 
@@ -178,11 +171,6 @@
     width: 370px;
   }
 
-  .website {
-    /* flex-direction: row; */
-    /* justify-content: space-between; */
-  }
-
   .friend {
     font-size: 16px;
   }
@@ -196,7 +184,6 @@
 @media screen and (min-width: 1024px) {
   .profilecontainer {
     width: 450px;
-    /* padding: 0 auto; */
   }
 
   .userpostdiv {

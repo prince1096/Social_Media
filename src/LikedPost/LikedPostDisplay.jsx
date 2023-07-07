@@ -148,8 +148,6 @@ const LikedPostDisplay = ({ post }) => {
           ) : (
             <button>Unfollow</button>
           )}
-
-          {/* <Edit /> */}
         </div>
       )}
     </div>
@@ -157,7 +155,3 @@ const LikedPostDisplay = ({ post }) => {
 };
 
 export default LikedPostDisplay;
-
-//  <button onClick={() => removeFromBookmarkServices(token, dispatch, post)}>
-//   <FaRegBookmark />
-// </button>;

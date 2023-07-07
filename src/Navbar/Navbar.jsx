@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import styles from "./Navbar.module.css";
 
@@ -8,11 +8,8 @@ import { MdAddCircle } from "react-icons/md";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
 import { ImExit } from "react-icons/im";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
-import { getUserDataService } from "../Services/user/userServices";
-import NavAdd from "../Componets/NavAdd/NavAdd";
 import PostModal from "../Componets/PostModal/PostModal";
 import AddPost from "../Componets/AddPost/AddPost";
 import Profile from "../Componets/Profile/Profile";
@@ -36,11 +33,7 @@ const Navbar = () => {
   };
 
   const logoutHandler = () => {
-    // localStorage.clear();
     localStorage.clear();
-    // setToken("");
-    // localStorage.clear(isLoggedIn);
-    // navigate("/", { replace: true });
     window.location.reload();
   };
 
@@ -144,8 +137,6 @@ const Navbar = () => {
 
         <div className={`${styles.navlogocontainer} ${styles.hidelogout}`}>
           <button
-            // className={styles.logout}
-
             className={`${styles.logout} ${
               theme ? styles.lighttheme : styles.darktheme
             }`}

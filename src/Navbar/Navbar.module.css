@@ -30,17 +30,8 @@
   cursor: pointer;
 }
 
-.navdiv {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
-  /* justify-content: space-around; */
-  /* position: relative; */
-}
-
 .navend {
   position: absolute;
-  /* bottom: 10px; */
 }
 
 .navlogocontainer {
@@ -53,7 +44,6 @@
   font-size: 20px;
   line-height: 18px;
   margin: 20px 0px;
-  /* padding: 12px; */
   width: auto;
 }
 .navprofilebtn {
@@ -69,11 +59,9 @@
   font-size: 20px;
   line-height: 18px;
   margin: 15px 0px;
-  /* padding: 12px; */
   width: auto;
   border: none;
   background-color: whitesmoke;
-  /* margin-top: 8rem; */
 }
 
 .navlink {

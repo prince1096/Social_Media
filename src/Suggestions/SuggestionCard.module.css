@@ -1,20 +1,9 @@
 .usercontainer {
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid; */
   margin: 4px;
   padding: 4px;
 }
-
-/*  */
-
-/* .suggestioncontainer {
-  display: none;
-  width: 250px;
-  margin: 4px;
-  padding: 4px;
-  background-color: white;
-} */
 
 .suggestbtn {
   background-color: white;
@@ -31,14 +20,6 @@
   background-color: lightgreen;
   border-radius: 50%;
 }
-
-/* .suggestedUser {
-  margin-top: 1rem;
-  display: flex;
-  max-height: 380px;
-  overflow-x: hidden;
-  z-index: 99;
-} */
 
 .userprofile {
   display: flex;
@@ -61,9 +42,3 @@
   color: whitesmoke;
   background-color: black;
 }
-
-/* @media screen and (min-width: 768px) {
-  .suggestioncontainer {
-    display: block;
-  }
-} */
