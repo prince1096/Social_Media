@@ -39,9 +39,6 @@ const Signup = () => {
       return;
     }
 
-    // console.log(event.target.value);
-    // console.log(userData);
-
     if (userData?.password !== userData?.confirmPassword) {
       return;
     }

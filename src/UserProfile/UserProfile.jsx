@@ -17,12 +17,14 @@ import {
   unfollowServices,
 } from "../Services/FollowUnfollowService/FollowUnfollowService";
 import Follower from "../Componets/FollowersModal/Follower";
+import Loader from "../Componets/Loader/Loader";
 
 const UserProfile = () => {
   const { state, dispatch } = useContext(DataUserContext);
   const [showImage, setShowImage] = useState(false);
   const [showfollower, setShowfollower] = useState(false);
   const [showfollowing, setShowfollowing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { username } = useParams();
 
@@ -89,176 +91,198 @@ const UserProfile = () => {
         ]
       : [...sortedDatePost];
 
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      // dispatch({ type: "DATA_FETCH_DONE" });
+      setIsLoading(true);
+    }, 1500);
+
+    return () => clearTimeout(timeId);
+  }, []);
+
   return (
     <div>
-      <div className={styles.profilecontainer}>
-        <div>
-          <button
-            className={`${styles.showpic} ${
-              theme ? styles.lighttheme : styles.darktheme
-            }`}
-            onClick={() => setShowImage(true)}
-          >
-            <Profile
-              url={currentProfile?.profilePicture}
-              height={"80px"}
-              width={"80px"}
-            />
-          </button>
+      {!isLoading && (
+        <div className={styles.loader}>
+          <Loader />
         </div>
+      )}
 
-        {showImage && (
-          <div>
-            <div
-              className={styles.overlay}
-              onClick={() => setShowImage(false)}
-            ></div>
-
-            <div className={styles.modals}>
-              <ShowImage url={currentProfile?.profilePicture} />
-            </div>
-          </div>
-        )}
-
+      {isLoading && (
         <div>
-          <div className={styles.name}>
+          <div className={styles.profilecontainer}>
             <div>
-              <p className={styles.username}>
-                {currentProfile?.firstName || currentProfile?.firstname + " "}
-                {currentProfile?.lastName || currentProfile?.lastname}
-              </p>
-              <p>@{currentProfile?.username}</p>
-            </div>
-            <div>
-              {userData?.username === currentProfile?.username ? (
-                <div>
-                  <button
-                    className={styles.editprofile}
-                    onClick={() => showEdit()}
-                  >
-                    Edit Profile
-                  </button>
-                  <button
-                    className={styles.logout}
-                    onClick={() => logoutHandler()}
-                  >
-                    <AiOutlineLogout className={styles.logoutlogo} />
-                  </button>
-                </div>
-              ) : (
-                <button
-                  className={styles.followbtn}
-                  onClick={() => followUnfollowHandler()}
-                >
-                  {followed ? "following" : "follow"}
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div>
-            {currentProfile?.bio ? currentProfile?.bio : "working on it"}
-          </div>
-
-          <div className={styles.website}>
-            <div>
-              <a
-                href={
-                  currentProfile?.website
-                    ? currentProfile?.website
-                    : "https://princerajdev.netlify.app/"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.hreflink}
+              <button
+                className={`${styles.showpic} ${
+                  theme ? styles.lighttheme : styles.darktheme
+                }`}
+                onClick={() => setShowImage(true)}
               >
-                {currentProfile?.website
-                  ? currentProfile?.website
-                  : "https://princerajdev.netlify.app/"}
-              </a>
-              {/* {currentProfile?.website
+                <Profile
+                  url={currentProfile?.profilePicture}
+                  height={"80px"}
+                  width={"80px"}
+                />
+              </button>
+            </div>
+
+            {showImage && (
+              <div>
+                <div
+                  className={styles.overlay}
+                  onClick={() => setShowImage(false)}
+                ></div>
+
+                <div className={styles.modals}>
+                  <ShowImage url={currentProfile?.profilePicture} />
+                </div>
+              </div>
+            )}
+
+            <div>
+              <div className={styles.name}>
+                <div>
+                  <p className={styles.username}>
+                    {currentProfile?.firstName ||
+                      currentProfile?.firstname + " "}
+                    {currentProfile?.lastName || currentProfile?.lastname}
+                  </p>
+                  <p>@{currentProfile?.username}</p>
+                </div>
+                <div>
+                  {userData?.username === currentProfile?.username ? (
+                    <div>
+                      <button
+                        className={styles.editprofile}
+                        onClick={() => showEdit()}
+                      >
+                        Edit Profile
+                      </button>
+                      <button
+                        className={styles.logout}
+                        onClick={() => logoutHandler()}
+                      >
+                        <AiOutlineLogout className={styles.logoutlogo} />
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      className={styles.followbtn}
+                      onClick={() => followUnfollowHandler()}
+                    >
+                      {followed ? "following" : "follow"}
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.userbiodata}>
+                {currentProfile?.bio ? currentProfile?.bio : "working on it"}
+              </div>
+
+              <div className={styles.website}>
+                <div>
+                  <a
+                    href={
+                      currentProfile?.website
+                        ? currentProfile?.website
+                        : "https://princerajdev.netlify.app/"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.hreflink}
+                  >
+                    {currentProfile?.website
+                      ? currentProfile?.website
+                      : "https://princerajdev.netlify.app/"}
+                  </a>
+                  {/* {currentProfile?.website
                 ? currentProfile?.website
                 : "https://princerajdev.netlify.app/"} */}
+                </div>
+                <div>{convertDate(currentProfile?.createdAt)}</div>
+              </div>
+
+              <div className={styles.friend}>
+                <p className={styles.friendpost}>
+                  {state?.userPost?.length} Posts
+                </p>
+                <button
+                  onClick={() => setShowfollower(true)}
+                  className={`${styles.followerbtn} ${
+                    theme ? styles.lighttheme : styles.darktheme
+                  }`}
+                >
+                  <p> {currentProfile?.followers?.length} followers </p>
+                </button>
+
+                <button
+                  onClick={() => setShowfollowing(true)}
+                  className={`${styles.followerbtn} ${
+                    theme ? styles.lighttheme : styles.darktheme
+                  }`}
+                >
+                  <p>{currentProfile?.following?.length} following</p>
+                </button>
+              </div>
             </div>
-            <div>{convertDate(currentProfile?.createdAt)}</div>
           </div>
 
-          <div className={styles.friend}>
-            <p className={styles.friendpost}>{state?.userPost?.length} Posts</p>
-            <button
-              onClick={() => setShowfollower(true)}
-              className={`${styles.followerbtn} ${
-                theme ? styles.lighttheme : styles.darktheme
-              }`}
-            >
-              <p> {currentProfile?.followers?.length} followers </p>
-            </button>
+          {showfollower && (
+            <div>
+              <div
+                className={styles.overlay}
+                onClick={() => setShowfollower(false)}
+              ></div>
 
-            <button
-              onClick={() => setShowfollowing(true)}
-              className={`${styles.followerbtn} ${
-                theme ? styles.lighttheme : styles.darktheme
-              }`}
-            >
-              <p>{currentProfile?.following?.length} following</p>
-            </button>
-          </div>
-        </div>
-      </div>
+              <div className={styles.modal}>
+                <Follower
+                  currentaction={"followers"}
+                  users={currentProfile?.followers}
+                  setShowfollowing={setShowfollowing}
+                  setShowfollower={setShowfollower}
+                  theme={theme}
+                />
+              </div>
+            </div>
+          )}
 
-      {showfollower && (
-        <div>
-          <div
-            className={styles.overlay}
-            onClick={() => setShowfollower(false)}
-          ></div>
+          {showfollowing && (
+            <div>
+              <div
+                className={styles.overlay}
+                onClick={() => setShowfollowing(false)}
+              ></div>
 
-          <div className={styles.modal}>
-            <Follower
-              currentaction={"followers"}
-              users={currentProfile?.followers}
-              setShowfollowing={setShowfollowing}
-              setShowfollower={setShowfollower}
-              theme={theme}
-            />
-          </div>
-        </div>
-      )}
+              <div className={styles.modal}>
+                <Follower
+                  currentaction={"following"}
+                  users={currentProfile?.following}
+                  setShowfollowing={setShowfollowing}
+                  setShowfollower={setShowfollower}
+                  theme={theme}
+                />
+              </div>
+            </div>
+          )}
 
-      {showfollowing && (
-        <div>
-          <div
-            className={styles.overlay}
-            onClick={() => setShowfollowing(false)}
-          ></div>
+          {state?.showProfile && (
+            <div className={styles.overlay} onClick={() => hideEdit()}></div>
+          )}
 
-          <div className={styles.modal}>
-            <Follower
-              currentaction={"following"}
-              users={currentProfile?.following}
-              setShowfollowing={setShowfollowing}
-              setShowfollower={setShowfollower}
-              theme={theme}
-            />
+          {state?.showProfile && (
+            <div className={styles.modal}>
+              <EditProfile />
+            </div>
+          )}
+
+          <div className={styles.userpostdiv}>
+            {sortedLikePost?.map((post) => (
+              <PostDisplay post={post} key={post._id} />
+            ))}
           </div>
         </div>
       )}
-
-      {state?.showProfile && (
-        <div className={styles.overlay} onClick={() => hideEdit()}></div>
-      )}
-
-      {state?.showProfile && (
-        <div className={styles.modal}>
-          <EditProfile />
-        </div>
-      )}
-
-      <div className={styles.userpostdiv}>
-        {sortedLikePost?.map((post) => (
-          <PostDisplay post={post} key={post._id} />
-        ))}
-      </div>
     </div>
   );
 };
