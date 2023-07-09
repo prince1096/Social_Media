@@ -1,6 +1,6 @@
 import React from "react";
 
-import spinner from "../../assets/spinner.gif";
+import Eclipse from "../../assets/Eclipse.png";
 
 import "./Loader.css";
 
@@ -8,7 +8,7 @@ const Loader = () => {
   return (
     <div className="spinner_loader">
       <div>
-        <img src={spinner} alt="" />
+        <img src={Eclipse} alt="" />
       </div>
     </div>
   );

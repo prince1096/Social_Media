@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import styles from "./Scroll.module.css";
 
@@ -6,9 +6,11 @@ import AddPost from "../Componets/AddPost/AddPost";
 import Filter from "../Componets/Filter/Filter";
 import PostDisplay from "../Componets/PostDisplay/PostDisplay";
 import { DataUserContext } from "../Context/DataUser/DataUserProvider";
+import Loader from "../Componets/Loader/Loader";
 
 const Scroll = () => {
   const { state } = useContext(DataUserContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const followerPost = state?.post?.filter((userpost) =>
     state?.following?.some((user) => user.username === userpost?.username)
@@ -40,21 +42,37 @@ const Scroll = () => {
         ]
       : [...sortedDatePost];
 
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      setIsLoading(true);
+    }, 1000);
+
+    return () => clearTimeout(timeId);
+  }, []);
+
   return (
     <div>
-      <div className={styles.container}>
-        <div className={styles.addpost}>
-          <AddPost />
+      {!isLoading && (
+        <div className={styles.loader}>
+          <Loader />
         </div>
+      )}
 
-        <div className={styles.filtermobile}>
-          <Filter />
+      {isLoading && (
+        <div className={styles.container}>
+          <div className={styles.addpost}>
+            <AddPost />
+          </div>
+
+          <div className={styles.filtermobile}>
+            <Filter />
+          </div>
+
+          {sortedLikePost?.map((post) => (
+            <PostDisplay post={post} key={post._id} />
+          ))}
         </div>
-
-        {sortedLikePost?.map((post) => (
-          <PostDisplay post={post} key={post._id} />
-        ))}
-      </div>
+      )}
     </div>
   );
 };

@@ -93,7 +93,6 @@ const UserProfile = () => {
 
   useEffect(() => {
     const timeId = setTimeout(() => {
-      // dispatch({ type: "DATA_FETCH_DONE" });
       setIsLoading(true);
     }, 1500);
 

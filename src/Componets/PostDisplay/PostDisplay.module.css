@@ -67,6 +67,9 @@
 }
 .heart {
   font-size: 21px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .contentdiv {
@@ -176,7 +179,7 @@
 
 .darkthemebookok {
   background-color: rgb(46, 49, 50);
-  font-size: 18px;
+  font-size: 20px;
 
   color: white;
 }

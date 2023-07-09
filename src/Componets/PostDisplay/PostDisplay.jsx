@@ -125,7 +125,7 @@ const PostDisplay = ({ post }) => {
             >
               <span className={styles.heart}>
                 <HiOutlineHeart className={styles.likedLogo} />{" "}
-                {likes !== 0 ? likes : ""}
+                <p>{likes !== 0 ? likes : ""}</p>
               </span>{" "}
             </button>
           ) : (
@@ -136,7 +136,8 @@ const PostDisplay = ({ post }) => {
               onClick={() => likePostServices(token, dispatch, post)}
             >
               <span className={styles.heart}>
-                <HiOutlineHeart /> {likes !== 0 ? likes : ""}
+                <HiOutlineHeart />
+                <p>{likes !== 0 ? likes : ""}</p>
               </span>{" "}
             </button>
           )}
