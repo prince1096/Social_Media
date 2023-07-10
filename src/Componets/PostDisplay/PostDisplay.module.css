@@ -62,6 +62,7 @@
 
 .likelogo {
   display: flex;
+  align-items: center;
   gap: 10px;
   margin: 6px;
 }
